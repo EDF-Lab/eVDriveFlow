@@ -1,11 +1,16 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/%C3%89lectricit%C3%A9_de_France_logo.svg" width="400">
 
 
-# EDF implementation of ISO 15118-20 FDIS
+# EDF R&D implementation of ISO 15118-20 FDIS
 ============
 
 
-This project implements the use case DC Bidirectional Power Transfer BPT with dynamic control mode based on ISO 15118-20 FDIS version using *Python*.
+This project implements the ISO 15118-20 using *Python*.
+
+Supported features:
+- DC Bidirectional Power Transfer BPT with dynamic control mode.
+- TLS 1.3 with mutual authentication.
+- Set departure time from SECC side.
 
 
 # Project setup 
