@@ -1,0 +1,181 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb10aa74c, pid=1504, tid=1504
+#
+# JRE version: OpenJDK Runtime Environment (11.0.13+8) (build 11.0.13+8-post-Raspbian-1deb11u1)
+# Java VM: OpenJDK Server VM (11.0.13+8-post-Raspbian-1deb11u1, mixed mode, g1 gc, linux-)
+# Problematic frame:
+# C  [libQt5Gui.so.5+0x2f674c]  QBrush::QBrush()+0xf0
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   Unknown
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea 
+
+Host: rev 3 (v7l), 4 cores, 1G, Raspbian GNU/Linux 11 (bullseye)
+Time: Mon Nov 29 13:37:17 2021 CET elapsed time: 54.451004 seconds (0d 0h 0m 54s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02093c00):  JavaThread "main" [_thread_in_native, id=1504, stack(0xbe951000,0xbe9a1000)]
+
+Stack: [0xbe951000,0xbe9a1000],  sp=0xbe99feb8,  free space=315k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libQt5Gui.so.5+0x2f674c]  QBrush::QBrush()+0xf0
+
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00000000
+
+Register to memory mapping:
+
+  r0  = 0x025b04c4
+0x025b04c4 points into unknown readable memory: 0x024cdb78 | 78 db 4c 02
+
+  r1  = 0x00000000
+0x0 is NULL
+
+  r2  = 0x0000bc00
+0x0000bc00 is an unknown value
+
+  r3  = 0x00000000
+0x0 is NULL
+
+  r4  = 0x025b0408
+0x025b0408 points into unknown readable memory: 0xbe99ff78 | 78 ff 99 be
+
+  r5  = 0x00000000
+0x0 is NULL
+
+  r6  = 0xb135b658
+0xb135b658: <offset 0x005a7658> in /lib/arm-linux-gnueabihf/libQt5Gui.so.5 at 0xb0db4000
+
+  r7  = 0x024beed8
+0x024beed8 points into unknown readable memory: 0xb09f339c | 9c 33 9f b0
+
+  r8  = 0x025ee820
+0x025ee820 points into unknown readable memory: 0xb134d068 | 68 d0 34 b1
+
+  r9  = 0xbe9a0028
+0xbe9a0028 is pointing into the stack for thread: 0x02093c00
+
+  r10 = 0x8c438dec
+0x8c438dec points into unknown readable memory: 0xb134bbc0 | c0 bb 34 b1
+
+  fp  = 0x024beed0
+0x024beed0 points into unknown readable memory: 0xb09f32c0 | c0 32 9f b0
+
+  r12 = 0xb13533bc
+0xb13533bc: <offset 0x0059f3bc> in /lib/arm-linux-gnueabihf/libQt5Gui.so.5 at 0xb0db4000
+
+  sp  = 0xbe99feb8
+0xbe99feb8 is pointing into the stack for thread: 0x02093c00
+
+  lr  = 0xb1153384
+0xb1153384: _ZN8QPainterC2EP12QPaintDevice+0x00000098 in /lib/arm-linux-gnueabihf/libQt5Gui.so.5 at 0xb0db4000
+
+  pc  = 0xb10aa74c
+0xb10aa74c: _ZN6QBrushC2Ev+0x000000f0 in /lib/arm-linux-gnueabihf/libQt5Gui.so.5 at 0xb0db4000
+
+
+
+Registers:
+  r0  = 0x025b04c4
+  r1  = 0x00000000
+  r2  = 0x0000bc00
+  r3  = 0x00000000
+  r4  = 0x025b0408
+  r5  = 0x00000000
+  r6  = 0xb135b658
+  r7  = 0x024beed8
+  r8  = 0x025ee820
+  r9  = 0xbe9a0028
+  r10 = 0x8c438dec
+  fp  = 0x024beed0
+  r12 = 0xb13533bc
+  sp  = 0xbe99feb8
+  lr  = 0xb1153384
+  pc  = 0xb10aa74c
+  cpsr = 0x88000010
+
+Top of Stack: (sp=0xbe99feb8)
+0xbe99feb8:   025b0408 00000000 be99ff78 024beed8
+0xbe99fec8:   025ee820 b1153384 023c0ce8 be99ff3c
+0xbe99fed8:   00000001 00000001 025ee820 b00e8dd4
+0xbe99fee8:   024bfe18 8b3f3098 025ec948 b1197f70
+0xbe99fef8:   b1349a94 d4145000 be9a0040 00000000
+0xbe99ff08:   b0567000 025ec940 00000004 00000001
+0xbe99ff18:   00000000 00000001 00000001 00000000
+0xbe99ff28:   00000000 be9a0028 023c0ce8 b1349a94 
+
+Instructions: (pc=0xb10aa74c)
+0xb10aa64c:   e3520018 05d3007c 13a00000 e12fff1e
+0xb10aa65c:   e92d41f0 e59f60ec e08f6006 e5963000
+0xb10aa66c:   e3730001 ba000034 e5d63008 e1a04000
+0xb10aa67c:   ee070fba e2135001 0a00000c e59f30c8
+0xb10aa68c:   e08f3003 e593300c e5843000 ee070fba
+0xb10aa69c:   e1932f9f e2822001 e1831f92 e3510000
+0xb10aa6ac:   1afffffa e1a00004 ee070fba e8bd81f0
+0xb10aa6bc:   e2868008 e1a00008 ebf6f78b e3500000
+0xb10aa6cc:   0affffed e3a00068 ebf70123 e59f307c
+0xb10aa6dc:   e1a07000 e5805000 e5805008 e5805010
+0xb10aa6ec:   e1c051b4 e580300c e2800018 ebf6f256
+0xb10aa6fc:   e3a03001 e586700c e5873000 e596000c
+0xb10aa70c:   e3a01002 e2800008 e5005004 ebf6ffbf
+0xb10aa71c:   e3e03000 e1a00008 e5863000 ebf6ff8b
+0xb10aa72c:   e59f202c e59f102c e08f2002 e08f1001
+0xb10aa73c:   e286000c ebf70b85 eaffffcf e3a03000
+0xb10aa74c:   e5933000 e7f000f0 002b0fec 002b0fc4
+0xb10aa75c:   0000ffff 002ab22c fffffe38 e5913000
+0xb10aa76c:   e5803000 ee070fba e1932f9f e2822001
+0xb10aa77c:   e1831f92 e3510000 1afffffa ee070fba
+0xb10aa78c:   e12fff1e e1a02001 e92d4010 e3a01042
+0xb10aa79c:   e1a04000 ebf6f6d3 e1a00004 e8bd8010
+0xb10aa7ac:   e59f20a4 e59f30a4 e08f2002 e92d4070
+0xb10aa7bc:   e24dd008 e5915000 e7923003 e1a04000
+0xb10aa7cc:   e5933000 e58d3004 e3a03000 e5953004
+0xb10aa7dc:   e3530018 0a00000c ebf6f37d e59f2070
+0xb10aa7ec:   e59f3068 e08f2002 e7923003 e5932000
+0xb10aa7fc:   e59d3004 e0332002 e3a03000 1a000011
+0xb10aa80c:   e1a00004 e28dd008 e8bd8070 e5956068
+0xb10aa81c:   e3560000 0a000003 e1a01006 e1a00004
+0xb10aa82c:   ebf6fe51 eaffffec e3a00010 ebf700ca
+0xb10aa83c:   e3a02000 e285106c e1a06000 ebf71d3a 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x025b0408 points into unknown readable memory: 0xbe99ff78 | 78 ff 99 be
+stack at sp + 1 slots: 0x0 is NULL
+stack at sp + 2 slots: 0xbe99ff78 is pointing into the stack for thread: 0x02093c00
+stack at sp + 3 slots: 0x024beed8 points into unknown readable memory: 0xb09f339c | 9c 33 9f b0
+stack at sp + 4 slots: 0x025ee820 points into unknown readable memory: 0xb134d068 | 68 d0 34 b1
+stack at sp + 5 slots: 0xb1153384: _ZN8QPainterC2EP12QPaintDevice+0x00000098 in /lib/arm-linux-gnueabihf/libQt5Gui.so.5 at 0xb0db4000
+stack at sp + 6 slots: 0x023c0ce8 points into unknown readable memory: 0xb0558084 | 84 80 55 b0
+stack at sp + 7 slots: 0xbe99ff3c is pointing into the stack for thread: 0x02093c00
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x8c462208, length=10, elements={
+0x02093c00, 0x021f0800, 0x021f4400, 0x021fd400,
+0x021ffc00, 0x02201000, 0x02202800, 0x02264800,
+0x8cc04c00, 0x8c284400
+}
+
+Java Threads: ( => current thread )
+=>0x02093c00 JavaThread "main" [_thread_in_native, id=1504, stack(0xbe951000,0xbe9a1000)]
+  0x021f0800 JavaThread "Reference Handler" daemon [_thread_blocked, id=1512, stack(0x8d006000,0x8d056000)]
+  0x021f4400 JavaThread "Finalizer" daemon [_thread_blocked, id=1513, stack(0x8ce2e000,0x8ce7e000)]
+  0x021fd400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1514, stack(0x8cb2e000,0x8cb7e000)]
+  0x021ffc00 JavaThread "Service Thread" daemon [_thread_blocked, id=1515, stack(0x8c3b0000,0x8c400000)]
+  0x02201000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=1516, stack(0x8c330000,0x8c3b0000)]
+  0x02202800 JavaThread "Sweeper thread" daemon [_thread_blocked, id=1517, stack(0x8c1b0000,0x8c200000)]
+  0x02264800 JavaThread "Common-Cleaner" daemon [

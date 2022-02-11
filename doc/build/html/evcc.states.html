@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>evcc.states package &#8212; edf15118-20 0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="secc package" href="secc.html" />
+    <link rel="prev" title="evcc package" href="evcc.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="secc.html" title="secc package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="evcc.html" title="evcc package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">edf15118-20 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >edf15118-20</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="evcc.html" accesskey="U">evcc package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">evcc.states package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="evcc-states-package">
+<h1>evcc.states package<a class="headerlink" href="#evcc-states-package" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-evcc.states.ev_state">
+<span id="evcc-states-ev-state-module"></span><h2>evcc.states.ev_state module<a class="headerlink" href="#module-evcc.states.ev_state" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.ev_state.DcEVState">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.ev_state.</span></span><span class="sig-name descname"><span class="pre">DcEVState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#evcc.states.ev_state.DcEVState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shared.html#shared.state.V2GState" title="shared.state.V2GState"><code class="xref py py-class docutils literal notranslate"><span class="pre">shared.state.V2GState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.ev_state.DcEVState.process_payload">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.ev_state.DcEVState.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.ev_state.EVState">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.ev_state.</span></span><span class="sig-name descname"><span class="pre">EVState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#evcc.states.ev_state.EVState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shared.html#shared.state.V2GState" title="shared.state.V2GState"><code class="xref py py-class docutils literal notranslate"><span class="pre">shared.state.V2GState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.ev_state.EVState.process_payload">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.ev_state.EVState.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_authorization_response">
+<span id="evcc-states-wait-for-authorization-response-module"></span><h2>evcc.states.wait_for_authorization_response module<a class="headerlink" href="#module-evcc.states.wait_for_authorization_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_authorization_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_authorization_response.WaitForAuthorizationResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_authorization_response.</span></span><span class="sig-name descname"><span class="pre">WaitForAuthorizationResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_authorization_response.WaitForAuthorizationResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.EVState" title="evcc.states.ev_state.EVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.EVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_authorization_response.WaitForAuthorizationResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_authorization_response.WaitForAuthorizationResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_authorization_setup_response">
+<span id="evcc-states-wait-for-authorization-setup-response-module"></span><h2>evcc.states.wait_for_authorization_setup_response module<a class="headerlink" href="#module-evcc.states.wait_for_authorization_setup_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_authorization_setup_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_authorization_setup_response.WaitForAuthorizationSetupResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_authorization_setup_response.</span></span><span class="sig-name descname"><span class="pre">WaitForAuthorizationSetupResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_authorization_setup_response.WaitForAuthorizationSetupResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.EVState" title="evcc.states.ev_state.EVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.EVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_authorization_setup_response.WaitForAuthorizationSetupResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_authorization_setup_response.WaitForAuthorizationSetupResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_dc_cable_check_response">
+<span id="evcc-states-wait-for-dc-cable-check-response-module"></span><h2>evcc.states.wait_for_dc_cable_check_response module<a class="headerlink" href="#module-evcc.states.wait_for_dc_cable_check_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_dc_cable_check_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_dc_cable_check_response.WaitForDcCableCheckResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_dc_cable_check_response.</span></span><span class="sig-name descname"><span class="pre">WaitForDcCableCheckResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_dc_cable_check_response.WaitForDcCableCheckResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.DcEVState" title="evcc.states.ev_state.DcEVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.DcEVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_dc_cable_check_response.WaitForDcCableCheckResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_dc_cable_check_response.WaitForDcCableCheckResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_dc_charge_loop_response">
+<span id="evcc-states-wait-for-dc-charge-loop-response-module"></span><h2>evcc.states.wait_for_dc_charge_loop_response module<a class="headerlink" href="#module-evcc.states.wait_for_dc_charge_loop_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_dc_charge_loop_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_dc_charge_loop_response.WaitForDcChargeLoopResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_dc_charge_loop_response.</span></span><span class="sig-name descname"><span class="pre">WaitForDcChargeLoopResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_dc_charge_loop_response.WaitForDcChargeLoopResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.DcEVState" title="evcc.states.ev_state.DcEVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.DcEVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_dc_charge_loop_response.WaitForDcChargeLoopResponse.build_power_delivery_message">
+<span class="sig-name descname"><span class="pre">build_power_delivery_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#evcc.states.wait_for_dc_charge_loop_response.WaitForDcChargeLoopResponse.build_power_delivery_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_dc_charge_loop_response.WaitForDcChargeLoopResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_dc_charge_loop_response.WaitForDcChargeLoopResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_dc_charge_parameter_discovery_response">
+<span id="evcc-states-wait-for-dc-charge-parameter-discovery-response-module"></span><h2>evcc.states.wait_for_dc_charge_parameter_discovery_response module<a class="headerlink" href="#module-evcc.states.wait_for_dc_charge_parameter_discovery_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_dc_charge_parameter_discovery_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_dc_charge_parameter_discovery_response.WaitForDcChargeParameterDiscoveryResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_dc_charge_parameter_discovery_response.</span></span><span class="sig-name descname"><span class="pre">WaitForDcChargeParameterDiscoveryResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_dc_charge_parameter_discovery_response.WaitForDcChargeParameterDiscoveryResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.DcEVState" title="evcc.states.ev_state.DcEVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.DcEVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_dc_charge_parameter_discovery_response.WaitForDcChargeParameterDiscoveryResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_dc_charge_parameter_discovery_response.WaitForDcChargeParameterDiscoveryResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_dc_pre_charge_response">
+<span id="evcc-states-wait-for-dc-pre-charge-response-module"></span><h2>evcc.states.wait_for_dc_pre_charge_response module<a class="headerlink" href="#module-evcc.states.wait_for_dc_pre_charge_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_pre_charge_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_dc_pre_charge_response.WaitForDcPreChargeResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_dc_pre_charge_response.</span></span><span class="sig-name descname"><span class="pre">WaitForDcPreChargeResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_dc_pre_charge_response.WaitForDcPreChargeResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.DcEVState" title="evcc.states.ev_state.DcEVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.DcEVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_dc_pre_charge_response.WaitForDcPreChargeResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_dc_pre_charge_response.WaitForDcPreChargeResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_dc_welding_detection_response">
+<span id="evcc-states-wait-for-dc-welding-detection-response-module"></span><h2>evcc.states.wait_for_dc_welding_detection_response module<a class="headerlink" href="#module-evcc.states.wait_for_dc_welding_detection_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_dc_welding_detection_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_dc_welding_detection_response.WaitForDcWeldingDetectionResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_dc_welding_detection_response.</span></span><span class="sig-name descname"><span class="pre">WaitForDcWeldingDetectionResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_dc_welding_detection_response.WaitForDcWeldingDetectionResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.DcEVState" title="evcc.states.ev_state.DcEVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.DcEVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_dc_welding_detection_response.WaitForDcWeldingDetectionResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_dc_welding_detection_response.WaitForDcWeldingDetectionResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_power_delivery_response">
+<span id="evcc-states-wait-for-power-delivery-response-module"></span><h2>evcc.states.wait_for_power_delivery_response module<a class="headerlink" href="#module-evcc.states.wait_for_power_delivery_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_power_delivery_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_power_delivery_response.WaitForPowerDeliveryResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_power_delivery_response.</span></span><span class="sig-name descname"><span class="pre">WaitForPowerDeliveryResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_power_delivery_response.WaitForPowerDeliveryResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.EVState" title="evcc.states.ev_state.EVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.EVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_power_delivery_response.WaitForPowerDeliveryResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_power_delivery_response.WaitForPowerDeliveryResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_schedule_exchange_response">
+<span id="evcc-states-wait-for-schedule-exchange-response-module"></span><h2>evcc.states.wait_for_schedule_exchange_response module<a class="headerlink" href="#module-evcc.states.wait_for_schedule_exchange_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_schedule_exchange_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_schedule_exchange_response.WaitForScheduleExchangeResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_schedule_exchange_response.</span></span><span class="sig-name descname"><span class="pre">WaitForScheduleExchangeResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_schedule_exchange_response.WaitForScheduleExchangeResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.EVState" title="evcc.states.ev_state.EVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.EVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_schedule_exchange_response.WaitForScheduleExchangeResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_schedule_exchange_response.WaitForScheduleExchangeResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_service_detail_response">
+<span id="evcc-states-wait-for-service-detail-response-module"></span><h2>evcc.states.wait_for_service_detail_response module<a class="headerlink" href="#module-evcc.states.wait_for_service_detail_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_service_detail_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_service_detail_response.WaitForServiceDetailResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_service_detail_response.</span></span><span class="sig-name descname"><span class="pre">WaitForServiceDetailResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_service_detail_response.WaitForServiceDetailResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.EVState" title="evcc.states.ev_state.EVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.EVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_service_detail_response.WaitForServiceDetailResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_service_detail_response.WaitForServiceDetailResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_service_discovery_response">
+<span id="evcc-states-wait-for-service-discovery-response-module"></span><h2>evcc.states.wait_for_service_discovery_response module<a class="headerlink" href="#module-evcc.states.wait_for_service_discovery_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_service_discovery_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_service_discovery_response.WaitForServiceDiscoveryResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_service_discovery_response.</span></span><span class="sig-name descname"><span class="pre">WaitForServiceDiscoveryResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_service_discovery_response.WaitForServiceDiscoveryResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.EVState" title="evcc.states.ev_state.EVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.EVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_service_discovery_response.WaitForServiceDiscoveryResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_service_discovery_response.WaitForServiceDiscoveryResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_service_selection_response">
+<span id="evcc-states-wait-for-service-selection-response-module"></span><h2>evcc.states.wait_for_service_selection_response module<a class="headerlink" href="#module-evcc.states.wait_for_service_selection_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_service_selection_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_service_selection_response.WaitForServiceSelectionResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_service_selection_response.</span></span><span class="sig-name descname"><span class="pre">WaitForServiceSelectionResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_service_selection_response.WaitForServiceSelectionResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.EVState" title="evcc.states.ev_state.EVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.EVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_service_selection_response.WaitForServiceSelectionResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_service_selection_response.WaitForServiceSelectionResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_session_setup_response">
+<span id="evcc-states-wait-for-session-setup-response-module"></span><h2>evcc.states.wait_for_session_setup_response module<a class="headerlink" href="#module-evcc.states.wait_for_session_setup_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_session_setup_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_session_setup_response.WaitForSessionSetupResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_session_setup_response.</span></span><span class="sig-name descname"><span class="pre">WaitForSessionSetupResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_session_setup_response.WaitForSessionSetupResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.EVState" title="evcc.states.ev_state.EVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.EVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_session_setup_response.WaitForSessionSetupResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_session_setup_response.WaitForSessionSetupResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_session_stop_response">
+<span id="evcc-states-wait-for-session-stop-response-module"></span><h2>evcc.states.wait_for_session_stop_response module<a class="headerlink" href="#module-evcc.states.wait_for_session_stop_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_session_stop_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_session_stop_response.WaitForSessionStopResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_session_stop_response.</span></span><span class="sig-name descname"><span class="pre">WaitForSessionStopResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_session_stop_response.WaitForSessionStopResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.EVState" title="evcc.states.ev_state.EVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.EVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_session_stop_response.WaitForSessionStopResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_session_stop_response.WaitForSessionStopResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states.wait_for_supported_app_protocol_response">
+<span id="evcc-states-wait-for-supported-app-protocol-response-module"></span><h2>evcc.states.wait_for_supported_app_protocol_response module<a class="headerlink" href="#module-evcc.states.wait_for_supported_app_protocol_response" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-wait_for_supported_app_protocol_response"></span><dl class="py class">
+<dt class="sig sig-object py" id="evcc.states.wait_for_supported_app_protocol_response.WaitForSupportedAppProtocolResponse">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">evcc.states.wait_for_supported_app_protocol_response.</span></span><span class="sig-name descname"><span class="pre">WaitForSupportedAppProtocolResponse</span></span><a class="headerlink" href="#evcc.states.wait_for_supported_app_protocol_response.WaitForSupportedAppProtocolResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#evcc.states.ev_state.EVState" title="evcc.states.ev_state.EVState"><code class="xref py py-class docutils literal notranslate"><span class="pre">evcc.states.ev_state.EVState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="evcc.states.wait_for_supported_app_protocol_response.WaitForSupportedAppProtocolResponse.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#evcc.states.wait_for_supported_app_protocol_response.WaitForSupportedAppProtocolResponse.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-evcc.states">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-evcc.states" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">evcc.states package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-evcc.states.ev_state">evcc.states.ev_state module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_authorization_response">evcc.states.wait_for_authorization_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_authorization_setup_response">evcc.states.wait_for_authorization_setup_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_dc_cable_check_response">evcc.states.wait_for_dc_cable_check_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_dc_charge_loop_response">evcc.states.wait_for_dc_charge_loop_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_dc_charge_parameter_discovery_response">evcc.states.wait_for_dc_charge_parameter_discovery_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_dc_pre_charge_response">evcc.states.wait_for_dc_pre_charge_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_dc_welding_detection_response">evcc.states.wait_for_dc_welding_detection_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_power_delivery_response">evcc.states.wait_for_power_delivery_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_schedule_exchange_response">evcc.states.wait_for_schedule_exchange_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_service_detail_response">evcc.states.wait_for_service_detail_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_service_discovery_response">evcc.states.wait_for_service_discovery_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_service_selection_response">evcc.states.wait_for_service_selection_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_session_setup_response">evcc.states.wait_for_session_setup_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_session_stop_response">evcc.states.wait_for_session_stop_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states.wait_for_supported_app_protocol_response">evcc.states.wait_for_supported_app_protocol_response module</a></li>
+<li><a class="reference internal" href="#module-evcc.states">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="evcc.html"
+                        title="previous chapter">evcc package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="secc.html"
+                        title="next chapter">secc package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/evcc.states.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="secc.html" title="secc package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="evcc.html" title="evcc package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">edf15118-20 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >edf15118-20</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="evcc.html" >evcc package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">evcc.states package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright The MIT License, 2022 EDF.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

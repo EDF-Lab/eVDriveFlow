@@ -1,0 +1,47 @@
+@startuml evcc
+
+package evcc {
+
+    class EVState{}
+    class DcEVState{}
+    class WaitForXXXResponse {}
+    note bottom: Multiple classes defined here. \nNot detailed for the sake of clarity.
+    EVState <|-- DcEVState
+    EVState <|-- WaitForXXXResponse
+    class WaitForDcXXXResponse {}
+    note bottom: Multiple classes defined here. \nNot detailed for the sake of clarity.
+    DcEVState <|-- WaitForDcXXXResponse
+
+    class UDPClient {}
+    class TCPClient {}
+
+    class IEVController {}
+    class EVDummyController {}
+    class IDcEVController {}
+
+    class EVDataModel {}
+    class DcEVDataModel {}
+    class EVEmulator {}
+
+    IEVController <|-- EVDummyController
+    IEVController <|-- IDcEVController
+    EVDataModel <|-- DcEVDataModel
+    DcEVDataModel <|-- EVEmulator
+
+    IEVController o-- EVDataModel
+
+    class EVSession {}
+    EVSession o-- IEVController
+    EVSession *-- EVState
+    class EVSessionHandler {}
+
+    EVSessionHandler *-- EVSession
+    EVSessionHandler o-- UDPClient
+    EVSessionHandler o-- TCPClient
+
+
+}
+
+hide empty members
+
+@enduml

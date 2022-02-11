@@ -1,0 +1,53 @@
+@startuml shared
+left to right direction
+package shared {
+
+    abstract ReactionToIncomingMessage {}
+    class SendMessage {}
+    class TerminateSession {}
+    class PauseSession {}
+
+    abstract V2GTPMessage{}
+    class EXIMessage {}
+    class SDPMessage {}
+
+    interface Payload{}
+    class SDPReqPayload {}
+    class SDPResPayload {}
+    class EXIPayload {}
+
+    class MessageHandler {}
+
+    interface ControllerInterface {}
+    class Timer {}
+    class CommunicationSession{}
+    class V2GState {}
+    class PhysicalInterface {}
+    class ChargeControllerInterface {}
+    PhysicalInterface <|-- ChargeControllerInterface
+    class SessionHandler {}
+    SessionHandler *-- CommunicationSession
+    SessionHandler o-- PhysicalInterface
+
+
+
+}
+hide empty members
+
+
+V2GTPMessage <|-- EXIMessage
+V2GTPMessage <|-- SDPMessage
+Payload <|-- EXIPayload
+Payload <|-- SDPReqPayload
+Payload <|-- SDPResPayload
+ReactionToIncomingMessage <|-- SendMessage
+ReactionToIncomingMessage <|-- TerminateSession
+ReactionToIncomingMessage <|-- PauseSession
+V2GTPMessage o-- Payload
+V2GState o-- "2" Timer
+CommunicationSession o-- ControllerInterface
+CommunicationSession o-- MessageHandler
+CommunicationSession *-- V2GState
+
+
+@enduml

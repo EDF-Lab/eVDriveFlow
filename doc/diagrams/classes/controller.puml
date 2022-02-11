@@ -1,0 +1,53 @@
+@startuml controller
+
+interface ControllerInterface {
+    data_model: dataclass
+    virtual_mode: bool
+    state_machine: PhysicalInterface
+    set_settings() -> None
+    set_machine() -> None
+}
+
+class IEVController {}
+
+class IEVSEController {}
+
+class IDcEVController {}
+class IDcEVSEController {}
+
+class EVDummyController {
+    update_charging_status() -> None
+}
+
+class EVDataModel {}
+
+class DcEVDataModel {}
+
+class EVEmulator {}
+
+
+class EVSEDummyController {
+    update_charging_status() -> None
+}
+
+class EVSEDataModel {}
+
+class DcEVSEDataModel {}
+
+class EVSEEmulator {}
+
+ControllerInterface <|-- IEVController
+IEVController <|-- EVDummyController
+IEVController <|-- IDcEVController
+EVDataModel <|-- DcEVDataModel
+DcEVDataModel <|-- EVEmulator
+
+ControllerInterface <|-- IEVSEController
+IEVSEController <|-- EVSEDummyController
+IEVSEController <|-- IDcEVSEController
+EVSEDataModel <|-- DcEVSEDataModel
+DcEVSEDataModel <|-- EVSEEmulator
+
+hide empty members
+
+@enduml

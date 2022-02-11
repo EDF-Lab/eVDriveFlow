@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>shared.charge_controller_tcp_driver package &#8212; edf15118-20 0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="shared.xml_classes package" href="shared.xml_classes.html" />
+    <link rel="prev" title="shared package" href="shared.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="shared.xml_classes.html" title="shared.xml_classes package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="shared.html" title="shared package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">edf15118-20 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >edf15118-20</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="shared.html" accesskey="U">shared package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">shared.charge_controller_tcp_driver package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="shared-charge-controller-tcp-driver-package">
+<h1>shared.charge_controller_tcp_driver package<a class="headerlink" href="#shared-charge-controller-tcp-driver-package" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="shared-charge-controller-tcp-driver-charge-controller-tcp-client-cli-module">
+<h2>shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli module<a class="headerlink" href="#shared-charge-controller-tcp-driver-charge-controller-tcp-client-cli-module" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli"></span><dl class="py class">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.</span></span><span class="sig-name descname"><span class="pre">CCShell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">completekey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tab'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">cmd.Cmd</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_get_c1">
+<span class="sig-name descname"><span class="pre">do_get_c1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_get_c1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the primary contactor’s driving signal state (OPEN/CLOSE)
+Usage: GET_C1</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_get_c1_real">
+<span class="sig-name descname"><span class="pre">do_get_c1_real</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_get_c1_real" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the primary contactor’s physical state (OPEN/CLOSE)
+Usage: GET_C1</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_get_c2">
+<span class="sig-name descname"><span class="pre">do_get_c2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_get_c2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the secondary contactor’s state (OPEN/CLOSE)
+Usage: GET_C2</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_get_ev_state">
+<span class="sig-name descname"><span class="pre">do_get_ev_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_get_ev_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the current 61851-1 state
+Usage: GET_EV_STATE</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_get_max_current">
+<span class="sig-name descname"><span class="pre">do_get_max_current</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_get_max_current" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the cable’s maximum possible current (either 13, 20, 32 or 63 A)
+Usage: GET_MAX_CURRENT</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_get_pwm">
+<span class="sig-name descname"><span class="pre">do_get_pwm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_get_pwm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the currently set PWM
+Usage: GET_PWM</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_set_c1">
+<span class="sig-name descname"><span class="pre">do_set_c1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_set_c1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the primary contactor’s position
+Usage: SET_C1 &lt;OPEN/CLOSE&gt;
+Example:</p>
+<blockquote>
+<div><p>SET_C1 OPEN
+Sets the primary contactor to an open position</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_set_c2">
+<span class="sig-name descname"><span class="pre">do_set_c2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_set_c2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the secondary contactor’s position
+Usage: SET_C2 &lt;OPEN/CLOSE&gt;
+Example:</p>
+<blockquote>
+<div><p>SET_C2 CLOSE
+Sets the primary contactor to a closed position</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_set_ev_state">
+<span class="sig-name descname"><span class="pre">do_set_ev_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_set_ev_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the current 61851-1 state
+Usage: SET_EV_STATE &lt;A-D&gt;
+Example:</p>
+<blockquote>
+<div><p>SET_EV_STATE A
+Sets the 61851-1 state to A</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_set_pwm">
+<span class="sig-name descname"><span class="pre">do_set_pwm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.do_set_pwm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the current PWM
+Usage: SET_PWM &lt;VALUE&gt;
+Example:</p>
+<blockquote>
+<div><p>SET_PWM 10
+Sets the PWM to 10</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.intro">
+<span class="sig-name descname"><span class="pre">intro</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&quot;\n</span> <span class="pre">_____</span> <span class="pre">____</span>&#160; <span class="pre">_____</span>&#160;&#160;&#160; <span class="pre">____</span> <span class="pre">____</span>&#160;&#160; <span class="pre">____</span>&#160; <span class="pre">_</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">_</span> <span class="pre">_\n|</span> <span class="pre">____|</span>&#160; <span class="pre">_</span> <span class="pre">\\|</span>&#160; <span class="pre">___|</span>&#160; <span class="pre">/</span> <span class="pre">___/</span> <span class="pre">___|</span> <span class="pre">/</span> <span class="pre">___||</span> <span class="pre">|__</span>&#160;&#160; <span class="pre">___|</span> <span class="pre">|</span> <span class="pre">|\n|</span>&#160; <span class="pre">_|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|_</span>&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">|</span>&#160; <span class="pre">|</span> <span class="pre">|</span>&#160;&#160;&#160;&#160; <span class="pre">\\___</span> <span class="pre">\\|</span> <span class="pre">'_</span> <span class="pre">\\</span> <span class="pre">/</span> <span class="pre">_</span> <span class="pre">\\</span> <span class="pre">|</span> <span class="pre">|\n|</span> <span class="pre">|___|</span> <span class="pre">|_|</span> <span class="pre">|</span>&#160; <span class="pre">_|</span>&#160;&#160; <span class="pre">|</span> <span class="pre">|__|</span> <span class="pre">|___</span>&#160;&#160; <span class="pre">___)</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span>&#160; <span class="pre">__/</span> <span class="pre">|</span> <span class="pre">|\n|_____|____/|_|</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">\\____\\____|</span> <span class="pre">|____/|_|</span> <span class="pre">|_|\\___|_|_|\n\nWelcome</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">Charge</span> <span class="pre">Controller</span> <span class="pre">TCP</span> <span class="pre">client</span> <span class="pre">shell.</span> <span class="pre">Type</span> <span class="pre">help</span> <span class="pre">or</span> <span class="pre">?</span> <span class="pre">to</span> <span class="pre">list</span> <span class="pre">commands.\n&quot;</span></em><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.intro" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.precmd">
+<span class="sig-name descname"><span class="pre">precmd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.precmd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method executed just before the command line is
+interpreted, but after the input prompt is generated and issued.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.prompt">
+<span class="sig-name descname"><span class="pre">prompt</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'(Charge</span> <span class="pre">Controller)</span> <span class="pre">'</span></em><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.CCShell.prompt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.check_valid_state">
+<span class="sig-prename descclassname"><span class="pre">shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.</span></span><span class="sig-name descname"><span class="pre">check_valid_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.check_valid_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.parse">
+<span class="sig-prename descclassname"><span class="pre">shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.</span></span><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">arg</span></em>, <em class="sig-param"><span class="pre">t:</span> <span class="pre">type</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a series of zero or more arguments to a tuple</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.print_results">
+<span class="sig-prename descclassname"><span class="pre">shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.</span></span><span class="sig-name descname"><span class="pre">print_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli.print_results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="shared-charge-controller-tcp-driver-charge-controller-tcp-client-helper-module">
+<h2>shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper module<a class="headerlink" href="#shared-charge-controller-tcp-driver-charge-controller-tcp-client-helper-module" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper"></span><dl class="py class">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.</span></span><span class="sig-name descname"><span class="pre">ChargeControllerTCPClientHelper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_c1">
+<span class="sig-name descname"><span class="pre">get_c1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_c1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_c1_real">
+<span class="sig-name descname"><span class="pre">get_c1_real</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_c1_real" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_c2">
+<span class="sig-name descname"><span class="pre">get_c2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_c2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_command">
+<span class="sig-name descname"><span class="pre">get_command</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_command" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_ev_state">
+<span class="sig-name descname"><span class="pre">get_ev_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_ev_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_max_current">
+<span class="sig-name descname"><span class="pre">get_max_current</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_max_current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_pwm">
+<span class="sig-name descname"><span class="pre">get_pwm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_pwm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_status">
+<span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_value">
+<span class="sig-name descname"><span class="pre">get_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.get_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.is_ok">
+<span class="sig-name descname"><span class="pre">is_ok</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.is_ok" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.send_message">
+<span class="sig-name descname"><span class="pre">send_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.send_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a message over the TCP socket, and display the response
+:param msg: The message to send</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.set_c1">
+<span class="sig-name descname"><span class="pre">set_c1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.set_c1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.set_c2">
+<span class="sig-name descname"><span class="pre">set_c2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.set_c2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.set_ev_state">
+<span class="sig-name descname"><span class="pre">set_ev_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.set_ev_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.set_pwm">
+<span class="sig-name descname"><span class="pre">set_pwm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper.ChargeControllerTCPClientHelper.set_pwm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="shared-charge-controller-tcp-driver-exemple-driver-module">
+<h2>shared.charge_controller_tcp_driver.exemple_driver module<a class="headerlink" href="#shared-charge-controller-tcp-driver-exemple-driver-module" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-shared.charge_controller_tcp_driver.exemple_driver"></span></section>
+<section id="module-shared.charge_controller_tcp_driver">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-shared.charge_controller_tcp_driver" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">shared.charge_controller_tcp_driver package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#shared-charge-controller-tcp-driver-charge-controller-tcp-client-cli-module">shared.charge_controller_tcp_driver.charge_controller_tcp_client_cli module</a></li>
+<li><a class="reference internal" href="#shared-charge-controller-tcp-driver-charge-controller-tcp-client-helper-module">shared.charge_controller_tcp_driver.charge_controller_tcp_client_helper module</a></li>
+<li><a class="reference internal" href="#shared-charge-controller-tcp-driver-exemple-driver-module">shared.charge_controller_tcp_driver.exemple_driver module</a></li>
+<li><a class="reference internal" href="#module-shared.charge_controller_tcp_driver">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="shared.html"
+                        title="previous chapter">shared package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="shared.xml_classes.html"
+                        title="next chapter">shared.xml_classes package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/shared.charge_controller_tcp_driver.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="shared.xml_classes.html" title="shared.xml_classes package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="shared.html" title="shared package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">edf15118-20 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >edf15118-20</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="shared.html" >shared package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">shared.charge_controller_tcp_driver package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright The MIT License, 2022 EDF.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

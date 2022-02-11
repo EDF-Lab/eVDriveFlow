@@ -1,0 +1,149 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb106874c, pid=2324, tid=2324
+#
+# JRE version: OpenJDK Runtime Environment (11.0.13+8) (build 11.0.13+8-post-Raspbian-1deb11u1)
+# Java VM: OpenJDK Server VM (11.0.13+8-post-Raspbian-1deb11u1, mixed mode, g1 gc, linux-)
+# Problematic frame:
+# C  [libQt5Gui.so.5+0x2f674c]  QBrush::QBrush()+0xf0
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   Unknown
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea 
+
+Host: rev 3 (v7l), 4 cores, 1G, Raspbian GNU/Linux 11 (bullseye)
+Time: Thu Nov 25 18:07:16 2021 CET elapsed time: 173.055190 seconds (0d 0h 2m 53s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x01217c00):  JavaThread "main" [_thread_in_native, id=2324, stack(0xbecd6000,0xbed26000)]
+
+Stack: [0xbecd6000,0xbed26000],  sp=0xbed24668,  free space=313k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libQt5Gui.so.5+0x2f674c]  QBrush::QBrush()+0xf0
+
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00000000
+
+Register to memory mapping:
+
+  r0  = 0x01734734
+0x01734734 points into unknown readable memory: 0x0165a1f8 | f8 a1 65 01
+
+  r1  = 0x00000000
+0x0 is NULL
+
+  r2  = 0x0000bc00
+0x0000bc00 is an unknown value
+
+  r3  = 0x00000000
+0x0 is NULL
+
+  r4  = 0x01734678
+0x01734678 points into unknown readable memory: 0xbed24728 | 28 47 d2 be
+
+  r5  = 0x00000000
+0x0 is NULL
+
+  r6  = 0xb1319658
+0xb1319658: <offset 0x005a7658> in /lib/arm-linux-gnueabihf/libQt5Gui.so.5 at 0xb0d72000
+
+  r7  = 0x01643928
+0x01643928 points into unknown readable memory: 0xb09b139c | 9c 13 9b b0
+
+  r8  = 0x01772c80
+0x01772c80 points into unknown readable memory: 0xb130b068 | 68 b0 30 b1
+
+  r9  = 0xbed247d8
+0xbed247d8 is pointing into the stack for thread: 0x01217c00
+
+  r10 = 0x017715e4
+0x017715e4 points into unknown readable memory: 0xb1309bc0 | c0 9b 30 b1
+
+  fp  = 0x01643920
+0x01643920 points into unknown readable memory: 0xb09b12c0 | c0 12 9b b0
+
+  r12 = 0xb13113bc
+0xb13113bc: <offset 0x0059f3bc> in /lib/arm-linux-gnueabihf/libQt5Gui.so.5 at 0xb0d72000
+
+  sp  = 0xbed24668
+0xbed24668 is pointing into the stack for thread: 0x01217c00
+
+  lr  = 0xb1111384
+0xb1111384: _ZN8QPainterC2EP12QPaintDevice+0x00000098 in /lib/arm-linux-gnueabihf/libQt5Gui.so.5 at 0xb0d72000
+
+  pc  = 0xb106874c
+0xb106874c: _ZN6QBrushC2Ev+0x000000f0 in /lib/arm-linux-gnueabihf/libQt5Gui.so.5 at 0xb0d72000
+
+
+
+Registers:
+  r0  = 0x01734734
+  r1  = 0x00000000
+  r2  = 0x0000bc00
+  r3  = 0x00000000
+  r4  = 0x01734678
+  r5  = 0x00000000
+  r6  = 0xb1319658
+  r7  = 0x01643928
+  r8  = 0x01772c80
+  r9  = 0xbed247d8
+  r10 = 0x017715e4
+  fp  = 0x01643920
+  r12 = 0xb13113bc
+  sp  = 0xbed24668
+  lr  = 0xb1111384
+  pc  = 0xb106874c
+  cpsr = 0x88000010
+
+Top of Stack: (sp=0xbed24668)
+0xbed24668:   01734678 00000000 bed24728 01643928
+0xbed24678:   01772c80 b1111384 01543658 bed246ec
+0xbed24688:   00000001 00000001 01772c80 b00a6dd4
+0xbed24698:   01644248 8b1f3098 01771b70 b1155f70
+0xbed246a8:   b1307a94 97c5e400 bed247f0 00000000
+0xbed246b8:   b0525000 01771b68 00000004 00000001
+0xbed246c8:   00000000 00000001 00000001 00000000
+0xbed246d8:   00000000 bed247d8 01543658 b1307a94 
+
+Instructions: (pc=0xb106874c)
+0xb106864c:   e3520018 05d3007c 13a00000 e12fff1e
+0xb106865c:   e92d41f0 e59f60ec e08f6006 e5963000
+0xb106866c:   e3730001 ba000034 e5d63008 e1a04000
+0xb106867c:   ee070fba e2135001 0a00000c e59f30c8
+0xb106868c:   e08f3003 e593300c e5843000 ee070fba
+0xb106869c:   e1932f9f e2822001 e1831f92 e3510000
+0xb10686ac:   1afffffa e1a00004 ee070fba e8bd81f0
+0xb10686bc:   e2868008 e1a00008 ebf6f78b e3500000
+0xb10686cc:   0affffed e3a00068 ebf70123 e59f307c
+0xb10686dc:   e1a07000 e5805000 e5805008 e5805010
+0xb10686ec:   e1c051b4 e580300c e2800018 ebf6f256
+0xb10686fc:   e3a03001 e586700c e5873000 e596000c
+0xb106870c:   e3a01002 e2800008 e5005004 ebf6ffbf
+0xb106871c:   e3e03000 e1a00008 e5863000 ebf6ff8b
+0xb106872c:   e59f202c e59f102c e08f2002 e08f1001
+0xb106873c:   e286000c ebf70b85 eaffffcf e3a03000
+0xb106874c:   e5933000 e7f000f0 002b0fec 002b0fc4
+0xb106875c:   0000ffff 002ab22c fffffe38 e5913000
+0xb106876c:   e5803000 ee070fba e1932f9f e2822001
+0xb106877c:   e1831f92 e3510000 1afffffa ee070fba
+0xb106878c:   e12fff1e e1a02001 e92d4010 e3a01042
+0xb106879c:   e1a04000 ebf6f6d3 e1a00004 e8bd8010
+0xb10687ac:   e59f20a4 e59f30a4 e08f2002 e92d4070
+0xb10687bc:   e24dd008 e5915000 e7923003 e1a04000
+0xb10687cc:   e5933000 e58d3004 e3a03000 e5953004
+0xb10687dc:   e3530018 0a00000c ebf6f37d e59f2070
+0xb10687ec:   e59f3068 e08f2002 e7923003 e5932000
+0xb10687fc:   e59d3004 e0332002 e3a03000 1a000011
+0xb106880c:   e1a00004 e28dd008 e8bd8070 e5956068
+0xb106881c:   e3560000 0a000003 e1a01006 e1a00004
+0xb106882c:   ebf6fe51 eaffffec e3a00010 ebf700ca

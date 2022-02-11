@@ -1,0 +1,49 @@
+@startuml session
+
+class CommunicationSession {
+    message_handler: MessageHandler
+    sequence_timer: Timer
+    message_timer: Timer
+    controller: ControllerInterface
+    session_parameters: SessionParameters
+    states: List<State>
+    transitions: Dict<str>
+    save_session_data(extra_data) -> None
+    update_sequence_timer() -> None
+    update_sequence_timer() -> None
+    reset_sequence_timer() -> None
+    update_message_timer() -> None
+    reset_message_timer() -> None
+    update_timers() -> None
+}
+
+class SessionParameters {
+    session_id: bytes
+    ip_address: str
+    port: int
+}
+
+class SessionHandler {
+    sessions: List<CommunicationSession>
+    current_session: CommunicationSession
+    interface: PhysicalInterface
+    tcp_port: int
+    get_config() -> None
+    start_new_session(controller) -> None
+    set_network_parameters() -> None
+}
+
+class V2GState {
+    seq_perf_time: int
+    ongoing_perf_time: int
+    timeout: int
+    ongoing_timeout: int
+    message_handler: MessageHandler
+    session: CommunicationSession
+    build_message(message) -> bytes
+    process_payload(payload) -> bytes
+}
+
+hide empty members
+
+@enduml

@@ -1,0 +1,1053 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>secc package &#8212; edf15118-20 0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="secc.states package" href="secc.states.html" />
+    <link rel="prev" title="evcc.states package" href="evcc.states.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="secc.states.html" title="secc.states package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="evcc.states.html" title="evcc.states package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">edf15118-20 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">edf15118-20</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">secc package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="secc-package">
+<h1>secc package<a class="headerlink" href="#secc-package" title="Permalink to this headline">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="secc.states.html">secc.states package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.evse_state">secc.states.evse_state module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.initial_state">secc.states.initial_state module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_authorization_request">secc.states.process_authorization_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_authorization_setup_request">secc.states.process_authorization_setup_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_dc_cable_check_request">secc.states.process_dc_cable_check_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_dc_charge_loop_request">secc.states.process_dc_charge_loop_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_dc_charge_parameter_discovery_request">secc.states.process_dc_charge_parameter_discovery_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_dc_pre_charge_request">secc.states.process_dc_pre_charge_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_dc_welding_detection_request">secc.states.process_dc_welding_detection_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_power_delivery_request">secc.states.process_power_delivery_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_schedule_exchange_request">secc.states.process_schedule_exchange_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_service_detail_request">secc.states.process_service_detail_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_service_discovery_request">secc.states.process_service_discovery_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_service_selection_request">secc.states.process_service_selection_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_session_setup_request">secc.states.process_session_setup_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_session_stop_request">secc.states.process_session_stop_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states.process_supported_app_protocol_request">secc.states.process_supported_app_protocol_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secc.states.html#module-secc.states">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-secc.evse_controller">
+<span id="secc-evse-controller-module"></span><h2>secc.evse_controller module<a class="headerlink" href="#module-secc.evse_controller" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-evse_controller"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.evse_controller.</span></span><span class="sig-name descname"><span class="pre">DcEVSEDataModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">_observers:</span> <span class="pre">List[shared.gui.GUI]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">notification_type:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">supported_app_protocols:</span> <span class="pre">List[shared.xml_classes.app_protocol.v2_g_ci_app_protocol.AppProtocolType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evseid:</span> <span class="pre">Union[str</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">authorization_services:</span> <span class="pre">List[shared.xml_classes.common_messages.v2_g_ci_common_messages.AuthorizationType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">certificate_installation_service:</span> <span class="pre">Union[bool</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evseprocessing:</span> <span class="pre">Union[shared.xml_classes.common_messages.v2_g_ci_common_types.ProcessingType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">service_renegotiation_supported:</span> <span class="pre">Union[bool</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">energy_transfer_service_list:</span> <span class="pre">Union[shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">vaslist:</span> <span class="pre">Union[shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">service_id:</span> <span class="pre">Union[int</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">services:</span> <span class="pre">List[shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceParameterListType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsestatus:</span> <span class="pre">Union[shared.xml_classes.common_messages.v2_g_ci_common_types.EvsestatusType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">bpt_dc_cpdres_energy_transfer_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_dc.BptDcCpdresEnergyTransferMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">dc_cpdres_energy_transfer_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_dc.DcCpdresEnergyTransferMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">dc_evseprocessing:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsepresent_voltage:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsepresent_current:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsepower_limit_achieved:</span> <span class="pre">Union[bool</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsecurrent_limit_achieved:</span> <span class="pre">Union[bool</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsevoltage_limit_achieved:</span> <span class="pre">Union[bool</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">bpt_dynamic_dc_clres_control_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_dc.BptDynamicDcClresControlMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">dynamic_dc_clres_control_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_dc.DynamicDcClresControlMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">bpt_scheduled_dc_clres_control_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_dc.BptScheduledDcClresControlMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">scheduled_dc_clres_control_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_dc.ScheduledDcClresControlMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">clres_control_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.ClresControlMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.evse_controller.EVSEDataModel" title="secc.evse_controller.EVSEDataModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.evse_controller.EVSEDataModel</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.bpt_dc_cpdres_energy_transfer_mode">
+<span class="sig-name descname"><span class="pre">bpt_dc_cpdres_energy_transfer_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.BptDcCpdresEnergyTransferMode" title="shared.xml_classes.dc.v2_g_ci_dc.BptDcCpdresEnergyTransferMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.BptDcCpdresEnergyTransferMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.bpt_dc_cpdres_energy_transfer_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.bpt_dynamic_dc_clres_control_mode">
+<span class="sig-name descname"><span class="pre">bpt_dynamic_dc_clres_control_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.BptDynamicDcClresControlMode" title="shared.xml_classes.dc.v2_g_ci_dc.BptDynamicDcClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.BptDynamicDcClresControlMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.bpt_dynamic_dc_clres_control_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.bpt_scheduled_dc_clres_control_mode">
+<span class="sig-name descname"><span class="pre">bpt_scheduled_dc_clres_control_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.BptScheduledDcClresControlMode" title="shared.xml_classes.dc.v2_g_ci_dc.BptScheduledDcClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.BptScheduledDcClresControlMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.bpt_scheduled_dc_clres_control_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.clres_control_mode">
+<span class="sig-name descname"><span class="pre">clres_control_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.ClresControlMode" title="shared.xml_classes.dc.v2_g_ci_common_types.ClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.ClresControlMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.clres_control_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.dc_cpdres_energy_transfer_mode">
+<span class="sig-name descname"><span class="pre">dc_cpdres_energy_transfer_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.DcCpdresEnergyTransferMode" title="shared.xml_classes.dc.v2_g_ci_dc.DcCpdresEnergyTransferMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.DcCpdresEnergyTransferMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.dc_cpdres_energy_transfer_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.dc_evseprocessing">
+<span class="sig-name descname"><span class="pre">dc_evseprocessing</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType" title="shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.dc_evseprocessing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.dynamic_dc_clres_control_mode">
+<span class="sig-name descname"><span class="pre">dynamic_dc_clres_control_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.DynamicDcClresControlMode" title="shared.xml_classes.dc.v2_g_ci_dc.DynamicDcClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.DynamicDcClresControlMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.dynamic_dc_clres_control_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.evsecurrent_limit_achieved">
+<span class="sig-name descname"><span class="pre">evsecurrent_limit_achieved</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.evsecurrent_limit_achieved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.evsepower_limit_achieved">
+<span class="sig-name descname"><span class="pre">evsepower_limit_achieved</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.evsepower_limit_achieved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.evsepresent_current">
+<span class="sig-name descname"><span class="pre">evsepresent_current</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.evsepresent_current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.evsepresent_voltage">
+<span class="sig-name descname"><span class="pre">evsepresent_voltage</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.evsepresent_voltage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.evsevoltage_limit_achieved">
+<span class="sig-name descname"><span class="pre">evsevoltage_limit_achieved</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.evsevoltage_limit_achieved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.DcEVSEDataModel.scheduled_dc_clres_control_mode">
+<span class="sig-name descname"><span class="pre">scheduled_dc_clres_control_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.ScheduledDcClresControlMode" title="shared.xml_classes.dc.v2_g_ci_dc.ScheduledDcClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.ScheduledDcClresControlMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.DcEVSEDataModel.scheduled_dc_clres_control_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.evse_controller.</span></span><span class="sig-name descname"><span class="pre">EVSEDataModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">_observers:</span> <span class="pre">List[shared.gui.GUI]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">notification_type:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">supported_app_protocols:</span> <span class="pre">Optional[List[shared.xml_classes.app_protocol.v2_g_ci_app_protocol.AppProtocolType]]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evseid:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">authorization_services:</span> <span class="pre">Optional[List[shared.xml_classes.common_messages.v2_g_ci_common_messages.AuthorizationType]]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">certificate_installation_service:</span> <span class="pre">Optional[bool]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evseprocessing:</span> <span class="pre">Optional[shared.xml_classes.common_messages.v2_g_ci_common_types.ProcessingType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">service_renegotiation_supported:</span> <span class="pre">Optional[bool]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">energy_transfer_service_list:</span> <span class="pre">Optional[shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">vaslist:</span> <span class="pre">Optional[shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">service_id:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">services:</span> <span class="pre">Optional[List[shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceParameterListType]]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsestatus:</span> <span class="pre">Optional[shared.xml_classes.common_messages.v2_g_ci_common_types.EvsestatusType]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_controller.EVSEDataModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Data model containing anything related to the EVSE.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.attach">
+<span class="sig-name descname"><span class="pre">attach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.attach" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.authorization_services">
+<span class="sig-name descname"><span class="pre">authorization_services</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.AuthorizationType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.AuthorizationType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.AuthorizationType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.authorization_services" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.certificate_installation_service">
+<span class="sig-name descname"><span class="pre">certificate_installation_service</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.certificate_installation_service" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.energy_transfer_service_list">
+<span class="sig-name descname"><span class="pre">energy_transfer_service_list</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.energy_transfer_service_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.evseid">
+<span class="sig-name descname"><span class="pre">evseid</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.evseid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.evseprocessing">
+<span class="sig-name descname"><span class="pre">evseprocessing</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_types.ProcessingType" title="shared.xml_classes.common_messages.v2_g_ci_common_types.ProcessingType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_types.ProcessingType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.evseprocessing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.evsestatus">
+<span class="sig-name descname"><span class="pre">evsestatus</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_types.EvsestatusType" title="shared.xml_classes.common_messages.v2_g_ci_common_types.EvsestatusType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_types.EvsestatusType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.evsestatus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.notification_type">
+<span class="sig-name descname"><span class="pre">notification_type</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.notification_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.notify">
+<span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.notify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.service_id">
+<span class="sig-name descname"><span class="pre">service_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.service_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.service_renegotiation_supported">
+<span class="sig-name descname"><span class="pre">service_renegotiation_supported</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.service_renegotiation_supported" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.services">
+<span class="sig-name descname"><span class="pre">services</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceParameterListType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceParameterListType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceParameterListType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.services" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.supported_app_protocols">
+<span class="sig-name descname"><span class="pre">supported_app_protocols</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.app_protocol.html#shared.xml_classes.app_protocol.v2_g_ci_app_protocol.AppProtocolType" title="shared.xml_classes.app_protocol.v2_g_ci_app_protocol.AppProtocolType"><span class="pre">shared.xml_classes.app_protocol.v2_g_ci_app_protocol.AppProtocolType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.supported_app_protocols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.EVSEDataModel.vaslist">
+<span class="sig-name descname"><span class="pre">vaslist</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_controller.EVSEDataModel.vaslist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="secc.evse_controller.IDcEVSEController">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.evse_controller.</span></span><span class="sig-name descname"><span class="pre">IDcEVSEController</span></span><a class="headerlink" href="#secc.evse_controller.IDcEVSEController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.evse_controller.IEVSEController" title="secc.evse_controller.IEVSEController"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.evse_controller.IEVSEController</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.IDcEVSEController.charge_ev">
+<span class="sig-name descname"><span class="pre">charge_ev</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#secc.evse_controller.IDcEVSEController.charge_ev" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="secc.evse_controller.IEVSEController">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.evse_controller.</span></span><span class="sig-name descname"><span class="pre">IEVSEController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data_model:</span> <span class="pre">dataclasses.dataclass</span></em>, <em class="sig-param"><span class="pre">virtual_mode:</span> <span class="pre">Optional[bool]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">state_machine:</span> <span class="pre">shared.physical_interface.PhysicalInterface</span> <span class="pre">=</span> <span class="pre">&lt;shared.physical_interface.PhysicalInterface</span> <span class="pre">object&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_controller.IEVSEController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shared.html#shared.controller.ControllerInterface" title="shared.controller.ControllerInterface"><code class="xref py py-class docutils literal notranslate"><span class="pre">shared.controller.ControllerInterface</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_controller.IEVSEController.data_model">
+<span class="sig-name descname"><span class="pre">data_model</span></span><em class="property"><span class="pre">:</span> <span class="pre">dataclasses.dataclass</span></em><a class="headerlink" href="#secc.evse_controller.IEVSEController.data_model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_controller.IEVSEController.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_controller.IEVSEController.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.evse_dummy_controller">
+<span id="secc-evse-dummy-controller-module"></span><h2>secc.evse_dummy_controller module<a class="headerlink" href="#module-secc.evse_dummy_controller" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-evse_dummy_controller"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEDummyController">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.evse_dummy_controller.</span></span><span class="sig-name descname"><span class="pre">EVSEDummyController</span></span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEDummyController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.evse_controller.IEVSEController" title="secc.evse_controller.IEVSEController"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.evse_controller.IEVSEController</span></code></a></p>
+<p>Class that implements the DcBptDynamic EVSE controller.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEDummyController.data_model">
+<span class="sig-name descname"><span class="pre">data_model</span></span><em class="property"><span class="pre">:</span> <span class="pre">dataclasses.dataclass</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEDummyController.data_model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEDummyController.set_machine">
+<span class="sig-name descname"><span class="pre">set_machine</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEDummyController.set_machine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configures the 61851 state machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.evse_dummy_controller.</span></span><span class="sig-name descname"><span class="pre">EVSEEmulator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">_observers:</span> <span class="pre">List[shared.gui.GUI]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">notification_type:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">supported_app_protocols:</span> <span class="pre">List[shared.xml_classes.app_protocol.v2_g_ci_app_protocol.AppProtocolType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evseid:</span> <span class="pre">Union[str</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">authorization_services:</span> <span class="pre">List[shared.xml_classes.common_messages.v2_g_ci_common_messages.AuthorizationType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">certificate_installation_service:</span> <span class="pre">Union[bool</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evseprocessing:</span> <span class="pre">Union[shared.xml_classes.common_messages.v2_g_ci_common_types.ProcessingType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">service_renegotiation_supported:</span> <span class="pre">Union[bool</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">energy_transfer_service_list:</span> <span class="pre">Union[shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">vaslist:</span> <span class="pre">Union[shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">service_id:</span> <span class="pre">Union[int</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">services:</span> <span class="pre">List[shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceParameterListType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsestatus:</span> <span class="pre">Union[shared.xml_classes.common_messages.v2_g_ci_common_types.EvsestatusType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">bpt_dc_cpdres_energy_transfer_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_dc.BptDcCpdresEnergyTransferMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">dc_cpdres_energy_transfer_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_dc.DcCpdresEnergyTransferMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">dc_evseprocessing:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsepresent_voltage:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsepresent_current:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">RationalNumberType(exponent=0</span></em>, <em class="sig-param"><span class="pre">value=0)</span></em>, <em class="sig-param"><span class="pre">evsepower_limit_achieved:</span> <span class="pre">Union[bool</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsecurrent_limit_achieved:</span> <span class="pre">Union[bool</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsevoltage_limit_achieved:</span> <span class="pre">Union[bool</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">bpt_dynamic_dc_clres_control_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_dc.BptDynamicDcClresControlMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">dynamic_dc_clres_control_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_dc.DynamicDcClresControlMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">bpt_scheduled_dc_clres_control_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_dc.BptScheduledDcClresControlMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">scheduled_dc_clres_control_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_dc.ScheduledDcClresControlMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">clres_control_mode:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.ClresControlMode</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">departure_time:</span> <span class="pre">Union[int</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">86400</span></em>, <em class="sig-param"><span class="pre">ev_departure_time:</span> <span class="pre">Union[int</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">&lt;property</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f02f9005680&gt;</span></em>, <em class="sig-param"><span class="pre">_ev_departure_time:</span> <span class="pre">Union[int</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">0</span></em>, <em class="sig-param"><span class="pre">minimum_soc:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></em>, <em class="sig-param"><span class="pre">target_soc:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">&lt;property</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f02f90056d0&gt;</span></em>, <em class="sig-param"><span class="pre">_target_soc:</span> <span class="pre">Union[int</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">0</span></em>, <em class="sig-param"><span class="pre">evsemaximum_charge_power:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evseminimum_charge_power:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsemaximum_discharge_power:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evseminimum_discharge_power:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsemaximum_charge_current:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evseminimum_charge_current:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsemaximum_discharge_current:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evseminimum_discharge_current:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsemaximum_voltage:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evseminimum_voltage:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">evsepresent_power:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">internal_resistance:</span> <span class="pre">Union[float</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">0.1</span></em>, <em class="sig-param"><span class="pre">present_soc:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">&lt;property</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f02f9005590&gt;</span></em>, <em class="sig-param"><span class="pre">state:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&lt;property</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f02f90055e0&gt;</span></em>, <em class="sig-param"><span class="pre">battery_capacity:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">&lt;property</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f02f9005630&gt;</span></em>, <em class="sig-param"><span class="pre">_battery_capacity:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">RationalNumberType(exponent=0</span></em>, <em class="sig-param"><span class="pre">value=0)</span></em>, <em class="sig-param"><span class="pre">consumed_energy:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></em>, <em class="sig-param"><span class="pre">provided_energy:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></em>, <em class="sig-param"><span class="pre">total_energy:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></em>, <em class="sig-param"><span class="pre">evmaximum_discharge_power:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">&lt;property</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f02f9005770&gt;</span></em>, <em class="sig-param"><span class="pre">_evmaximum_discharge_power:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">RationalNumberType(exponent=0</span></em>, <em class="sig-param"><span class="pre">value=0)</span></em>, <em class="sig-param"><span class="pre">evmaximum_charge_power:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">&lt;property</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f02f9005720&gt;</span></em>, <em class="sig-param"><span class="pre">_evmaximum_charge_power:</span> <span class="pre">Union[shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></em>, <em class="sig-param"><span class="pre">NoneType]</span> <span class="pre">=</span> <span class="pre">RationalNumberType(exponent=0</span></em>, <em class="sig-param"><span class="pre">value=0)</span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.evse_controller.DcEVSEDataModel" title="secc.evse_controller.DcEVSEDataModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.evse_controller.DcEVSEDataModel</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.battery_capacity">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">battery_capacity</span></span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.battery_capacity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.consumed_energy">
+<span class="sig-name descname"><span class="pre">consumed_energy</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.consumed_energy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.departure_time">
+<span class="sig-name descname"><span class="pre">departure_time</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">86400</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.departure_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.energy_evolution">
+<span class="sig-name descname"><span class="pre">energy_evolution</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[0]</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.energy_evolution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.ev_departure_time">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ev_departure_time</span></span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.ev_departure_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evmaximum_charge_power">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">evmaximum_charge_power</span></span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evmaximum_charge_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evmaximum_discharge_power">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">evmaximum_discharge_power</span></span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evmaximum_discharge_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evsemaximum_charge_current">
+<span class="sig-name descname"><span class="pre">evsemaximum_charge_current</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evsemaximum_charge_current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evsemaximum_charge_power">
+<span class="sig-name descname"><span class="pre">evsemaximum_charge_power</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evsemaximum_charge_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evsemaximum_discharge_current">
+<span class="sig-name descname"><span class="pre">evsemaximum_discharge_current</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evsemaximum_discharge_current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evsemaximum_discharge_power">
+<span class="sig-name descname"><span class="pre">evsemaximum_discharge_power</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evsemaximum_discharge_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evsemaximum_voltage">
+<span class="sig-name descname"><span class="pre">evsemaximum_voltage</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evsemaximum_voltage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evseminimum_charge_current">
+<span class="sig-name descname"><span class="pre">evseminimum_charge_current</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evseminimum_charge_current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evseminimum_charge_power">
+<span class="sig-name descname"><span class="pre">evseminimum_charge_power</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evseminimum_charge_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evseminimum_discharge_current">
+<span class="sig-name descname"><span class="pre">evseminimum_discharge_current</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evseminimum_discharge_current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evseminimum_discharge_power">
+<span class="sig-name descname"><span class="pre">evseminimum_discharge_power</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evseminimum_discharge_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evseminimum_voltage">
+<span class="sig-name descname"><span class="pre">evseminimum_voltage</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evseminimum_voltage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evsepresent_current">
+<span class="sig-name descname"><span class="pre">evsepresent_current</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">RationalNumberType(exponent=0,</span> <span class="pre">value=0)</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evsepresent_current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.evsepresent_power">
+<span class="sig-name descname"><span class="pre">evsepresent_power</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.evsepresent_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.get_bpt_dc_cpdres_energy_transfer_mode">
+<span class="sig-name descname"><span class="pre">get_bpt_dc_cpdres_energy_transfer_mode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.get_bpt_dc_cpdres_energy_transfer_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds message containing BptDcCpdresEnergyTransferMode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>XML object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.get_bpt_dynamic_dc_clres_control_mode">
+<span class="sig-name descname"><span class="pre">get_bpt_dynamic_dc_clres_control_mode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.get_bpt_dynamic_dc_clres_control_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds message containing BptDynamicDcClresControlMode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>XML object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.get_dynamic_seres_control_mode">
+<span class="sig-name descname"><span class="pre">get_dynamic_seres_control_mode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.get_dynamic_seres_control_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds message containing DynamicSeresControlModeType.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>XML object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.internal_resistance">
+<span class="sig-name descname"><span class="pre">internal_resistance</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.1</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.internal_resistance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.minimum_soc">
+<span class="sig-name descname"><span class="pre">minimum_soc</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.minimum_soc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.power_evolution">
+<span class="sig-name descname"><span class="pre">power_evolution</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[0]</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.power_evolution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.present_soc">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">present_soc</span></span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.present_soc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.provided_energy">
+<span class="sig-name descname"><span class="pre">provided_energy</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.provided_energy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.state">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.target_soc">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">target_soc</span></span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.target_soc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.total_energy">
+<span class="sig-name descname"><span class="pre">total_energy</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.total_energy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_dummy_controller.EVSEEmulator.update_charging_status">
+<span class="sig-name descname"><span class="pre">update_charging_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">present_soc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">battery_energy_capacity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_dummy_controller.EVSEEmulator.update_charging_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates data model by calculating values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>present_soc</strong> – The present state of charge.</p></li>
+<li><p><strong>battery_energy_capacity</strong> – The total battery capacity.</p></li>
+<li><p><strong>power</strong> – The current power.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.evse_gui">
+<span id="secc-evse-gui-module"></span><h2>secc.evse_gui module<a class="headerlink" href="#module-secc.evse_gui" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-evse_gui"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.evse_gui.EVSEMainWindow">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.evse_gui.</span></span><span class="sig-name descname"><span class="pre">EVSEMainWindow</span></span><a class="headerlink" href="#secc.evse_gui.EVSEMainWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shared.html#shared.gui.GUI" title="shared.gui.GUI"><code class="xref py py-class docutils literal notranslate"><span class="pre">shared.gui.GUI</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_gui.EVSEMainWindow.check_state_box">
+<span class="sig-name descname"><span class="pre">check_state_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_gui.EVSEMainWindow.check_state_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks the boxes depending on the current state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_gui.EVSEMainWindow.connect_signals">
+<span class="sig-name descname"><span class="pre">connect_signals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_gui.EVSEMainWindow.connect_signals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects data to their respective widgets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_gui.EVSEMainWindow.retranslate_ui">
+<span class="sig-name descname"><span class="pre">retranslate_ui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">main_window</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_gui.EVSEMainWindow.retranslate_ui" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retranslates some texts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>main_window</strong> – The window containing all the widgets.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_gui.EVSEMainWindow.run_evse">
+<span class="sig-name descname"><span class="pre">run_evse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_gui.EVSEMainWindow.run_evse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_gui.EVSEMainWindow.set_ev_settings">
+<span class="sig-name descname"><span class="pre">set_ev_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_gui.EVSEMainWindow.set_ev_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets EV settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_gui.EVSEMainWindow.set_present_current">
+<span class="sig-name descname"><span class="pre">set_present_current</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_gui.EVSEMainWindow.set_present_current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_gui.EVSEMainWindow.setup_ui">
+<span class="sig-name descname"><span class="pre">setup_ui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">main_window</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_gui.EVSEMainWindow.setup_ui" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the UI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>main_window</strong> – The window containing all the widgets.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_gui.EVSEMainWindow.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_gui.EVSEMainWindow.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the UI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_gui.EVSEMainWindow.update_timer">
+<span class="sig-name descname"><span class="pre">update_timer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_gui.EVSEMainWindow.update_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the departure time timer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.evse_session">
+<span id="secc-evse-session-module"></span><h2>secc.evse_session module<a class="headerlink" href="#module-secc.evse_session" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-evse_session"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESession">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.evse_session.</span></span><span class="sig-name descname"><span class="pre">EVSESession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_session.EVSESession" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shared.html#shared.session.CommunicationSession" title="shared.session.CommunicationSession"><code class="xref py py-class docutils literal notranslate"><span class="pre">shared.session.CommunicationSession</span></code></a></p>
+<p>Represents a EVSE side communication session. Built with a state machine.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESession.generate_random_session_id">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">generate_random_session_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#secc.evse_session.EVSESession.generate_random_session_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a random 8-length int number. See [V2G20-2621] for more detail. Might have security issues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>str – the resulting id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.evse_session.</span></span><span class="sig-name descname"><span class="pre">EVSESessionParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bytes</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip_address</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evseid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authorization_services</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.AuthorizationType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.AuthorizationType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.AuthorizationType</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">certificate_installation_service</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eim_asres_authorization_mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">object</span><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pn_c_asres_authorization_mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.PnCAsresAuthorizationModeType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.PnCAsresAuthorizationModeType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.PnCAsresAuthorizationModeType</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evseprocessing</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_types.ProcessingType" title="shared.xml_classes.common_messages.v2_g_ci_common_types.ProcessingType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_types.ProcessingType</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_renegotiation_supported</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_transfer_service_list</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vaslist</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_parameter_list</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceParameterListType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceParameterListType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceParameterListType</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bpt_dc_cpdres_energy_transfer_mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.BptDcCpdresEnergyTransferMode" title="shared.xml_classes.dc.v2_g_ci_dc.BptDcCpdresEnergyTransferMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.BptDcCpdresEnergyTransferMode</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_cpdres_energy_transfer_mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.DcCpdresEnergyTransferMode" title="shared.xml_classes.dc.v2_g_ci_dc.DcCpdresEnergyTransferMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.DcCpdresEnergyTransferMode</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_evseprocessing</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType" title="shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evsepresent_voltage</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evsestatus</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_types.EvsestatusType" title="shared.xml_classes.common_messages.v2_g_ci_common_types.EvsestatusType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_types.EvsestatusType</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evsepresent_current</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evsepower_limit_achieved</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evsecurrent_limit_achieved</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evsevoltage_limit_achieved</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bpt_dynamic_dc_clres_control_mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.BptDynamicDcClresControlMode" title="shared.xml_classes.dc.v2_g_ci_dc.BptDynamicDcClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.BptDynamicDcClresControlMode</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_dc_clres_control_mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.DynamicDcClresControlMode" title="shared.xml_classes.dc.v2_g_ci_dc.DynamicDcClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.DynamicDcClresControlMode</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bpt_scheduled_dc_clres_control_mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.BptScheduledDcClresControlMode" title="shared.xml_classes.dc.v2_g_ci_dc.BptScheduledDcClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.BptScheduledDcClresControlMode</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scheduled_dc_clres_control_mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.ScheduledDcClresControlMode" title="shared.xml_classes.dc.v2_g_ci_dc.ScheduledDcClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.ScheduledDcClresControlMode</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clres_control_mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.ClresControlMode" title="shared.xml_classes.dc.v2_g_ci_common_types.ClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.ClresControlMode</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_session.EVSESessionParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shared.html#shared.session.SessionParameters" title="shared.session.SessionParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">shared.session.SessionParameters</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.authorization_services">
+<span class="sig-name descname"><span class="pre">authorization_services</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.AuthorizationType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.AuthorizationType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.AuthorizationType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.authorization_services" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.bpt_dc_cpdres_energy_transfer_mode">
+<span class="sig-name descname"><span class="pre">bpt_dc_cpdres_energy_transfer_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.BptDcCpdresEnergyTransferMode" title="shared.xml_classes.dc.v2_g_ci_dc.BptDcCpdresEnergyTransferMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.BptDcCpdresEnergyTransferMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.bpt_dc_cpdres_energy_transfer_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.bpt_dynamic_dc_clres_control_mode">
+<span class="sig-name descname"><span class="pre">bpt_dynamic_dc_clres_control_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.BptDynamicDcClresControlMode" title="shared.xml_classes.dc.v2_g_ci_dc.BptDynamicDcClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.BptDynamicDcClresControlMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.bpt_dynamic_dc_clres_control_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.bpt_scheduled_dc_clres_control_mode">
+<span class="sig-name descname"><span class="pre">bpt_scheduled_dc_clres_control_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.BptScheduledDcClresControlMode" title="shared.xml_classes.dc.v2_g_ci_dc.BptScheduledDcClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.BptScheduledDcClresControlMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.bpt_scheduled_dc_clres_control_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.certificate_installation_service">
+<span class="sig-name descname"><span class="pre">certificate_installation_service</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.certificate_installation_service" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.clres_control_mode">
+<span class="sig-name descname"><span class="pre">clres_control_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.ClresControlMode" title="shared.xml_classes.dc.v2_g_ci_common_types.ClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.ClresControlMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.clres_control_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.dc_cpdres_energy_transfer_mode">
+<span class="sig-name descname"><span class="pre">dc_cpdres_energy_transfer_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.DcCpdresEnergyTransferMode" title="shared.xml_classes.dc.v2_g_ci_dc.DcCpdresEnergyTransferMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.DcCpdresEnergyTransferMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.dc_cpdres_energy_transfer_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.dc_evseprocessing">
+<span class="sig-name descname"><span class="pre">dc_evseprocessing</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType" title="shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.dc_evseprocessing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.dynamic_dc_clres_control_mode">
+<span class="sig-name descname"><span class="pre">dynamic_dc_clres_control_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.DynamicDcClresControlMode" title="shared.xml_classes.dc.v2_g_ci_dc.DynamicDcClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.DynamicDcClresControlMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.dynamic_dc_clres_control_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.eim_asres_authorization_mode">
+<span class="sig-name descname"><span class="pre">eim_asres_authorization_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">object</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.eim_asres_authorization_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.energy_transfer_service_list">
+<span class="sig-name descname"><span class="pre">energy_transfer_service_list</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.energy_transfer_service_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.evsecurrent_limit_achieved">
+<span class="sig-name descname"><span class="pre">evsecurrent_limit_achieved</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.evsecurrent_limit_achieved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.evseid">
+<span class="sig-name descname"><span class="pre">evseid</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.evseid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.evsepower_limit_achieved">
+<span class="sig-name descname"><span class="pre">evsepower_limit_achieved</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.evsepower_limit_achieved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.evsepresent_current">
+<span class="sig-name descname"><span class="pre">evsepresent_current</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.evsepresent_current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.evsepresent_voltage">
+<span class="sig-name descname"><span class="pre">evsepresent_voltage</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType" title="shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType"><span class="pre">shared.xml_classes.dc.v2_g_ci_common_types.RationalNumberType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.evsepresent_voltage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.evseprocessing">
+<span class="sig-name descname"><span class="pre">evseprocessing</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_types.ProcessingType" title="shared.xml_classes.common_messages.v2_g_ci_common_types.ProcessingType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_types.ProcessingType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.evseprocessing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.evsestatus">
+<span class="sig-name descname"><span class="pre">evsestatus</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_types.EvsestatusType" title="shared.xml_classes.common_messages.v2_g_ci_common_types.EvsestatusType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_types.EvsestatusType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.evsestatus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.evsevoltage_limit_achieved">
+<span class="sig-name descname"><span class="pre">evsevoltage_limit_achieved</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.evsevoltage_limit_achieved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.pn_c_asres_authorization_mode">
+<span class="sig-name descname"><span class="pre">pn_c_asres_authorization_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.PnCAsresAuthorizationModeType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.PnCAsresAuthorizationModeType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.PnCAsresAuthorizationModeType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.pn_c_asres_authorization_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.scheduled_dc_clres_control_mode">
+<span class="sig-name descname"><span class="pre">scheduled_dc_clres_control_mode</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_dc.ScheduledDcClresControlMode" title="shared.xml_classes.dc.v2_g_ci_dc.ScheduledDcClresControlMode"><span class="pre">shared.xml_classes.dc.v2_g_ci_dc.ScheduledDcClresControlMode</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.scheduled_dc_clres_control_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.service_id">
+<span class="sig-name descname"><span class="pre">service_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.service_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.service_parameter_list">
+<span class="sig-name descname"><span class="pre">service_parameter_list</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceParameterListType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceParameterListType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceParameterListType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.service_parameter_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.service_renegotiation_supported">
+<span class="sig-name descname"><span class="pre">service_renegotiation_supported</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.service_renegotiation_supported" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="secc.evse_session.EVSESessionParameters.vaslist">
+<span class="sig-name descname"><span class="pre">vaslist</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType" title="shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType"><span class="pre">shared.xml_classes.common_messages.v2_g_ci_common_messages.ServiceListType</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#secc.evse_session.EVSESessionParameters.vaslist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.evse_session_handler">
+<span id="secc-evse-session-handler-module"></span><h2>secc.evse_session_handler module<a class="headerlink" href="#module-secc.evse_session_handler" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-evse_session_handler"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.evse_session_handler.EVSESessionHandler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.evse_session_handler.</span></span><span class="sig-name descname"><span class="pre">EVSESessionHandler</span></span><a class="headerlink" href="#secc.evse_session_handler.EVSESessionHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shared.html#shared.session_handler.SessionHandler" title="shared.session_handler.SessionHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">shared.session_handler.SessionHandler</span></code></a></p>
+<p>This is the class representing the EVSE session handler.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_session_handler.EVSESessionHandler.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_session_handler.EVSESessionHandler.get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the needed configuration to run a SessionHandler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_session_handler.EVSESessionHandler.get_tcp_server_address">
+<span class="sig-name descname"><span class="pre">get_tcp_server_address</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_session_handler.EVSESessionHandler.get_tcp_server_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a TCP server address from a specified interface set in the configuration file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.evse_session_handler.EVSESessionHandler.start_new_session">
+<span class="sig-name descname"><span class="pre">start_new_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.evse_session_handler.EVSESessionHandler.start_new_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a new communication session.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>controller</strong> – The controller that will handle the data.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.start_evse">
+<span id="secc-start-evse-module"></span><h2>secc.start_evse module<a class="headerlink" href="#module-secc.start_evse" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-start_evse"></span><dl class="py function">
+<dt class="sig sig-object py" id="secc.start_evse.start_evse">
+<span class="sig-prename descclassname"><span class="pre">secc.start_evse.</span></span><span class="sig-name descname"><span class="pre">start_evse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#secc.start_evse.start_evse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the EVSE.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>controller</strong> – The controller that will handle the data.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-secc.tcp_server">
+<span id="secc-tcp-server-module"></span><h2>secc.tcp_server module<a class="headerlink" href="#module-secc.tcp_server" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-tcp_server"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.tcp_server.TCPServerProtocol">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.tcp_server.</span></span><span class="sig-name descname"><span class="pre">TCPServerProtocol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.tcp_server.TCPServerProtocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">asyncio.protocols.Protocol</span></code></p>
+<p>This is the protocol used by the SECC server to communicate with the EV.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.tcp_server.TCPServerProtocol.attach">
+<span class="sig-name descname"><span class="pre">attach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.tcp_server.TCPServerProtocol.attach" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.tcp_server.TCPServerProtocol.connection_lost">
+<span class="sig-name descname"><span class="pre">connection_lost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exc</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Exception</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#secc.tcp_server.TCPServerProtocol.connection_lost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the connection is lost or closed.</p>
+<p>The argument is an exception object or None (the latter
+meaning a regular EOF is received or the connection was
+aborted or closed).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.tcp_server.TCPServerProtocol.connection_made">
+<span class="sig-name descname"><span class="pre">connection_made</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">asyncio.transports.BaseTransport</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#secc.tcp_server.TCPServerProtocol.connection_made" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a connection is made.</p>
+<p>The argument is the transport representing the pipe connection.
+To receive data, wait for data_received() calls.
+When the connection is closed, connection_lost() is called.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.tcp_server.TCPServerProtocol.data_received">
+<span class="sig-name descname"><span class="pre">data_received</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#secc.tcp_server.TCPServerProtocol.data_received" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when some data is received.</p>
+<p>The argument is a bytes object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.tcp_server.TCPServerProtocol.eof_received">
+<span class="sig-name descname"><span class="pre">eof_received</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#secc.tcp_server.TCPServerProtocol.eof_received" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the other end calls write_eof() or equivalent.</p>
+<p>If this returns a false value (including None), the transport
+will close itself.  If it returns a true value, closing the
+transport is up to the protocol.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.tcp_server.TCPServerProtocol.notify">
+<span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.tcp_server.TCPServerProtocol.notify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.tcp_server.TCPServerProtocol.process_incoming_message">
+<span class="sig-name descname"><span class="pre">process_incoming_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v2gtp_message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="shared.html#shared.messages.V2GTPMessage" title="shared.messages.V2GTPMessage"><span class="pre">shared.messages.V2GTPMessage</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.tcp_server.TCPServerProtocol.process_incoming_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes incoming messages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>v2gtp_message</strong> – The incoming message.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.tcp_server.TCPServerProtocol.process_reaction">
+<span class="sig-name descname"><span class="pre">process_reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reaction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.tcp_server.TCPServerProtocol.process_reaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Depending on the incoming message, processes the resulting reaction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>reaction</strong> – The reaction generated by the message.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="secc.tcp_server.TCPServerProtocol.session">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">session</span></span><a class="headerlink" href="#secc.tcp_server.TCPServerProtocol.session" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="secc.tcp_server.get_ssl_context">
+<span class="sig-prename descclassname"><span class="pre">secc.tcp_server.</span></span><span class="sig-name descname"><span class="pre">get_ssl_context</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ssl.SSLContext</span></span></span><a class="headerlink" href="#secc.tcp_server.get_ssl_context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an SSL context based on 15118-20 recommendations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>ssl.SSLContext – the SSL settings for the TLS connection.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="secc.tcp_server.get_tcp_server">
+<span class="sig-prename descclassname"><span class="pre">secc.tcp_server.</span></span><span class="sig-name descname"><span class="pre">get_tcp_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcp_server_address</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcp_server_port</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.tcp_server.get_tcp_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the TCP server used in the 15118 communication.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>controller</strong> – The controller that will handle the data.</p></li>
+<li><p><strong>tcp_server_address</strong> – The server address.</p></li>
+<li><p><strong>tcp_server_port</strong> – The server port.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>server – the created server</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-secc.udp_server">
+<span id="secc-udp-server-module"></span><h2>secc.udp_server module<a class="headerlink" href="#module-secc.udp_server" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-udp_server"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.udp_server.UDPServerProtocol">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.udp_server.</span></span><span class="sig-name descname"><span class="pre">UDPServerProtocol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tcp_server_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcp_server_port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.udp_server.UDPServerProtocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">asyncio.protocols.DatagramProtocol</span></code></p>
+<p>This is the protocol used by the SECC discovery protocol server.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.udp_server.UDPServerProtocol.connection_lost">
+<span class="sig-name descname"><span class="pre">connection_lost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exc</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Exception</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#secc.udp_server.UDPServerProtocol.connection_lost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the connection is lost or closed.</p>
+<p>The argument is an exception object or None (the latter
+meaning a regular EOF is received or the connection was
+aborted or closed).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.udp_server.UDPServerProtocol.connection_made">
+<span class="sig-name descname"><span class="pre">connection_made</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transport</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">asyncio.transports.BaseTransport</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#secc.udp_server.UDPServerProtocol.connection_made" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a connection is made.</p>
+<p>The argument is the transport representing the pipe connection.
+To receive data, wait for data_received() calls.
+When the connection is closed, connection_lost() is called.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.udp_server.UDPServerProtocol.datagram_received">
+<span class="sig-name descname"><span class="pre">datagram_received</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addr</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#secc.udp_server.UDPServerProtocol.datagram_received" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when some datagram is received.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.udp_server.UDPServerProtocol.error_received">
+<span class="sig-name descname"><span class="pre">error_received</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exc</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Exception</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#secc.udp_server.UDPServerProtocol.error_received" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a send or receive operation raises an OSError.</p>
+<p>(Other than BlockingIOError or InterruptedError.)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="secc.udp_server.get_udp_server">
+<span class="sig-prename descclassname"><span class="pre">secc.udp_server.</span></span><span class="sig-name descname"><span class="pre">get_udp_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tcp_server_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcp_server_port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.udp_server.get_udp_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns UDP server used in 15118 communication.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tcp_server_address</strong> – The TCP server address.</p></li>
+<li><p><strong>tcp_server_port</strong> – The TCP server port.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>transport, protocol – the objects associated with the UDP connection.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-secc">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-secc" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">secc package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-secc.evse_controller">secc.evse_controller module</a></li>
+<li><a class="reference internal" href="#module-secc.evse_dummy_controller">secc.evse_dummy_controller module</a></li>
+<li><a class="reference internal" href="#module-secc.evse_gui">secc.evse_gui module</a></li>
+<li><a class="reference internal" href="#module-secc.evse_session">secc.evse_session module</a></li>
+<li><a class="reference internal" href="#module-secc.evse_session_handler">secc.evse_session_handler module</a></li>
+<li><a class="reference internal" href="#module-secc.start_evse">secc.start_evse module</a></li>
+<li><a class="reference internal" href="#module-secc.tcp_server">secc.tcp_server module</a></li>
+<li><a class="reference internal" href="#module-secc.udp_server">secc.udp_server module</a></li>
+<li><a class="reference internal" href="#module-secc">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="evcc.states.html"
+                        title="previous chapter">evcc.states package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="secc.states.html"
+                        title="next chapter">secc.states package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/secc.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="secc.states.html" title="secc.states package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="evcc.states.html" title="evcc.states package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">edf15118-20 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >edf15118-20</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">secc package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright The MIT License, 2022 EDF.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

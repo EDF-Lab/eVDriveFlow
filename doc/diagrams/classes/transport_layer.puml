@@ -1,0 +1,52 @@
+@startuml transport_layer
+
+class UDPClientProtocol {
+    transport: asyncio.transports.BaseTransport
+    message: bytes
+    message_handler: MessageHandler
+    tcp_server_address: str
+    tcp_server_port: int
+    connection_made(transport) -> None
+    datagram_received(data, address) -> None
+    error_received(exception) -> None
+    connection_lost(exception) -> None
+}
+
+class UDPServerProtocol {
+    transport: asyncio.transports.BaseTransport
+    message: bytes
+    message_handler: MessageHandler
+    connection_made(transport) -> None
+    datagram_received(data, address) -> None
+    error_received(exception) -> None
+    connection_lost(exception) -> None
+}
+
+class TCPClientProtocol {
+    transport: asyncio.transports.BaseTransport
+    session: CommunicationSession
+    message_handler: MessageHandler
+    connection_made(transport) -> None
+    data_received(data, address) -> None
+    eof_received(exception) -> None
+    connection_lost(exception) -> None
+    process_incoming_message(v2gtp_message) -> None
+    process_reaction(reaction) -> None
+    build_supported_app_protocol_message() -> bytes
+    build_session_stop_message() -> bytes
+}
+
+class TCPServerProtocol {
+    transport: asyncio.transports.BaseTransport
+    session: CommunicationSession
+    message_handler: MessageHandler
+    controller: ControllerInterface
+    connection_made(transport) -> None
+    data_received(data, address) -> None
+    eof_received(exception) -> None
+    connection_lost(exception) -> None
+    process_incoming_message(v2gtp_message) -> None
+    process_reaction(reaction) -> None
+}
+
+@enduml

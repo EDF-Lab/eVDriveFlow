@@ -1,0 +1,18 @@
+@startuml message_handling
+
+class MessageHandler {
+    is_valid(v2gtp_message) -> bool
+    is_version_valid(v2gtp_message) -> bool
+    is_payload_type_correct(v2gtp_message) -> bool
+    is_payload_length_correct(v2gtp_message) -> bool
+    open_exi_schema(filepath) -> EXISchema
+    encode(xml_string, exischema) -> str
+    decode(xml_string, exischema) -> str
+    unmarshall(xml_string) -> bytes
+    marshall(message) -> str
+    is_xml_valid(xml_bytes) -> bool
+}
+
+hide empty members
+
+@enduml

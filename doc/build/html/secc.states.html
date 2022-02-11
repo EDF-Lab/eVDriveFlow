@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>secc.states package &#8212; edf15118-20 0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="shared package" href="shared.html" />
+    <link rel="prev" title="secc package" href="secc.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="shared.html" title="shared package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="secc.html" title="secc package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">edf15118-20 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >edf15118-20</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="secc.html" accesskey="U">secc package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">secc.states package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="secc-states-package">
+<h1>secc.states package<a class="headerlink" href="#secc-states-package" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-secc.states.evse_state">
+<span id="secc-states-evse-state-module"></span><h2>secc.states.evse_state module<a class="headerlink" href="#module-secc.states.evse_state" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-evse_state"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.evse_state.DcEVSEState">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.evse_state.</span></span><span class="sig-name descname"><span class="pre">DcEVSEState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.states.evse_state.DcEVSEState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shared.html#shared.state.V2GState" title="shared.state.V2GState"><code class="xref py py-class docutils literal notranslate"><span class="pre">shared.state.V2GState</span></code></a></p>
+<p>This is a class that represents a DC EVSE state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.evse_state.DcEVSEState.process_payload">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.evse_state.DcEVSEState.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="secc.states.evse_state.EVSEState">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.evse_state.</span></span><span class="sig-name descname"><span class="pre">EVSEState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.states.evse_state.EVSEState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="shared.html#shared.state.V2GState" title="shared.state.V2GState"><code class="xref py py-class docutils literal notranslate"><span class="pre">shared.state.V2GState</span></code></a></p>
+<p>This is a class that represents an EVSE state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.evse_state.EVSEState.process_payload">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.evse_state.EVSEState.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.initial_state">
+<span id="secc-states-initial-state-module"></span><h2>secc.states.initial_state module<a class="headerlink" href="#module-secc.states.initial_state" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-initial_state"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.initial_state.InitialState">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.initial_state.</span></span><span class="sig-name descname"><span class="pre">InitialState</span></span><a class="headerlink" href="#secc.states.initial_state.InitialState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.EVSEState" title="secc.states.evse_state.EVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.EVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.initial_state.InitialState.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.initial_state.InitialState.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_authorization_request">
+<span id="secc-states-process-authorization-request-module"></span><h2>secc.states.process_authorization_request module<a class="headerlink" href="#module-secc.states.process_authorization_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_authorization_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_authorization_request.ProcessAuthorizationRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_authorization_request.</span></span><span class="sig-name descname"><span class="pre">ProcessAuthorizationRequest</span></span><a class="headerlink" href="#secc.states.process_authorization_request.ProcessAuthorizationRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.EVSEState" title="secc.states.evse_state.EVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.EVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_authorization_request.ProcessAuthorizationRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_authorization_request.ProcessAuthorizationRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_authorization_setup_request">
+<span id="secc-states-process-authorization-setup-request-module"></span><h2>secc.states.process_authorization_setup_request module<a class="headerlink" href="#module-secc.states.process_authorization_setup_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_authorization_setup_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_authorization_setup_request.ProcessAuthorizationSetupRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_authorization_setup_request.</span></span><span class="sig-name descname"><span class="pre">ProcessAuthorizationSetupRequest</span></span><a class="headerlink" href="#secc.states.process_authorization_setup_request.ProcessAuthorizationSetupRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.EVSEState" title="secc.states.evse_state.EVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.EVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_authorization_setup_request.ProcessAuthorizationSetupRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_authorization_setup_request.ProcessAuthorizationSetupRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_dc_cable_check_request">
+<span id="secc-states-process-dc-cable-check-request-module"></span><h2>secc.states.process_dc_cable_check_request module<a class="headerlink" href="#module-secc.states.process_dc_cable_check_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_dc_cable_check_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_dc_cable_check_request.ProcessDcCableCheckRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_dc_cable_check_request.</span></span><span class="sig-name descname"><span class="pre">ProcessDcCableCheckRequest</span></span><a class="headerlink" href="#secc.states.process_dc_cable_check_request.ProcessDcCableCheckRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.DcEVSEState" title="secc.states.evse_state.DcEVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.DcEVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_dc_cable_check_request.ProcessDcCableCheckRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_dc_cable_check_request.ProcessDcCableCheckRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_dc_charge_loop_request">
+<span id="secc-states-process-dc-charge-loop-request-module"></span><h2>secc.states.process_dc_charge_loop_request module<a class="headerlink" href="#module-secc.states.process_dc_charge_loop_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_dc_charge_loop_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_dc_charge_loop_request.ProcessDcChargeLoopRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_dc_charge_loop_request.</span></span><span class="sig-name descname"><span class="pre">ProcessDcChargeLoopRequest</span></span><a class="headerlink" href="#secc.states.process_dc_charge_loop_request.ProcessDcChargeLoopRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.DcEVSEState" title="secc.states.evse_state.DcEVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.DcEVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_dc_charge_loop_request.ProcessDcChargeLoopRequest.is_limit_achieved">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">is_limit_achieved</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.states.process_dc_charge_loop_request.ProcessDcChargeLoopRequest.is_limit_achieved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_dc_charge_loop_request.ProcessDcChargeLoopRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_dc_charge_loop_request.ProcessDcChargeLoopRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_dc_charge_parameter_discovery_request">
+<span id="secc-states-process-dc-charge-parameter-discovery-request-module"></span><h2>secc.states.process_dc_charge_parameter_discovery_request module<a class="headerlink" href="#module-secc.states.process_dc_charge_parameter_discovery_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_dc_charge_parameter_discovery_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_dc_charge_parameter_discovery_request.ProcessDcChargeParameterDiscoveryRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_dc_charge_parameter_discovery_request.</span></span><span class="sig-name descname"><span class="pre">ProcessDcChargeParameterDiscoveryRequest</span></span><a class="headerlink" href="#secc.states.process_dc_charge_parameter_discovery_request.ProcessDcChargeParameterDiscoveryRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.DcEVSEState" title="secc.states.evse_state.DcEVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.DcEVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_dc_charge_parameter_discovery_request.ProcessDcChargeParameterDiscoveryRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_dc_charge_parameter_discovery_request.ProcessDcChargeParameterDiscoveryRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_dc_pre_charge_request">
+<span id="secc-states-process-dc-pre-charge-request-module"></span><h2>secc.states.process_dc_pre_charge_request module<a class="headerlink" href="#module-secc.states.process_dc_pre_charge_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_pre_charge_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_dc_pre_charge_request.ProcessDcPreChargeRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_dc_pre_charge_request.</span></span><span class="sig-name descname"><span class="pre">ProcessDcPreChargeRequest</span></span><a class="headerlink" href="#secc.states.process_dc_pre_charge_request.ProcessDcPreChargeRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.DcEVSEState" title="secc.states.evse_state.DcEVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.DcEVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_dc_pre_charge_request.ProcessDcPreChargeRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_dc_pre_charge_request.ProcessDcPreChargeRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_dc_welding_detection_request">
+<span id="secc-states-process-dc-welding-detection-request-module"></span><h2>secc.states.process_dc_welding_detection_request module<a class="headerlink" href="#module-secc.states.process_dc_welding_detection_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_dc_welding_detection_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_dc_welding_detection_request.ProcessDcWeldingDetectionRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_dc_welding_detection_request.</span></span><span class="sig-name descname"><span class="pre">ProcessDcWeldingDetectionRequest</span></span><a class="headerlink" href="#secc.states.process_dc_welding_detection_request.ProcessDcWeldingDetectionRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.DcEVSEState" title="secc.states.evse_state.DcEVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.DcEVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_dc_welding_detection_request.ProcessDcWeldingDetectionRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_dc_welding_detection_request.ProcessDcWeldingDetectionRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_power_delivery_request">
+<span id="secc-states-process-power-delivery-request-module"></span><h2>secc.states.process_power_delivery_request module<a class="headerlink" href="#module-secc.states.process_power_delivery_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_power_delivery_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_power_delivery_request.ProcessPowerDeliveryRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_power_delivery_request.</span></span><span class="sig-name descname"><span class="pre">ProcessPowerDeliveryRequest</span></span><a class="headerlink" href="#secc.states.process_power_delivery_request.ProcessPowerDeliveryRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.EVSEState" title="secc.states.evse_state.EVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.EVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_power_delivery_request.ProcessPowerDeliveryRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_power_delivery_request.ProcessPowerDeliveryRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_schedule_exchange_request">
+<span id="secc-states-process-schedule-exchange-request-module"></span><h2>secc.states.process_schedule_exchange_request module<a class="headerlink" href="#module-secc.states.process_schedule_exchange_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_schedule_exchange_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_schedule_exchange_request.ProcessScheduleExchangeRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_schedule_exchange_request.</span></span><span class="sig-name descname"><span class="pre">ProcessScheduleExchangeRequest</span></span><a class="headerlink" href="#secc.states.process_schedule_exchange_request.ProcessScheduleExchangeRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.EVSEState" title="secc.states.evse_state.EVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.EVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_schedule_exchange_request.ProcessScheduleExchangeRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_schedule_exchange_request.ProcessScheduleExchangeRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_service_detail_request">
+<span id="secc-states-process-service-detail-request-module"></span><h2>secc.states.process_service_detail_request module<a class="headerlink" href="#module-secc.states.process_service_detail_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_service_detail_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_service_detail_request.ProcessServiceDetailRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_service_detail_request.</span></span><span class="sig-name descname"><span class="pre">ProcessServiceDetailRequest</span></span><a class="headerlink" href="#secc.states.process_service_detail_request.ProcessServiceDetailRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.EVSEState" title="secc.states.evse_state.EVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.EVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_service_detail_request.ProcessServiceDetailRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_service_detail_request.ProcessServiceDetailRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_service_discovery_request">
+<span id="secc-states-process-service-discovery-request-module"></span><h2>secc.states.process_service_discovery_request module<a class="headerlink" href="#module-secc.states.process_service_discovery_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_service_discovery_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_service_discovery_request.ProcessServiceDiscoveryRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_service_discovery_request.</span></span><span class="sig-name descname"><span class="pre">ProcessServiceDiscoveryRequest</span></span><a class="headerlink" href="#secc.states.process_service_discovery_request.ProcessServiceDiscoveryRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.EVSEState" title="secc.states.evse_state.EVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.EVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_service_discovery_request.ProcessServiceDiscoveryRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_service_discovery_request.ProcessServiceDiscoveryRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_service_selection_request">
+<span id="secc-states-process-service-selection-request-module"></span><h2>secc.states.process_service_selection_request module<a class="headerlink" href="#module-secc.states.process_service_selection_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_service_selection_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_service_selection_request.ProcessServiceSelectionRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_service_selection_request.</span></span><span class="sig-name descname"><span class="pre">ProcessServiceSelectionRequest</span></span><a class="headerlink" href="#secc.states.process_service_selection_request.ProcessServiceSelectionRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.EVSEState" title="secc.states.evse_state.EVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.EVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_service_selection_request.ProcessServiceSelectionRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_service_selection_request.ProcessServiceSelectionRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_session_setup_request">
+<span id="secc-states-process-session-setup-request-module"></span><h2>secc.states.process_session_setup_request module<a class="headerlink" href="#module-secc.states.process_session_setup_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_session_setup_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_session_setup_request.ProcessSessionSetupRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_session_setup_request.</span></span><span class="sig-name descname"><span class="pre">ProcessSessionSetupRequest</span></span><a class="headerlink" href="#secc.states.process_session_setup_request.ProcessSessionSetupRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.EVSEState" title="secc.states.evse_state.EVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.EVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_session_setup_request.ProcessSessionSetupRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_session_setup_request.ProcessSessionSetupRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_session_stop_request">
+<span id="secc-states-process-session-stop-request-module"></span><h2>secc.states.process_session_stop_request module<a class="headerlink" href="#module-secc.states.process_session_stop_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_session_stop_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_session_stop_request.ProcessSessionStopRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_session_stop_request.</span></span><span class="sig-name descname"><span class="pre">ProcessSessionStopRequest</span></span><a class="headerlink" href="#secc.states.process_session_stop_request.ProcessSessionStopRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.EVSEState" title="secc.states.evse_state.EVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.EVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_session_stop_request.ProcessSessionStopRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_session_stop_request.ProcessSessionStopRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states.process_supported_app_protocol_request">
+<span id="secc-states-process-supported-app-protocol-request-module"></span><h2>secc.states.process_supported_app_protocol_request module<a class="headerlink" href="#module-secc.states.process_supported_app_protocol_request" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-process_supported_app_protocol_request"></span><dl class="py class">
+<dt class="sig sig-object py" id="secc.states.process_supported_app_protocol_request.ProcessSupportedAppProtocolRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">secc.states.process_supported_app_protocol_request.</span></span><span class="sig-name descname"><span class="pre">ProcessSupportedAppProtocolRequest</span></span><a class="headerlink" href="#secc.states.process_supported_app_protocol_request.ProcessSupportedAppProtocolRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#secc.states.evse_state.EVSEState" title="secc.states.evse_state.EVSEState"><code class="xref py py-class docutils literal notranslate"><span class="pre">secc.states.evse_state.EVSEState</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_supported_app_protocol_request.ProcessSupportedAppProtocolRequest.get_priority">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">get_priority</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_protocol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#secc.states.process_supported_app_protocol_request.ProcessSupportedAppProtocolRequest.get_priority" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_supported_app_protocol_request.ProcessSupportedAppProtocolRequest.get_supported_app_protocols">
+<span class="sig-name descname"><span class="pre">get_supported_app_protocols</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#secc.states.process_supported_app_protocol_request.ProcessSupportedAppProtocolRequest.get_supported_app_protocols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="secc.states.process_supported_app_protocol_request.ProcessSupportedAppProtocolRequest.process_payload">
+<span class="sig-name descname"><span class="pre">process_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="shared.html#shared.reaction_message.ReactionToIncomingMessage" title="shared.reaction_message.ReactionToIncomingMessage"><span class="pre">shared.reaction_message.ReactionToIncomingMessage</span></a></span></span><a class="headerlink" href="#secc.states.process_supported_app_protocol_request.ProcessSupportedAppProtocolRequest.process_payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the payload and readies the next message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> – The data that will be processed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReactionToIncomingMessage – the reaction the processed data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-secc.states">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-secc.states" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">secc.states package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-secc.states.evse_state">secc.states.evse_state module</a></li>
+<li><a class="reference internal" href="#module-secc.states.initial_state">secc.states.initial_state module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_authorization_request">secc.states.process_authorization_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_authorization_setup_request">secc.states.process_authorization_setup_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_dc_cable_check_request">secc.states.process_dc_cable_check_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_dc_charge_loop_request">secc.states.process_dc_charge_loop_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_dc_charge_parameter_discovery_request">secc.states.process_dc_charge_parameter_discovery_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_dc_pre_charge_request">secc.states.process_dc_pre_charge_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_dc_welding_detection_request">secc.states.process_dc_welding_detection_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_power_delivery_request">secc.states.process_power_delivery_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_schedule_exchange_request">secc.states.process_schedule_exchange_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_service_detail_request">secc.states.process_service_detail_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_service_discovery_request">secc.states.process_service_discovery_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_service_selection_request">secc.states.process_service_selection_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_session_setup_request">secc.states.process_session_setup_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_session_stop_request">secc.states.process_session_stop_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states.process_supported_app_protocol_request">secc.states.process_supported_app_protocol_request module</a></li>
+<li><a class="reference internal" href="#module-secc.states">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="secc.html"
+                        title="previous chapter">secc package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="shared.html"
+                        title="next chapter">shared package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/secc.states.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="shared.html" title="shared package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="secc.html" title="secc package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">edf15118-20 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >edf15118-20</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="secc.html" >secc package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">secc.states package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright The MIT License, 2022 EDF.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

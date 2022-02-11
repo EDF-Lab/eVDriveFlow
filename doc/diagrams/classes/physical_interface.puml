@@ -1,0 +1,23 @@
+@startuml physical_interface
+
+class PhysicalInterface {
+        pwm: int
+        states: List<State>
+        transitions: Dict<str>
+        pwm_on() -> bool
+        pwn_off() -> bool
+        set_pwm() -> None
+        unset_pwm() -> None
+        set_ev_state(str) -> None
+        is_state_a() -> bool
+        is_state_b() -> bool
+        is_state_c() -> bool
+}
+
+class ChargeControllerInterface {}
+
+PhysicalInterface <|-- ChargeControllerInterface
+
+hide empty members
+
+@enduml

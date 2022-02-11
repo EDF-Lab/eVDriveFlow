@@ -1,0 +1,47 @@
+@startuml secc
+
+package secc {
+
+    class EVSEState{}
+    class DcEVSEState{}
+    class ProcessXXXRequest {}
+    note bottom: Multiple classes defined here. \nNot detailed for the sake of clarity.
+    EVSEState <|-- DcEVSEState
+    EVSEState <|-- ProcessXXXRequest
+    class ProcessDcXXXRequest {}
+    note bottom: Multiple classes defined here. \nNot detailed for the sake of clarity.
+    DcEVSEState <|-- ProcessDcXXXRequest
+
+    class UDPServer {}
+    class TCPServer {}
+
+    class IEVSEController {}
+    class EVSEDummyController {}
+    class IDcEVSEController {}
+
+    class EVSEDataModel {}
+    class DcEVSEDataModel {}
+    class EVSEEmulator {}
+
+    IEVSEController <|-- EVSEDummyController
+    IEVSEController <|-- IDcEVSEController
+    EVSEDataModel <|-- DcEVSEDataModel
+    DcEVSEDataModel <|-- EVSEEmulator
+
+    IEVSEController o-- EVSEDataModel
+
+    class EVSESession {}
+    EVSESession o-- IEVSEController
+    EVSESession *-- EVSEState
+    class EVSESessionHandler {}
+
+    EVSESessionHandler *-- EVSESession
+    EVSESessionHandler o-- UDPServer
+    EVSESessionHandler o-- TCPServer
+
+
+}
+
+hide empty members
+
+@enduml
