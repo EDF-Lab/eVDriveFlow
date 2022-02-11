@@ -217,11 +217,16 @@ Then, you can run electric vehicle communication controller EVCC:
 
  - To execute without GUI, run *start_ev.py*
 
- Once the session is running you can control dinamically the power transfer by moving the control bar at the left side of the SECC control window:
+The session sequence can be seen in the terminal by the printed logs or in the GUI, in the information tab.
+
+![Information tab EVCC](/doc/figures/SECC_ChargingSession.png?raw=true)
+
+ Once the session is in the charging loop you can control dinamically the power transfer by moving the control bar at the left side of the SECC control window:
 
  ![Control Window SECC](/doc/figures/SECC_ControlWindow.png?raw=true)
 
- To stop the charging session, click on stop button of the EVCC start window.
+ 
+  To stop the charging session, click on stop button of the EVCC start window.
 
 
 
