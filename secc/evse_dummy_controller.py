@@ -95,7 +95,7 @@ class EVSEEmulator(DcEVSEDataModel):
     _evmaximum_charge_power: Optional[DcRationalNumberType] = DcRationalNumberType(0, 0)
 
     def __post_init__(self):
-        self.evseid = "FR*V2G*E12345"
+        self.evseid = "ZZ000000"
         self.departure_time = 0
         self.supported_app_protocols = [AppProtocolType(protocol_namespace=V2G_CI_MSG_DC_NAMESPACE,
                                                         version_number_major=2, version_number_minor=0, priority=1)]
