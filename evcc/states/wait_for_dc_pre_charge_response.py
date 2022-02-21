@@ -27,12 +27,14 @@ class WaitForDcPreChargeResponse(DcEVState):
 
     def process_payload(self, payload) -> ReactionToIncomingMessage:
         extra_data = {}
+        reaction = SendMessage()
         if self.processed:
             request = PowerDeliveryReq()
             request.header = MessageHeaderType(self.session_parameters.session_id, int(time.time()))
             request.charge_progress = ChargeProgressType.START
             request.evprocessing = ProcessingType.FINISHED
             self.session_parameters.processing = False
+            reaction.msg_type = "Common"
         else:
             request = DcPreChargeReq()
             request.header = DcMessageHeaderType(self.session_parameters.session_id, int(time.time()))
@@ -47,7 +49,8 @@ class WaitForDcPreChargeResponse(DcEVState):
             self.controller.data_model.evpresent_voltage = evsepresent_voltage
             request.evtarget_voltage = self.controller.data_model.evpresent_voltage
             request.evpresent_voltage = self.controller.data_model.evpresent_voltage
-        reaction = SendMessage()
+            reaction.msg_type = "DC"
+
         reaction.message = request
         reaction.extra_data = extra_data
         return reaction

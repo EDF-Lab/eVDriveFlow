@@ -20,6 +20,7 @@ class ReactionToIncomingMessage:
     def __init__(self):
         self.__message = None
         self.__extra_data = None
+        self.__msg_type = None
 
     @property
     def message(self):
@@ -40,6 +41,14 @@ class ReactionToIncomingMessage:
     @property
     def next_state(self):
         return self.__next_state
+
+    @property
+    def msg_type(self):
+        return self.__msg_type
+
+    @msg_type.setter
+    def msg_type(self, type_msg):
+        self.__msg_type = type_msg
 
 
 class SendMessage(ReactionToIncomingMessage):

@@ -20,7 +20,8 @@ from shared.messages import V2GTPMessage
 from shared.global_values import PROTOCOL_VERSION
 from shared.log import logger
 import lxml
-from shared.global_values import SDP_PAYLOAD_TYPES, MAX_PAYLOAD_LENGTH, APP_PROTOCOL_EXIG, COMMON_MESSAGES_EXIG
+from shared.global_values import SDP_PAYLOAD_TYPES, MAX_PAYLOAD_LENGTH, APP_PROTOCOL_EXIG, COMMON_MESSAGES_EXIG, \
+    DC_MESSAGES_EXIG
 import jpype
 import os
 import jpype.imports
@@ -56,13 +57,60 @@ class Singleton(type):
         return cls._instances[cls]
 
 
+def open_exi_schema(filepath: str) -> EXISchema:
+    """Loads EXISchema. Relies on Java classes.
+
+    :param filepath: The path to the EXIG file.
+    :return: EXISchema -- the object containing the schema.
+    """
+    schema_reader = EXISchemaReader()
+    schema = None
+    fis = None
+    try:
+        fis = FileInputStream(filepath)
+        schema = schema_reader.parse(fis)
+    finally:
+        if fis:
+            fis.close()
+        return schema
+
+
 class MessageHandler(metaclass=Singleton):
     """This is the class that will process every single V2GTP message.
 
     """
+    transmogrifier = Transmogrifier()
+    transmogrifier.setAlignmentType(AlignmentType.bitPacked)
+    options = GrammarOptions.DEFAULT_OPTIONS
+    transmogrifier.setBlockSize(1000000)
+    transmogrifier.setValueMaxLength(-1)
+    transmogrifier.setValuePartitionCapacity(0)
+
+    sax_transformer_factory = JObject(SAXTransformerFactory.newInstance(), SAXTransformerFactory)
+    sax_parser_factory = SAXParserFactory.newInstance()
+    sax_parser_factory.setNamespaceAware(True)
+    transformer_handler = sax_transformer_factory.newTransformerHandler()
+    reader = EXIReader()
+    reader.setAlignmentType(AlignmentType.bitPacked)
+    reader.setBlockSize(1000000)
+    reader.setValueMaxLength(-1)
+    reader.setValuePartitionCapacity(0)
+    reader.setContentHandler(transformer_handler)
+
+    ap_schema = open_exi_schema(APP_PROTOCOL_EXIG)
+    ap_grammar_cache = GrammarCache(ap_schema, options)
+
+    common_schema = open_exi_schema(COMMON_MESSAGES_EXIG)
+    common_grammar_cache = GrammarCache(common_schema, options)
+
+    dc_schema = open_exi_schema(DC_MESSAGES_EXIG)
+    dc_grammar_cache = GrammarCache(dc_schema, options)
+
     def __init__(self):
-        self.supported_app_schema = self.open_exi_schema(APP_PROTOCOL_EXIG)
-        self.common_messages_schema = self.open_exi_schema(COMMON_MESSAGES_EXIG)
+        pass
+        # self.supported_app_schema = self.open_exi_schema(APP_PROTOCOL_EXIG)
+        # self.common_messages_schema = self.open_exi_schema(COMMON_MESSAGES_EXIG)
+        # self.dc_messages_schema = self.open_exi_schema(DC_MESSAGES_EXIG)
 
     def is_valid(self, v2gtp_message: V2GTPMessage) -> bool:
         if self.is_version_valid(v2gtp_message) and self.is_version_valid(v2gtp_message) and \
@@ -100,48 +148,47 @@ class MessageHandler(metaclass=Singleton):
         logger.error("Wrong payload size.")
         return False
 
-    @staticmethod
-    def open_exi_schema(filepath: str) -> EXISchema:
-        """Loads EXISchema. Relies on Java classes.
+    # @staticmethod
+    # def open_exi_schema(filepath: str) -> EXISchema:
+    #     """Loads EXISchema. Relies on Java classes.
+    #
+    #     :param filepath: The path to the EXIG file.
+    #     :return: EXISchema -- the object containing the schema.
+    #     """
+    #     schema_reader = EXISchemaReader()
+    #     schema = None
+    #     fis = None
+    #     try:
+    #         fis = FileInputStream(filepath)
+    #         schema = schema_reader.parse(fis)
+    #     finally:
+    #         if fis:
+    #             fis.close()
+    #         return schema
 
-        :param filepath: The path to the EXIG file.
-        :return: EXISchema -- the object containing the schema.
-        """
-        schema_reader = EXISchemaReader()
-        schema = None
-        fis = None
-        try:
-            fis = FileInputStream(filepath)
-            schema = schema_reader.parse(fis)
-        finally:
-            if fis:
-                fis.close()
-            return schema
-
     @staticmethod
-    def encode(xml_contents: str, schema: EXISchema) -> str:
+    def encode(xml_contents: str, type_msg: str) -> str:
         """Turns a human-readable string to an EXI-encoded string. Relies on Java classes.
 
         :param xml_contents: The XML string to be encoded.
-        :param schema: The EXI schema used.
+        :param type_msg: The type of message used.
         :return: str -- the encoded result.
         """
         contents = String(xml_contents)
         input = None
         output = None
         try:
-            transmogrifier = Transmogrifier()
-            transmogrifier.setAlignmentType(AlignmentType.bitPacked)
-            options = GrammarOptions.DEFAULT_OPTIONS
-            transmogrifier.setBlockSize(1000000)
-            transmogrifier.setValueMaxLength(-1)
-            transmogrifier.setValuePartitionCapacity(0)
+            t = MessageHandler.transmogrifier
             input = ByteArrayInputStream(contents.getBytes(Charset.forName("ASCII")));
             output = ByteArrayOutputStream();
-            grammarCache = GrammarCache(schema, options);
-            transmogrifier.setGrammarCache(grammarCache);
-            transmogrifier.setOutputStream(output);
-            transmogrifier.encode(InputSource(input));
+            if type_msg == "SAP":
+                t.setGrammarCache(MessageHandler.ap_grammar_cache);
+            elif type_msg == "Common":
+                t.setGrammarCache(MessageHandler.common_grammar_cache);
+            else:
+                t.setGrammarCache(MessageHandler.dc_grammar_cache);
+            t.setOutputStream(output);
+            t.encode(InputSource(input));
             result = output.toByteArray()
         finally:
             if input:
@@ -151,11 +198,11 @@ class MessageHandler(metaclass=Singleton):
             return result
 
     @staticmethod
-    def decode(exi_contents: bytes, schema: EXISchema) -> str:
+    def decode(exi_contents: bytes, type_msg: str) -> str:
         """Turns encoded EXI bytes to human-readable string. Relies on Java classes.
 
         :param exi_contents: The EXI encoded contents.
-        :param schema: The EXI schema used.
+        :param type_msg: The type of message used.
         :return: str -- the decoded string.
         """
         input = None
@@ -163,22 +210,17 @@ class MessageHandler(metaclass=Singleton):
         stringWriter = StringWriter()
         result = None
         try:
-            sax_transformer_factory = JObject(SAXTransformerFactory.newInstance(), SAXTransformerFactory)
-            sax_parser_factory = SAXParserFactory.newInstance()
-            sax_parser_factory.setNamespaceAware(True)
-            transformer_handler = sax_transformer_factory.newTransformerHandler()
-            reader = EXIReader()
-            reader.setAlignmentType(AlignmentType.bitPacked)
-            options = GrammarOptions.DEFAULT_OPTIONS
-            reader.setBlockSize(1000000)
-            reader.setValueMaxLength(-1)
-            reader.setValuePartitionCapacity(0)
             input = ByteArrayInputStream(exi_contents)
-            grammar_cache = GrammarCache(schema, options)
-            reader.setGrammarCache(grammar_cache)
-            transformer_handler.setResult(StreamResult(stringWriter))
-            reader.setContentHandler(transformer_handler)
-            reader.parse(InputSource(input))
+            r = MessageHandler.reader
+            tf_handler = MessageHandler.transformer_handler
+            if type_msg == "SAP":
+                r.setGrammarCache(MessageHandler.ap_grammar_cache);
+            elif type_msg == "Common":
+                r.setGrammarCache(MessageHandler.common_grammar_cache);
+            else:
+                r.setGrammarCache(MessageHandler.dc_grammar_cache);
+            tf_handler.setResult(StreamResult(stringWriter))
+            r.parse(InputSource(input))
             result = stringWriter.getBuffer().toString()
         finally:
             if input:
@@ -188,16 +230,28 @@ class MessageHandler(metaclass=Singleton):
             return str(result)
 
     def supported_app_to_exi(self, xml_contents) -> bytes:
-        return self.encode(xml_contents, self.supported_app_schema)
+        logger.info("Supported App Protocol message encoded")
+        return self.encode(xml_contents, "SAP")
 
-    def v2g_msg_to_exi(self, xml_contents) -> bytes:
-        return self.encode(xml_contents, self.common_messages_schema)
+    def v2g_common_msg_to_exi(self, xml_contents) -> bytes:
+        logger.info("Common message encoded")
+        return self.encode(xml_contents, "Common")
+
+    def v2g_dc_msg_to_exi(self, xml_contents) -> bytes:
+        logger.info("DC message encoded")
+        return self.encode(xml_contents, "DC")
 
     def exi_to_supported_app(self, exi_contents) -> str:
-        return self.decode(exi_contents, self.supported_app_schema)
+        logger.info("Supported App Protocol message decoded")
+        return self.decode(exi_contents, "SAP")
 
-    def exi_to_v2g_msg(self, exi_contents) -> str:
-        return self.decode(exi_contents, self.common_messages_schema)
+    def exi_to_v2g_common_msg(self, exi_contents) -> str:
+        logger.info("Common message decoded")
+        return self.decode(exi_contents, "Common")
+
+    def exi_to_v2g_dc_msg(self, exi_contents) -> str:
+        logger.info("DC message decoded")
+        return self.decode(exi_contents, "DC")
 
     @staticmethod
     def unmarshall(xml):

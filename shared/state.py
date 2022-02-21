@@ -14,7 +14,7 @@
 
 from abc import abstractmethod
 from transitions import State
-from shared.messages import EXIMessage
+from shared.messages import EXIMessage, EXIDCMessage
 from shared.payloads import EXIPayload
 from shared.reaction_message import ReactionToIncomingMessage
 from shared.message_handling import MessageHandler
@@ -35,8 +35,7 @@ class V2GState(State):
 
     def _build_message(self, message):
         self.message_handler.marshall(message)
-        self.message_handler.v2g_msg_to_exi()
-        exi = self.message_handler.get_exi_contents()
+        exi = self.message_handler.v2g_common_msg_to_exi()
         packet = EXIMessage() / EXIPayload(payloadContent=exi)
         return packet
 

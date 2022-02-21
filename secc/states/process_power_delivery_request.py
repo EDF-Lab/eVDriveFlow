@@ -32,6 +32,7 @@ class ProcessPowerDeliveryRequest(EVSEState):
         reaction = SendMessage()
         reaction.extra_data = extra_data
         reaction.message = response
+        reaction.msg_type = "Common"
         # TODO other cases
         if payload.charge_progress == ChargeProgressType.STOP:
             response.evsestatus = EvsestatusType(0, EvseNotificationType.TERMINATE)

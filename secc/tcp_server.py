@@ -16,12 +16,14 @@ import asyncio
 import ssl
 from asyncio import transports
 from typing import Optional
+
+import hexdump
 import transitions
 from secc.evse_session import EVSESession
 from shared.log import logger
 from shared.global_values import SECC_CERTCHAIN, SECC_KEYFILE, PASSPHRASE, EVCC_CERTIFICATE_AUTHORITY
 from shared.message_handling import MessageHandler
-from shared.messages import V2GTPMessage, EXIMessage, SupportedAppMessage
+from shared.messages import V2GTPMessage, EXIMessage, SupportedAppMessage, EXIDCMessage
 from shared.payloads import EXIPayload
 from shared.reaction_message import PauseSession, SendMessage, TerminateSession
 
@@ -50,10 +52,11 @@ class TCPServerProtocol(asyncio.Protocol):
     def data_received(self, data: bytes) -> None:
         addr = self.transport.get_extra_info('peername')
         logger.info("Received request from %s.", addr)
-        if self.session.state == "initial_state":
+        packet = EXIMessage(data)
+        if packet.get_payload_type() == 0x8001:
             packet = SupportedAppMessage(data)
-        else:
-            packet = EXIMessage(data)
+        if packet.get_payload_type() == 0x8004:
+            packet = EXIDCMessage(data)
         self.process_incoming_message(packet)
 
     def eof_received(self) -> Optional[bool]:
@@ -75,13 +78,22 @@ class TCPServerProtocol(asyncio.Protocol):
         :return:
         """
         if self.message_handler.is_valid(v2gtp_message):
-            payload = v2gtp_message.payload.getfieldval("payloadContent")
             message_type = v2gtp_message.get_payload_type()
             if message_type == 0x8001:
+                logger.info("Payload type: 0x8001")
+                payload = v2gtp_message.payload.getfieldval("payloadContent")
                 xml = self.message_handler.exi_to_supported_app(payload)
+            elif message_type == 0x8004:
+                logger.info("Payload type: 0x8004")
+                payload = v2gtp_message.payload.getfieldval("payloadContent")
+                xml = self.message_handler.exi_to_v2g_dc_msg(payload)
+            elif message_type == 0x8002:
+                logger.info("Payload type: 0x8002")
+                payload = v2gtp_message.payload.getfieldval("payloadContent")
+                xml = self.message_handler.exi_to_v2g_common_msg(payload)
             else:
-                xml = self.message_handler.exi_to_v2g_msg(payload)
-
+                raise Exception("Unknown payload type")
+            logger.debug("XML decoded: " + xml)
             xml_object = self.message_handler.unmarshall(xml)
             request_type = type(xml_object).__name__
             logger.info("Received %s.", request_type)
@@ -108,10 +120,14 @@ class TCPServerProtocol(asyncio.Protocol):
         :return:
         """
         xml = self.message_handler.marshall(reaction.message)
-        if self.session.state == "ProcessSupportedAppProtocolReq":
+        if reaction.msg_type == "SupportedAppProtocol":
             exi = self.message_handler.supported_app_to_exi(xml)
+        elif reaction.msg_type == "DC":
+            exi = self.message_handler.v2g_dc_msg_to_exi(xml)
+        elif reaction.msg_type == "Common":
+            exi = self.message_handler.v2g_common_msg_to_exi(xml)
         else:
-            exi = self.message_handler.v2g_msg_to_exi(xml)
+            raise Exception("Unknown message type")
         if isinstance(reaction, PauseSession):
             # TODO
             raise NotImplementedError
@@ -123,12 +139,14 @@ class TCPServerProtocol(asyncio.Protocol):
         elif isinstance(reaction, SendMessage):
             self.session.reset_message_timer()
             self.session.sequence_timer.start()
-            if "Dc" in xml:
-                message = bytes(EXIMessage(payloadType=0x8004) / EXIPayload(payloadContent=exi))
-            elif "supportedApp" in xml:
+            if reaction.msg_type == "DC":
+                message = bytes(EXIDCMessage() / EXIPayload(payloadContent=exi))
+            elif reaction.msg_type == "SupportedAppProtocol":
                 message = bytes(SupportedAppMessage()/EXIPayload(payloadContent=exi))
-            else:
+            elif reaction.msg_type == "Common":
                 message = bytes(EXIMessage() / EXIPayload(payloadContent=exi))
+            else:
+                raise Exception("Unknown message type")
             self.transport.write(message)
         self.session.save_session_data(reaction.extra_data)
 

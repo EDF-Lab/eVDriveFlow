@@ -167,9 +167,11 @@
         <li><a href="shared.xml_classes.dc.html#shared.xml_classes.dc.xmldsig_core_schema.TransformType.algorithm">(shared.xml_classes.dc.xmldsig_core_schema.TransformType attribute)</a>
 </li>
       </ul></li>
-      <li><a href="shared.html#shared.messages.EXIMessage.aliastypes">aliastypes (shared.messages.EXIMessage attribute)</a>
+      <li><a href="shared.html#shared.messages.EXIDCMessage.aliastypes">aliastypes (shared.messages.EXIDCMessage attribute)</a>
 
       <ul>
+        <li><a href="shared.html#shared.messages.EXIMessage.aliastypes">(shared.messages.EXIMessage attribute)</a>
+</li>
         <li><a href="shared.html#shared.messages.SDPMessage.aliastypes">(shared.messages.SDPMessage attribute)</a>
 </li>
         <li><a href="shared.html#shared.messages.SupportedAppMessage.aliastypes">(shared.messages.SupportedAppMessage attribute)</a>
@@ -239,6 +241,10 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.ap_grammar_cache">ap_grammar_cache (shared.message_handling.MessageHandler attribute)</a>
+</li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.ap_schema">ap_schema (shared.message_handling.MessageHandler attribute)</a>
+</li>
       <li><a href="shared.xml_classes.app_protocol.html#shared.xml_classes.app_protocol.SupportedAppProtocolReq.app_protocol">app_protocol (shared.xml_classes.app_protocol.SupportedAppProtocolReq attribute)</a>
 
       <ul>
@@ -921,14 +927,14 @@
         <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.ChargingSessionType">(class in shared.xml_classes.common_messages.v2_g_ci_common_messages)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.EvCheckInStatusType.CHECK_IN">CHECK_IN (shared.xml_classes.common_messages.EvCheckInStatusType attribute)</a>
 
       <ul>
         <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.v2_g_ci_common_messages.EvCheckInStatusType.CHECK_IN">(shared.xml_classes.common_messages.v2_g_ci_common_messages.EvCheckInStatusType attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.EvCheckOutStatusType.CHECK_OUT">CHECK_OUT (shared.xml_classes.common_messages.EvCheckOutStatusType attribute)</a>
 
       <ul>
@@ -1051,6 +1057,10 @@
         <li><a href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.ClresControlModeType.Meta">(class in shared.xml_classes.dc.v2_g_ci_common_types)</a>
 </li>
       </ul></li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.common_grammar_cache">common_grammar_cache (shared.message_handling.MessageHandler attribute)</a>
+</li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.common_schema">common_schema (shared.message_handling.MessageHandler attribute)</a>
+</li>
       <li><a href="shared.html#shared.session.CommunicationSession">CommunicationSession (class in shared.session)</a>
 </li>
       <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.EvCheckInStatusType.COMPLETED">COMPLETED (shared.xml_classes.common_messages.EvCheckInStatusType attribute)</a>
@@ -1223,6 +1233,10 @@
         <li><a href="secc.html#secc.evse_session.EVSESessionParameters.dc_evseprocessing">(secc.evse_session.EVSESessionParameters attribute)</a>
 </li>
       </ul></li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.dc_grammar_cache">dc_grammar_cache (shared.message_handling.MessageHandler attribute)</a>
+</li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.dc_schema">dc_schema (shared.message_handling.MessageHandler attribute)</a>
+</li>
       <li><a href="shared.xml_classes.dc.html#shared.xml_classes.dc.DcCableCheckReq">DcCableCheckReq (class in shared.xml_classes.dc)</a>
 
       <ul>
@@ -3253,7 +3267,11 @@
       </ul></li>
       <li><a href="shared.html#shared.message_handling.MessageHandler.exi_to_supported_app">exi_to_supported_app() (shared.message_handling.MessageHandler method)</a>
 </li>
-      <li><a href="shared.html#shared.message_handling.MessageHandler.exi_to_v2g_msg">exi_to_v2g_msg() (shared.message_handling.MessageHandler method)</a>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.exi_to_v2g_common_msg">exi_to_v2g_common_msg() (shared.message_handling.MessageHandler method)</a>
+</li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.exi_to_v2g_dc_msg">exi_to_v2g_dc_msg() (shared.message_handling.MessageHandler method)</a>
+</li>
+      <li><a href="shared.html#shared.messages.EXIDCMessage">EXIDCMessage (class in shared.messages)</a>
 </li>
       <li><a href="shared.html#shared.messages.EXIMessage">EXIMessage (class in shared.messages)</a>
 </li>
@@ -3411,8 +3429,6 @@
         <li><a href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.ResponseCodeType.FAILED_SEQUENCE_ERROR">(shared.xml_classes.dc.v2_g_ci_common_types.ResponseCodeType attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.ResponseCodeType.FAILED_SERVICE_IDINVALID">FAILED_SERVICE_IDINVALID (shared.xml_classes.common_messages.ResponseCodeType attribute)</a>
 
       <ul>
@@ -3423,6 +3439,8 @@
         <li><a href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.ResponseCodeType.FAILED_SERVICE_IDINVALID">(shared.xml_classes.dc.v2_g_ci_common_types.ResponseCodeType attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.ResponseCodeType.FAILED_SERVICE_SELECTION_INVALID">FAILED_SERVICE_SELECTION_INVALID (shared.xml_classes.common_messages.ResponseCodeType attribute)</a>
 
       <ul>
@@ -3473,9 +3491,11 @@
         <li><a href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.ResponseCodeType.FAILED_WRONG_CHARGE_PARAMETER">(shared.xml_classes.dc.v2_g_ci_common_types.ResponseCodeType attribute)</a>
 </li>
       </ul></li>
-      <li><a href="shared.html#shared.messages.EXIMessage.fields_desc">fields_desc (shared.messages.EXIMessage attribute)</a>
+      <li><a href="shared.html#shared.messages.EXIDCMessage.fields_desc">fields_desc (shared.messages.EXIDCMessage attribute)</a>
 
       <ul>
+        <li><a href="shared.html#shared.messages.EXIMessage.fields_desc">(shared.messages.EXIMessage attribute)</a>
+</li>
         <li><a href="shared.html#shared.messages.SDPMessage.fields_desc">(shared.messages.SDPMessage attribute)</a>
 </li>
         <li><a href="shared.html#shared.messages.SupportedAppMessage.fields_desc">(shared.messages.SupportedAppMessage attribute)</a>
@@ -3489,9 +3509,11 @@
         <li><a href="shared.html#shared.payloads.SDPResPayload.fields_desc">(shared.payloads.SDPResPayload attribute)</a>
 </li>
       </ul></li>
-      <li><a href="shared.html#shared.messages.EXIMessage.fill">fill() (shared.messages.EXIMessage method)</a>
+      <li><a href="shared.html#shared.messages.EXIDCMessage.fill">fill() (shared.messages.EXIDCMessage method)</a>
 
       <ul>
+        <li><a href="shared.html#shared.messages.EXIMessage.fill">(shared.messages.EXIMessage method)</a>
+</li>
         <li><a href="shared.html#shared.messages.SDPMessage.fill">(shared.messages.SDPMessage method)</a>
 </li>
         <li><a href="shared.html#shared.messages.SupportedAppMessage.fill">(shared.messages.SupportedAppMessage method)</a>
@@ -4716,6 +4738,8 @@
         <li><a href="shared.xml_classes.dc.html#shared.xml_classes.dc.xmldsig_core_schema.RsakeyValueType.modulus">(shared.xml_classes.dc.xmldsig_core_schema.RsakeyValueType attribute)</a>
 </li>
       </ul></li>
+      <li><a href="shared.html#shared.reaction_message.ReactionToIncomingMessage.msg_type">msg_type (shared.reaction_message.ReactionToIncomingMessage property)</a>
+</li>
       <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.ParkingMethodType.MVGUIDE_MANUAL">MVGUIDE_MANUAL (shared.xml_classes.common_messages.ParkingMethodType attribute)</a>
 
       <ul>
@@ -5806,7 +5830,9 @@
         <li><a href="shared.xml_classes.dc.html#shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType.ONGOING_WAITING_FOR_CUSTOMER_INTERACTION">(shared.xml_classes.dc.v2_g_ci_common_types.ProcessingType attribute)</a>
 </li>
       </ul></li>
-      <li><a href="shared.html#shared.message_handling.MessageHandler.open_exi_schema">open_exi_schema() (shared.message_handling.MessageHandler static method)</a>
+      <li><a href="shared.html#shared.message_handling.open_exi_schema">open_exi_schema() (in module shared.message_handling)</a>
+</li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.options">options (shared.message_handling.MessageHandler attribute)</a>
 </li>
       <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.DigestMethod.other_element">other_element (shared.xml_classes.common_messages.DigestMethod attribute)</a>
 
@@ -6122,9 +6148,11 @@
 </li>
       <li><a href="shared.html#shared.payloads.Payload">Payload (class in shared.payloads)</a>
 </li>
-      <li><a href="shared.html#shared.messages.EXIMessage.payload_guess">payload_guess (shared.messages.EXIMessage attribute)</a>
+      <li><a href="shared.html#shared.messages.EXIDCMessage.payload_guess">payload_guess (shared.messages.EXIDCMessage attribute)</a>
 
       <ul>
+        <li><a href="shared.html#shared.messages.EXIMessage.payload_guess">(shared.messages.EXIMessage attribute)</a>
+</li>
         <li><a href="shared.html#shared.messages.SDPMessage.payload_guess">(shared.messages.SDPMessage attribute)</a>
 </li>
         <li><a href="shared.html#shared.messages.SupportedAppMessage.payload_guess">(shared.messages.SupportedAppMessage attribute)</a>
@@ -6896,6 +6924,8 @@
       </ul></li>
       <li><a href="shared.html#shared.reaction_message.ReactionToIncomingMessage">ReactionToIncomingMessage (class in shared.reaction_message)</a>
 </li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.reader">reader (shared.message_handling.MessageHandler attribute)</a>
+</li>
       <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.ChargeLoopResType.receipt">receipt (shared.xml_classes.common_messages.ChargeLoopResType attribute)</a>
 
       <ul>
@@ -7195,6 +7225,10 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="shared.html#shared.session.CommunicationSession.save_session_data">save_session_data() (shared.session.CommunicationSession method)</a>
+</li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.sax_parser_factory">sax_parser_factory (shared.message_handling.MessageHandler attribute)</a>
+</li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.sax_transformer_factory">sax_transformer_factory (shared.message_handling.MessageHandler attribute)</a>
 </li>
       <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.ChargeProgressType.SCHEDULE_RENEGOTIATION">SCHEDULE_RENEGOTIATION (shared.xml_classes.common_messages.ChargeProgressType attribute)</a>
 
@@ -9196,6 +9230,8 @@
         <li><a href="shared.xml_classes.dc.html#shared.xml_classes.dc.xmldsig_core_schema.Transform.Meta">(class in shared.xml_classes.dc.xmldsig_core_schema)</a>
 </li>
       </ul></li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.transformer_handler">transformer_handler (shared.message_handling.MessageHandler attribute)</a>
+</li>
       <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.Transforms">Transforms (class in shared.xml_classes.common_messages)</a>
 
       <ul>
@@ -9254,6 +9290,8 @@
         <li><a href="shared.xml_classes.dc.html#shared.xml_classes.dc.xmldsig_core_schema.TransformType">(class in shared.xml_classes.dc.xmldsig_core_schema)</a>
 </li>
       </ul></li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.transmogrifier">transmogrifier (shared.message_handling.MessageHandler attribute)</a>
+</li>
       <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.ReferenceType.type">type (shared.xml_classes.common_messages.ReferenceType attribute)</a>
 
       <ul>
@@ -9369,7 +9407,9 @@
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="shared.html#shared.message_handling.MessageHandler.v2g_msg_to_exi">v2g_msg_to_exi() (shared.message_handling.MessageHandler method)</a>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.v2g_common_msg_to_exi">v2g_common_msg_to_exi() (shared.message_handling.MessageHandler method)</a>
+</li>
+      <li><a href="shared.html#shared.message_handling.MessageHandler.v2g_dc_msg_to_exi">v2g_dc_msg_to_exi() (shared.message_handling.MessageHandler method)</a>
 </li>
       <li><a href="shared.xml_classes.common_messages.html#shared.xml_classes.common_messages.V2GmessageType">V2GmessageType (class in shared.xml_classes.common_messages)</a>
 

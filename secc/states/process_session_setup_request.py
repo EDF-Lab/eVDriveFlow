@@ -37,6 +37,7 @@ class ProcessSessionSetupRequest(EVSEState):
         reaction = SendMessage()
         reaction.message = response
         reaction.extra_data = extra_data
+        reaction.msg_type = "Common"
         return reaction
 
 

@@ -37,4 +37,5 @@ class WaitForScheduleExchangeResponse(EVState):
         reaction = SendMessage()
         reaction.message = request
         reaction.extra_data = extra_data
+        reaction.msg_type = "DC"
         return reaction

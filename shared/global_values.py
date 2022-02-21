@@ -24,6 +24,7 @@ SECC_KEYFILE = "../shared/certificates/privateKeys/secc.key"
 SECC_CERTIFICATE_AUTHORITY = "../shared/certificates/certs/v2gRootCACert.pem"
 APP_PROTOCOL_EXIG = "../shared/exig_files/latest_version/V2G_CI_AppProtocol.exig"
 COMMON_MESSAGES_EXIG = "../shared/exig_files/latest_version/V2G_CI_CommonMessages.exig"
+DC_MESSAGES_EXIG = "../shared/exig_files/latest_version/V2G_CI_DC.exig"
 
 
 # Passphrase used to access private key. This parameter shall be stored in a secured directory.

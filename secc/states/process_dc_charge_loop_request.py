@@ -89,6 +89,7 @@ class ProcessDcChargeLoopRequest(DcEVSEState):
         reaction = SendMessage()
         reaction.message = response
         reaction.extra_data = extra_data
+        reaction.msg_type = "DC"
         return reaction
 
     @staticmethod

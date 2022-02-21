@@ -25,6 +25,7 @@ class WaitForDcChargeLoopResponse(DcEVState):
 
     def process_payload(self, payload) -> ReactionToIncomingMessage:
         extra_data = {}
+        reaction = SendMessage()
         if self.session_parameters.charging:
             if hasattr(payload.bpt_dynamic_dc_clres_control_mode, "departure_time"):
                 self.controller.data_model.departure_time = payload.bpt_dynamic_dc_clres_control_mode.departure_time
@@ -51,9 +52,11 @@ class WaitForDcChargeLoopResponse(DcEVState):
                                                                self.controller.data_model.battery_capacity)
             request.evpresent_voltage = self.controller.data_model.evpresent_voltage
             request.meter_info_requested = False
+            reaction.msg_type = "DC"
         else:
             request = self.build_power_delivery_message()
-        reaction = SendMessage()
+            reaction.msg_type = "Common"
+
         reaction.message = request
         reaction.extra_data = extra_data
         return reaction

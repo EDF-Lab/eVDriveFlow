@@ -36,4 +36,5 @@ class WaitForDcChargeParameterDiscoveryResponse(DcEVState):
         reaction = SendMessage()
         reaction.message = request
         reaction.extra_data = extra_data
+        reaction.msg_type = "Common"
         return reaction

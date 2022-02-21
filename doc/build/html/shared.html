@@ -367,15 +367,45 @@ it is formatted using formatException() and appended to the message.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shared.message_handling.</span></span><span class="sig-name descname"><span class="pre">MessageHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.message_handling.MessageHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This is the class that will process every single V2GTP message.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.ap_grammar_cache">
+<span class="sig-name descname"><span class="pre">ap_grammar_cache</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;java</span> <span class="pre">object</span> <span class="pre">'org.openexi.proc.grammars.GrammarCache'&gt;</span></em><a class="headerlink" href="#shared.message_handling.MessageHandler.ap_grammar_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.ap_schema">
+<span class="sig-name descname"><span class="pre">ap_schema</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;java</span> <span class="pre">object</span> <span class="pre">'org.openexi.schema.EXISchema'&gt;</span></em><a class="headerlink" href="#shared.message_handling.MessageHandler.ap_schema" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.common_grammar_cache">
+<span class="sig-name descname"><span class="pre">common_grammar_cache</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;java</span> <span class="pre">object</span> <span class="pre">'org.openexi.proc.grammars.GrammarCache'&gt;</span></em><a class="headerlink" href="#shared.message_handling.MessageHandler.common_grammar_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.common_schema">
+<span class="sig-name descname"><span class="pre">common_schema</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;java</span> <span class="pre">object</span> <span class="pre">'org.openexi.schema.EXISchema'&gt;</span></em><a class="headerlink" href="#shared.message_handling.MessageHandler.common_schema" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.dc_grammar_cache">
+<span class="sig-name descname"><span class="pre">dc_grammar_cache</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;java</span> <span class="pre">object</span> <span class="pre">'org.openexi.proc.grammars.GrammarCache'&gt;</span></em><a class="headerlink" href="#shared.message_handling.MessageHandler.dc_grammar_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.dc_schema">
+<span class="sig-name descname"><span class="pre">dc_schema</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;java</span> <span class="pre">object</span> <span class="pre">'org.openexi.schema.EXISchema'&gt;</span></em><a class="headerlink" href="#shared.message_handling.MessageHandler.dc_schema" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="shared.message_handling.MessageHandler.decode">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exi_contents</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">org.openexi.schema.org.openexi.schema.EXISchema</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#shared.message_handling.MessageHandler.decode" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exi_contents</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_msg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#shared.message_handling.MessageHandler.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turns encoded EXI bytes to human-readable string. Relies on Java classes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>exi_contents</strong> – The EXI encoded contents.</p></li>
-<li><p><strong>schema</strong> – The EXI schema used.</p></li>
+<li><p><strong>type_msg</strong> – The type of message used.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -386,13 +416,13 @@ it is formatted using formatException() and appended to the message.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="shared.message_handling.MessageHandler.encode">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_contents</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">org.openexi.schema.org.openexi.schema.EXISchema</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#shared.message_handling.MessageHandler.encode" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_contents</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_msg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#shared.message_handling.MessageHandler.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turns a human-readable string to an EXI-encoded string. Relies on Java classes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>xml_contents</strong> – The XML string to be encoded.</p></li>
-<li><p><strong>schema</strong> – The EXI schema used.</p></li>
+<li><p><strong>type_msg</strong> – The type of message used.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -407,8 +437,13 @@ it is formatted using formatException() and appended to the message.</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.exi_to_v2g_msg">
-<span class="sig-name descname"><span class="pre">exi_to_v2g_msg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exi_contents</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#shared.message_handling.MessageHandler.exi_to_v2g_msg" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.exi_to_v2g_common_msg">
+<span class="sig-name descname"><span class="pre">exi_to_v2g_common_msg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exi_contents</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#shared.message_handling.MessageHandler.exi_to_v2g_common_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.exi_to_v2g_dc_msg">
+<span class="sig-name descname"><span class="pre">exi_to_v2g_dc_msg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exi_contents</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#shared.message_handling.MessageHandler.exi_to_v2g_dc_msg" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -464,23 +499,39 @@ it is formatted using formatException() and appended to the message.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.open_exi_schema">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">open_exi_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">org.openexi.schema.org.openexi.schema.EXISchema</span></span></span><a class="headerlink" href="#shared.message_handling.MessageHandler.open_exi_schema" title="Permalink to this definition">¶</a></dt>
-<dd><p>Loads EXISchema. Relies on Java classes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>filepath</strong> – The path to the EXIG file.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>EXISchema – the object containing the schema.</p>
-</dd>
-</dl>
-</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.options">
+<span class="sig-name descname"><span class="pre">options</span></span><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#shared.message_handling.MessageHandler.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.reader">
+<span class="sig-name descname"><span class="pre">reader</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;java</span> <span class="pre">object</span> <span class="pre">'org.openexi.sax.EXIReader'&gt;</span></em><a class="headerlink" href="#shared.message_handling.MessageHandler.reader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.sax_parser_factory">
+<span class="sig-name descname"><span class="pre">sax_parser_factory</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;java</span> <span class="pre">object</span> <span class="pre">'org.apache.xerces.jaxp.SAXParserFactoryImpl'&gt;</span></em><a class="headerlink" href="#shared.message_handling.MessageHandler.sax_parser_factory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.sax_transformer_factory">
+<span class="sig-name descname"><span class="pre">sax_transformer_factory</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;java</span> <span class="pre">object</span> <span class="pre">'javax.xml.transform.sax.SAXTransformerFactory'&gt;</span></em><a class="headerlink" href="#shared.message_handling.MessageHandler.sax_transformer_factory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="shared.message_handling.MessageHandler.supported_app_to_exi">
 <span class="sig-name descname"><span class="pre">supported_app_to_exi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_contents</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#shared.message_handling.MessageHandler.supported_app_to_exi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.transformer_handler">
+<span class="sig-name descname"><span class="pre">transformer_handler</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;java</span> <span class="pre">object</span> <span class="pre">'com.sun.org.apache.xalan.internal.xsltc.trax.TransformerHandlerImpl'&gt;</span></em><a class="headerlink" href="#shared.message_handling.MessageHandler.transformer_handler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.transmogrifier">
+<span class="sig-name descname"><span class="pre">transmogrifier</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;java</span> <span class="pre">object</span> <span class="pre">'org.openexi.sax.Transmogrifier'&gt;</span></em><a class="headerlink" href="#shared.message_handling.MessageHandler.transmogrifier" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -498,8 +549,13 @@ it is formatted using formatException() and appended to the message.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.v2g_msg_to_exi">
-<span class="sig-name descname"><span class="pre">v2g_msg_to_exi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_contents</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#shared.message_handling.MessageHandler.v2g_msg_to_exi" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.v2g_common_msg_to_exi">
+<span class="sig-name descname"><span class="pre">v2g_common_msg_to_exi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_contents</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#shared.message_handling.MessageHandler.v2g_common_msg_to_exi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.message_handling.MessageHandler.v2g_dc_msg_to_exi">
+<span class="sig-name descname"><span class="pre">v2g_dc_msg_to_exi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_contents</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#shared.message_handling.MessageHandler.v2g_dc_msg_to_exi" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -511,10 +567,51 @@ it is formatted using formatException() and appended to the message.</p>
 <p>This is a singleton design pattern class.</p>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="shared.message_handling.open_exi_schema">
+<span class="sig-prename descclassname"><span class="pre">shared.message_handling.</span></span><span class="sig-name descname"><span class="pre">open_exi_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">org.openexi.schema.org.openexi.schema.EXISchema</span></span></span><a class="headerlink" href="#shared.message_handling.open_exi_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads EXISchema. Relies on Java classes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> – The path to the EXIG file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>EXISchema – the object containing the schema.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="module-shared.messages">
 <span id="shared-messages-module"></span><h2>shared.messages module<a class="headerlink" href="#module-shared.messages" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-messages"></span><dl class="py class">
+<dt class="sig sig-object py" id="shared.messages.EXIDCMessage">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shared.messages.</span></span><span class="sig-name descname"><span class="pre">EXIDCMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.messages.EXIDCMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">scapy.base_classes.Gen</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">scapy.packet.Packet</span></code>]</p>
+<p>This is a class that represents the messages that have an EXI payload. Inherits from V2GTPMessage.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.messages.EXIDCMessage.aliastypes">
+<span class="sig-name descname"><span class="pre">aliastypes</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;class</span> <span class="pre">'shared.messages.EXIDCMessage'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'shared.messages.V2GTPMessage'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'scapy.packet.Packet'&gt;]</span></em><a class="headerlink" href="#shared.messages.EXIDCMessage.aliastypes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.messages.EXIDCMessage.fields_desc">
+<span class="sig-name descname"><span class="pre">fields_desc</span></span><em class="property"><span class="pre">:</span> <span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyField</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).protocolVersion&gt;,</span> <span class="pre">&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).inverseProtocolVersion&gt;,</span> <span class="pre">&lt;XShortEnumField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).payloadType&gt;]</span></em><a class="headerlink" href="#shared.messages.EXIDCMessage.fields_desc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shared.messages.EXIDCMessage.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shared.messages.EXIDCMessage.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shared.messages.EXIDCMessage.payload_guess">
+<span class="sig-name descname"><span class="pre">payload_guess</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">Packet</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[({'payloadType':</span> <span class="pre">32772},</span> <span class="pre">&lt;class</span> <span class="pre">'shared.payloads.EXIPayload'&gt;)]</span></em><a class="headerlink" href="#shared.messages.EXIDCMessage.payload_guess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="shared.messages.EXIMessage">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">shared.messages.</span></span><span class="sig-name descname"><span class="pre">EXIMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shared.messages.EXIMessage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">scapy.base_classes.Gen</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">scapy.packet.Packet</span></code>]</p>
@@ -526,7 +623,7 @@ it is formatted using formatException() and appended to the message.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="shared.messages.EXIMessage.fields_desc">
-<span class="sig-name descname"><span class="pre">fields_desc</span></span><em class="property"><span class="pre">:</span> <span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyField</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,SDPMessage).protocolVersion&gt;,</span> <span class="pre">&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,SDPMessage).inverseProtocolVersion&gt;,</span> <span class="pre">&lt;XShortEnumField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,SDPMessage).payloadType&gt;]</span></em><a class="headerlink" href="#shared.messages.EXIMessage.fields_desc" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fields_desc</span></span><em class="property"><span class="pre">:</span> <span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyField</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).protocolVersion&gt;,</span> <span class="pre">&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).inverseProtocolVersion&gt;,</span> <span class="pre">&lt;XShortEnumField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).payloadType&gt;]</span></em><a class="headerlink" href="#shared.messages.EXIMessage.fields_desc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -553,7 +650,7 @@ it is formatted using formatException() and appended to the message.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="shared.messages.SDPMessage.fields_desc">
-<span class="sig-name descname"><span class="pre">fields_desc</span></span><em class="property"><span class="pre">:</span> <span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyField</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,SDPMessage).protocolVersion&gt;,</span> <span class="pre">&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,SDPMessage).inverseProtocolVersion&gt;,</span> <span class="pre">&lt;XShortEnumField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,SDPMessage).payloadType&gt;]</span></em><a class="headerlink" href="#shared.messages.SDPMessage.fields_desc" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fields_desc</span></span><em class="property"><span class="pre">:</span> <span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyField</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).protocolVersion&gt;,</span> <span class="pre">&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).inverseProtocolVersion&gt;,</span> <span class="pre">&lt;XShortEnumField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).payloadType&gt;]</span></em><a class="headerlink" href="#shared.messages.SDPMessage.fields_desc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -580,7 +677,7 @@ it is formatted using formatException() and appended to the message.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="shared.messages.SupportedAppMessage.fields_desc">
-<span class="sig-name descname"><span class="pre">fields_desc</span></span><em class="property"><span class="pre">:</span> <span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyField</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,SDPMessage).protocolVersion&gt;,</span> <span class="pre">&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,SDPMessage).inverseProtocolVersion&gt;,</span> <span class="pre">&lt;XShortEnumField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,SDPMessage).payloadType&gt;]</span></em><a class="headerlink" href="#shared.messages.SupportedAppMessage.fields_desc" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fields_desc</span></span><em class="property"><span class="pre">:</span> <span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyField</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).protocolVersion&gt;,</span> <span class="pre">&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).inverseProtocolVersion&gt;,</span> <span class="pre">&lt;XShortEnumField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).payloadType&gt;]</span></em><a class="headerlink" href="#shared.messages.SupportedAppMessage.fields_desc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -607,7 +704,7 @@ it is formatted using formatException() and appended to the message.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="shared.messages.V2GTPMessage.fields_desc">
-<span class="sig-name descname"><span class="pre">fields_desc</span></span><em class="property"><span class="pre">:</span> <span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyField</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,SDPMessage).protocolVersion&gt;,</span> <span class="pre">&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,SDPMessage).inverseProtocolVersion&gt;,</span> <span class="pre">&lt;XShortEnumField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,SDPMessage).payloadType&gt;]</span></em><a class="headerlink" href="#shared.messages.V2GTPMessage.fields_desc" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fields_desc</span></span><em class="property"><span class="pre">:</span> <span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyField</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).protocolVersion&gt;,</span> <span class="pre">&lt;XByteField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).inverseProtocolVersion&gt;,</span> <span class="pre">&lt;XShortEnumField</span> <span class="pre">(V2GTPMessage,SupportedAppMessage,EXIMessage,EXIDCMessage,SDPMessage).payloadType&gt;]</span></em><a class="headerlink" href="#shared.messages.V2GTPMessage.fields_desc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -882,6 +979,11 @@ really used, to be implemented in later versions.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="shared.reaction_message.ReactionToIncomingMessage.message">
 <em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">message</span></span><a class="headerlink" href="#shared.reaction_message.ReactionToIncomingMessage.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="shared.reaction_message.ReactionToIncomingMessage.msg_type">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">msg_type</span></span><a class="headerlink" href="#shared.reaction_message.ReactionToIncomingMessage.msg_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">

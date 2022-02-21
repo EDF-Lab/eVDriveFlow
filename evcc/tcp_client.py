@@ -23,11 +23,12 @@ from shared.reaction_message import PauseSession, TerminateSession, SendMessage
 from shared.xml_classes.app_protocol import SupportedAppProtocolReq
 from shared.global_values import EVCC_CERTCHAIN, EVCC_KEYFILE, PASSPHRASE, SECC_CERTIFICATE_AUTHORITY
 import asyncio
-from shared.messages import EXIMessage, V2GTPMessage, SupportedAppMessage
+from shared.messages import EXIMessage, V2GTPMessage, SupportedAppMessage, EXIDCMessage
 from shared.log import logger
 from evcc.event_handler import KeyboardListener
 from shared.xml_classes.common_messages import SessionStopReq, MessageHeaderType, ChargingSessionType
 import time
+import hexdump
 
 
 class TCPClientProtocol(asyncio.Protocol):
@@ -61,6 +62,8 @@ class TCPClientProtocol(asyncio.Protocol):
         logger.info("Received response from %s.", addr)
         if self.session.state == "WaitForSupportedAppProtocolRes":
             packet = SupportedAppMessage(data)
+        elif "Dc" in self.session.state:
+            packet = EXIDCMessage(data)
         else:
             packet = EXIMessage(data)
         self.process_incoming_message(packet)
@@ -88,10 +91,15 @@ class TCPClientProtocol(asyncio.Protocol):
         if self.message_handler.is_valid(v2gtp_message):
             payload = v2gtp_message.payload.getfieldval("payloadContent")
             message_type = v2gtp_message.get_payload_type()
+            logger.info("Payload type: " + str(message_type))
             if message_type == 0x8001:
                 xml = self.message_handler.exi_to_supported_app(payload)
+            elif message_type == 0x8004:
+                xml = self.message_handler.exi_to_v2g_dc_msg(payload)
+            elif message_type == 0x8002:
+                xml = self.message_handler.exi_to_v2g_common_msg(payload)
             else:
-                xml = self.message_handler.exi_to_v2g_msg(payload)
+                raise Exception("Unknown payload type")
 
             xml_object = self.message_handler.unmarshall(xml)
             request_type = type(xml_object).__name__
@@ -126,11 +134,22 @@ class TCPClientProtocol(asyncio.Protocol):
             else:
                 request = reaction.message
                 xml_string = self.message_handler.marshall(request)
-                exi = self.message_handler.v2g_msg_to_exi(xml_string)
-                if "Dc" in type(xml_string).__name__:
-                    message = bytes(EXIMessage(payloadType=0x8004) / EXIPayload(payloadContent=exi))
-                else:
+                logger.debug("XML to be encoded: " + xml_string)
+                if reaction.msg_type == "DC":
+                    exi = self.message_handler.v2g_dc_msg_to_exi(xml_string)
+                    message = bytes(EXIDCMessage()/EXIPayload(payloadContent=exi))
+                    logger.debug("Encoded EXI message: " + hexdump.dump(exi, len(exi), ' '))
+                elif reaction.msg_type == "Common":
+                    exi = self.message_handler.v2g_common_msg_to_exi(xml_string)
                     message = bytes(EXIMessage()/EXIPayload(payloadContent=exi))
+                    logger.debug("Encoded EXI message: " + hexdump.dump(exi, len(exi), ' '))
+                elif reaction.msg_type == "SupportedAppProtocol":
+                    exi = self.message_handler.supported_app_to_exi(xml_string)
+                    message = bytes(SupportedAppMessage() / EXIPayload(payloadContent=exi))
+                    logger.debug("Encoded EXI message: " + hexdump.dump(exi, len(exi), ' '))
+                else:
+                    raise Exception("Unknown message type")
+
             self.session.reset_sequence_timer()
             self.session.message_timer.start()
             self.send(xml_string, message, request)

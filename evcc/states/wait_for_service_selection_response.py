@@ -32,4 +32,5 @@ class WaitForServiceSelectionResponse(EVState):
         reaction = SendMessage()
         reaction.extra_data = extra_data
         reaction.message = request
+        reaction.msg_type = "DC"
         return reaction

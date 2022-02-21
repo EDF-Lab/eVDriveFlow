@@ -31,4 +31,5 @@ class WaitForDcWeldingDetectionResponse(DcEVState):
         request.evtermination_explanation = "End_of_charge"
         reaction = SendMessage()
         reaction.message = request
+        reaction.msg_type = "Common"
         return reaction

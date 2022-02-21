@@ -61,6 +61,14 @@ class EXIMessage(V2GTPMessage):
         raise NotImplementedError
 
 
+class EXIDCMessage(V2GTPMessage):
+    """This is a class that represents the messages that have an EXI payload. Inherits from V2GTPMessage.
+
+    """
+    def fill(self):
+        raise NotImplementedError
+
+
 class SDPMessage(V2GTPMessage):
     """This is a class that represents SECC Discovery Protocol messages. Inherits from V2GTPMessage.
 
@@ -75,6 +83,7 @@ class SDPMessage(V2GTPMessage):
 # the payloadType when creating a new message.
 bind_layers(EXIMessage, EXIPayload, {"payloadType": 0x8002})
 bind_layers(SupportedAppMessage, EXIPayload, {"payloadType": 0x8001})
+bind_layers(EXIDCMessage, EXIPayload, {"payloadType": 0x8004})
 bind_layers(SDPMessage, SDPReqPayload, {'payloadType': 0x9000})
 bind_layers(SDPMessage, SDPResPayload, {'payloadType': 0x9001})
 bind_layers(UDP, SDPMessage, {"dport": UDP_SERVER_PORT})
