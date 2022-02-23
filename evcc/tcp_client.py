@@ -179,7 +179,7 @@ class TCPClientProtocol(asyncio.Protocol):
         request.header = MessageHeaderType(self.session.session_parameters.session_id, int(time.time()))
         request.charging_session = ChargingSessionType.TERMINATE
         xml_string = self.message_handler.marshall(request)
-        exi = self.message_handler.v2g_msg_to_exi(xml_string)
+        exi = self.message_handler.v2g_common_msg_to_exi(xml_string)
         message = EXIMessage()/EXIPayload(payloadContent=exi)
         return xml_string, bytes(message), request
 
