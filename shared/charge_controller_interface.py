@@ -22,9 +22,9 @@ class ChargeControllerInterface(PhysicalInterface):
     """This is the class that will interface with the card driver. Inherits from PhysicalInterface.
 
     """
-    def __init__(self, ip_address: str, port: int):
+    def __init__(self, ip_address: str, port: int, machine_type: str):
         self.__helper = ChargeControllerTCPClientHelper(ip_address, port)
-        super(ChargeControllerInterface, self).__init__()
+        super(ChargeControllerInterface, self).__init__(machine_type)
 
     async def update_pwm(self):
         while True:

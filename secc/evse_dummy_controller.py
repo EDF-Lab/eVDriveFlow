@@ -23,6 +23,7 @@ from shared.xml_classes.dc import BptDcCpdresEnergyTransferMode, RationalNumberT
     BptDynamicDcClresControlMode
 from dataclasses import dataclass, field
 from shared.charge_controller_interface import ChargeControllerInterface
+from shared.physical_interface import PhysicalInterface
 
 
 class EVSEDummyController(IEVSEController):
@@ -33,7 +34,8 @@ class EVSEDummyController(IEVSEController):
         super(EVSEDummyController, self).__init__(EVSEEmulator(evsemaximum_voltage=DcRationalNumberType(2, 4),
                                                                evseminimum_voltage=DcRationalNumberType(0, 250),
                                                                evsemaximum_charge_power=DcRationalNumberType(3, 11),
-                                                               evseminimum_charge_power=DcRationalNumberType(0, 500)))
+                                                               evseminimum_charge_power=DcRationalNumberType(0, 500)),
+                                                  PhysicalInterface("evse"))
 
     def set_machine(self):
         if self.virtual_mode:
@@ -45,7 +47,7 @@ class EVSEDummyController(IEVSEController):
                 ["stop_charge", "C", "B", None, None, None, "set_b"]
             ]
         else:
-            self.state_machine = ChargeControllerInterface("169.254.43.2", 12500)
+            self.state_machine = ChargeControllerInterface("169.254.43.20", 12500, "evse")
             transitions = [
                 ["plug", "A", "B", "is_state_b", None, None, 'set_pwm'],
                 ["unplug", "B", "A", "is_state_a"],

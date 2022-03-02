@@ -24,6 +24,7 @@ from shared.xml_classes.common_messages import RationalNumberType
 from dataclasses import dataclass, field
 from shared.utils import rational_to_float, float_to_dc_rational
 from shared.charge_controller_interface import ChargeControllerInterface
+from shared.physical_interface import PhysicalInterface
 
 
 class EVDummyController(IEVController):
@@ -33,7 +34,8 @@ class EVDummyController(IEVController):
     def __init__(self):
         super(EVDummyController, self).__init__(EVEmulator(battery_capacity=DcRationalNumberType(3, 67),
                                                            evmaximum_voltage=DcRationalNumberType(0, 360),
-                                                           evminimum_voltage=DcRationalNumberType(0, 310)))
+                                                           evminimum_voltage=DcRationalNumberType(0, 310)),
+                                                PhysicalInterface("ev"))
 
     def set_machine(self):
         # Transitions syntax: 
@@ -47,7 +49,7 @@ class EVDummyController(IEVController):
                 ["stop_charge", "C", "B", None, None, None, "set_b"]
             ]
         else:
-            self.state_machine = ChargeControllerInterface("169.254.43.3", 12500)
+            self.state_machine = ChargeControllerInterface("169.254.43.30", 12500, "ev")
             transitions = [
                 #["plug", "A", "B", "is_state_a", None, None, "set_b"],
                 ["plug", "E", "B", "is_state_b", None, None, "set_b"],

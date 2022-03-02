@@ -12,6 +12,7 @@
 
 """
 
+from platform import machine
 from shared.physical_interface import PhysicalInterface
 from dataclasses import dataclass
 
@@ -22,8 +23,8 @@ class ControllerInterface:
 
     """
     data_model: dataclass
+    state_machine: PhysicalInterface
     virtual_mode: bool = None
-    state_machine: PhysicalInterface = PhysicalInterface()
 
     def __post_init__(self):
         self.set_settings()

@@ -20,19 +20,30 @@ class PhysicalInterface(AsyncMachine):
     """This is a state machine class that will simulate the changes at a physical level.
 
     """
-    def __init__(self):
+    def __init__(self, machine_type : str):
         self.notification_type = "61851"
         self.__pwm = 100
         a_state = "A"
         b_state = "B"
         c_state = "C"
         e_state = "E"
-        self.state = e_state
+        if machine_type == "ev":
+            self.state = e_state
+        elif machine_type == "evse":
+            self.state = a_state
+        else:
+            raise "Unknown machine type: " + str(machine_type)
+        
         states = [a_state, b_state, c_state, e_state]
         self._observers = []
-        super(PhysicalInterface, self).__init__(states=states, initial=e_state)
+        super(PhysicalInterface, self).__init__(states=states, initial=self.state)
         # Initial physical state
-        self.set_ev_state("B")
+        if machine_type == "ev":
+            self.set_ev_state("B")
+        elif machine_type == "evse":
+            self.set_ev_state("A")
+        else:
+            raise "Unknown machine type: " + str(machine_type)
 
     @property
     def pwm(self):
