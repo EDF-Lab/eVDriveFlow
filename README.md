@@ -5,7 +5,9 @@
 ============
 
 
-This project implements the ISO 15118-20 using *Python*.
+This project is a *Python* implementation of the communication prococol between charging station communication controllers (SECC) and electric vehicles communication controllers (EVCC) based on ISO 15118-20 FDIS version. 
+
+This implementation integrates a model of the EV charging process in order to run a charging session. Using the provided interfaces, the project provides examples of Graphical user interfaces.
 
 Supported features:
 - DC Bidirectional Power Transfer BPT with dynamic control mode.
@@ -33,7 +35,7 @@ Next, to activate the command **conda**, execute the line below:
 ```bash
 export PATH="[YOUR PATH OF INSTALLED MINICONDA]/bin":$PATH
 ```
-Example path: */home/trang/miniconda3/bin/*
+Example path: */home/miniconda3/bin/*
 
 To install conda's shell functions for easier access, once **conda** command is activated, then: 
 ```bash
@@ -62,7 +64,7 @@ For Ubuntu/Debian, you can follow instructions [here](https://www.digitalocean.c
 
 ### 4. Create virtual environment and install dependencies
 
-First of all, it is necessary to download the project Raiden V2X from github.
+First of all, it is necessary to download/clone the project from github.
 
 In Terminal:
 ```bash
@@ -97,7 +99,7 @@ Then choose the package **python** of **edf15118-20** virtual environment.
 
 For example, the complete Python Interpreter path is: 
 
-*/home/trang/miniconda3/envs/edf15118-20/bin/python*
+*/home/miniconda3/envs/edf15118-20/bin/python*
 
 ![](https://raw.githubusercontent.com/EDF-Lab/EDF/main/doc/figures/interpreter.png)
 
