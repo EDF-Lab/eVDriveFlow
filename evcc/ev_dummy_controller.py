@@ -104,7 +104,7 @@ class EVEmulator(DcEVDataModel):
 
     def __post_init__(self):
         self.supported_app_protocols = [AppProtocolType(protocol_namespace=V2G_CI_MSG_DC_NAMESPACE,
-                                                        version_number_major=2, version_number_minor=0,
+                                                        version_number_major=1, version_number_minor=0,
                                                         schema_id=1, priority=1)]
         self.evccid = "EDFVFR123456789ZZZZ8" # EDF-V-FR123456789ZZZZ-8
         self.authorization_services = [AuthorizationType.EIM]
