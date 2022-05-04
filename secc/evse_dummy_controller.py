@@ -100,7 +100,7 @@ class EVSEEmulator(DcEVSEDataModel):
         self.evseid = "ZZ000000"
         self.departure_time = 0
         self.supported_app_protocols = [AppProtocolType(protocol_namespace=V2G_CI_MSG_DC_NAMESPACE,
-                                                        version_number_major=2, version_number_minor=0, priority=1)]
+                                                        version_number_major=1, version_number_minor=0, priority=1)]
         self.authorization_services = [AuthorizationType.EIM]
         self.certificate_installation_service = False
         self.energy_transfer_service_list = ServiceListType([ServiceType(2, False), ServiceType(6, False)])
