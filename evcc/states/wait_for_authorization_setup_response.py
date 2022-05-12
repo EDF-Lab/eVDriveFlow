@@ -15,6 +15,7 @@
 from evcc.states.ev_state import EVState
 from shared.reaction_message import ReactionToIncomingMessage, SendMessage
 import time
+from shared.log import logger
 
 from shared.xml_classes.common_messages import AuthorizationReq, AuthorizationType, MessageHeaderType
 
@@ -26,8 +27,10 @@ class WaitForAuthorizationSetupResponse(EVState):
     def process_payload(self, payload) -> ReactionToIncomingMessage:
         extra_data = {}
         request = AuthorizationReq()
+        logger.error(str(payload))
+        logger.error(str(self.controller.data_model.authorization_services))
         for _ in payload.authorization_services:
-            if _ in self.controller.data_model.authorization_services and payload.eim_asres_authorization_mode == "":
+            if _ in self.controller.data_model.authorization_services: #TODO: remove eim_asres_authorization_mode
                 request.selected_authorization_service = AuthorizationType.EIM
                 request.eim_areq_authorization_mode = ""
                 extra_data["selected_authorization_service"] = AuthorizationType.EIM

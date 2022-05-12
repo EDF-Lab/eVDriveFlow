@@ -858,7 +858,6 @@ class DcChargeLoopReqType(ChargeLoopReqType):
             "name": "BPT_Dynamic_DC_CLReqControlMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:DC",
-            "required": True,
         }
     )
     dynamic_dc_clreq_control_mode: Optional[DynamicDcClreqControlMode] = field(
@@ -867,7 +866,6 @@ class DcChargeLoopReqType(ChargeLoopReqType):
             "name": "Dynamic_DC_CLReqControlMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:DC",
-            "required": True,
         }
     )
     bpt_scheduled_dc_clreq_control_mode: Optional[BptScheduledDcClreqControlMode] = field(
@@ -876,7 +874,6 @@ class DcChargeLoopReqType(ChargeLoopReqType):
             "name": "BPT_Scheduled_DC_CLReqControlMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:DC",
-            "required": True,
         }
     )
     scheduled_dc_clreq_control_mode: Optional[ScheduledDcClreqControlMode] = field(
@@ -885,7 +882,6 @@ class DcChargeLoopReqType(ChargeLoopReqType):
             "name": "Scheduled_DC_CLReqControlMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:DC",
-            "required": True,
         }
     )
     clreq_control_mode: Optional[ClreqControlMode] = field(
@@ -894,7 +890,6 @@ class DcChargeLoopReqType(ChargeLoopReqType):
             "name": "CLReqControlMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:CommonTypes",
-            "required": True,
         }
     )
 
@@ -955,7 +950,6 @@ class DcChargeLoopResType(ChargeLoopResType):
             "name": "BPT_Dynamic_DC_CLResControlMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:DC",
-            "required": True,
         }
     )
     dynamic_dc_clres_control_mode: Optional[DynamicDcClresControlMode] = field(
@@ -964,7 +958,6 @@ class DcChargeLoopResType(ChargeLoopResType):
             "name": "Dynamic_DC_CLResControlMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:DC",
-            "required": True,
         }
     )
     bpt_scheduled_dc_clres_control_mode: Optional[BptScheduledDcClresControlMode] = field(
@@ -973,7 +966,6 @@ class DcChargeLoopResType(ChargeLoopResType):
             "name": "BPT_Scheduled_DC_CLResControlMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:DC",
-            "required": True,
         }
     )
     scheduled_dc_clres_control_mode: Optional[ScheduledDcClresControlMode] = field(
@@ -982,7 +974,6 @@ class DcChargeLoopResType(ChargeLoopResType):
             "name": "Scheduled_DC_CLResControlMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:DC",
-            "required": True,
         }
     )
     clres_control_mode: Optional[ClresControlMode] = field(
@@ -991,7 +982,6 @@ class DcChargeLoopResType(ChargeLoopResType):
             "name": "CLResControlMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:CommonTypes",
-            "required": True,
         }
     )
 
@@ -1007,7 +997,6 @@ class DcChargeParameterDiscoveryReqType(ChargeParameterDiscoveryReqType):
             "name": "BPT_DC_CPDReqEnergyTransferMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:DC",
-            "required": True,
         }
     )
     dc_cpdreq_energy_transfer_mode: Optional[DcCpdreqEnergyTransferMode] = field(
@@ -1016,7 +1005,6 @@ class DcChargeParameterDiscoveryReqType(ChargeParameterDiscoveryReqType):
             "name": "DC_CPDReqEnergyTransferMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:DC",
-            "required": True,
         }
     )
 
@@ -1032,7 +1020,6 @@ class DcChargeParameterDiscoveryResType(ChargeParameterDiscoveryResType):
             "name": "BPT_DC_CPDResEnergyTransferMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:DC",
-            "required": True,
         }
     )
     dc_cpdres_energy_transfer_mode: Optional[DcCpdresEnergyTransferMode] = field(
@@ -1041,7 +1028,6 @@ class DcChargeParameterDiscoveryResType(ChargeParameterDiscoveryResType):
             "name": "DC_CPDResEnergyTransferMode",
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:DC",
-            "required": True,
         }
     )
 

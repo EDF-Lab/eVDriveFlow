@@ -47,7 +47,7 @@ logger.setLevel(logging.DEBUG)
 
 # Create console handler with a higher log level
 ch = logging.StreamHandler()
-ch.setLevel(logging.INFO) # Change this setting for detailed log
+ch.setLevel(logging.DEBUG) # Change this setting for detailed log
 ch.setFormatter(CustomFormatter())
 logger.addHandler(ch)
 

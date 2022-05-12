@@ -100,7 +100,7 @@ class TCPClientProtocol(asyncio.Protocol):
                 xml = self.message_handler.exi_to_v2g_common_msg(payload)
             else:
                 raise Exception("Unknown payload type")
-
+            logger.debug("EXI message received: " + hexdump.dump(payload, len(payload), ' '))
             xml_object = self.message_handler.unmarshall(xml)
             request_type = type(xml_object).__name__
             logger.info("Received %s.", type(xml_object).__name__)
@@ -138,17 +138,15 @@ class TCPClientProtocol(asyncio.Protocol):
                 if reaction.msg_type == "DC":
                     exi = self.message_handler.v2g_dc_msg_to_exi(xml_string)
                     message = bytes(EXIDCMessage()/EXIPayload(payloadContent=exi))
-                    logger.debug("Encoded EXI message: " + hexdump.dump(exi, len(exi), ' '))
                 elif reaction.msg_type == "Common":
                     exi = self.message_handler.v2g_common_msg_to_exi(xml_string)
                     message = bytes(EXIMessage()/EXIPayload(payloadContent=exi))
-                    logger.debug("Encoded EXI message: " + hexdump.dump(exi, len(exi), ' '))
                 elif reaction.msg_type == "SupportedAppProtocol":
                     exi = self.message_handler.supported_app_to_exi(xml_string)
                     message = bytes(SupportedAppMessage() / EXIPayload(payloadContent=exi))
-                    logger.debug("Encoded EXI message: " + hexdump.dump(exi, len(exi), ' '))
                 else:
                     raise Exception("Unknown message type")
+                logger.debug("Encoded EXI message: " + hexdump.dump(exi, len(exi), ' '))
 
             self.session.reset_sequence_timer()
             self.session.message_timer.start()
@@ -211,7 +209,7 @@ class TCPClientProtocol(asyncio.Protocol):
         """
         self.transport.write(message)
         logger.info("Sent %s.", type(request).__name__)
-        logger.debug("Message contents: %s", xml_string)
+
 
 
 def get_ssl_context() -> ssl.SSLContext:

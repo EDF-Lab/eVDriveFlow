@@ -93,7 +93,7 @@ class TCPServerProtocol(asyncio.Protocol):
                 xml = self.message_handler.exi_to_v2g_common_msg(payload)
             else:
                 raise Exception("Unknown payload type")
-            logger.debug("XML decoded: " + xml)
+            logger.debug("EXI message received: " + hexdump.dump(payload, len(payload), ' '))
             xml_object = self.message_handler.unmarshall(xml)
             request_type = type(xml_object).__name__
             logger.info("Received %s.", request_type)
@@ -120,6 +120,7 @@ class TCPServerProtocol(asyncio.Protocol):
         :return:
         """
         xml = self.message_handler.marshall(reaction.message)
+        logger.debug("received XML Message: %s", xml)
         if reaction.msg_type == "SupportedAppProtocol":
             exi = self.message_handler.supported_app_to_exi(xml)
         elif reaction.msg_type == "DC":

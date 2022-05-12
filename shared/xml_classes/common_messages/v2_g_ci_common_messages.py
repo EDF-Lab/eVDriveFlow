@@ -979,7 +979,7 @@ class SignedMeteringDataType:
             "namespace": "urn:iso:std:iso:15118:-20:CommonMessages",
         }
     )
-    dynamic_smdtcontrol_mode: Optional[object] = field(
+    dynamic_smdtcontrol_mode: Optional[DynamicSmdtcontrolModeType] = field(
         default=None,
         metadata={
             "name": "Dynamic_SMDTControlMode",
@@ -1239,7 +1239,7 @@ class AuthorizationSetupResType(V2GresponseType):
             "required": True,
         }
     )
-    eim_asres_authorization_mode: Optional[object] = field(
+    eim_asres_authorization_mode: Optional[EimAsresAuthorizationModeType] = field(
         default=None,
         metadata={
             "name": "EIM_ASResAuthorizationMode",
@@ -1757,7 +1757,7 @@ class AuthorizationReqType(V2GrequestType):
             "required": True,
         }
     )
-    eim_areq_authorization_mode: Optional[object] = field(
+    eim_areq_authorization_mode: Optional[EimAreqAuthorizationModeType] = field(
         default=None,
         metadata={
             "name": "EIM_AReqAuthorizationMode",
@@ -1841,7 +1841,7 @@ class EvpowerProfileType:
             "required": True,
         }
     )
-    dynamic_evpptcontrol_mode: Optional[object] = field(
+    dynamic_evpptcontrol_mode: Optional[DynamicEvpptcontrolModeType] = field(
         default=None,
         metadata={
             "name": "Dynamic_EVPPTControlMode",
@@ -2414,7 +2414,7 @@ class ScheduleExchangeReqType(V2GrequestType):
             "namespace": "urn:iso:std:iso:15118:-20:CommonMessages",
             "required": True,
             "min_inclusive": 12,
-            "max_inclusive": 2048,
+            "max_inclusive": 1024,
         }
     )
     dynamic_sereq_control_mode: Optional[DynamicSereqControlModeType] = field(
@@ -2467,6 +2467,14 @@ class ScheduleExchangeResType(V2GresponseType):
             "type": "Element",
             "namespace": "urn:iso:std:iso:15118:-20:CommonMessages",
             "required": True,
+        }
+    )
+    go_to_pause: Optional[bool] = field(
+        default=None,
+        metadata={
+            "name": "GoToPause",
+            "type": "Element",
+            "namespace": "urn:iso:std:iso:15118:-20:CommonMessages",
         }
     )
     dynamic_seres_control_mode: Optional[DynamicSeresControlModeType] = field(

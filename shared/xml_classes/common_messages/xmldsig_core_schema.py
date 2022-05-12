@@ -6,20 +6,20 @@ __NAMESPACE__ = "http://www.w3.org/2000/09/xmldsig#"
 
 @dataclass
 class CanonicalizationMethodType:
-    any_element: List[object] = field(
-        default_factory=list,
-        metadata={
-            "type": "Wildcard",
-            "namespace": "##any",
-            "mixed": True,
-        }
-    )
     algorithm: Optional[str] = field(
         default=None,
         metadata={
             "name": "Algorithm",
             "type": "Attribute",
             "required": True,
+        }
+    )
+    content: List[object] = field(
+        default_factory=list,
+        metadata={
+            "type": "Wildcard",
+            "namespace": "##any",
+            "mixed": True,
         }
     )
 
@@ -97,20 +97,20 @@ class DsakeyValueType:
 
 @dataclass
 class DigestMethodType:
-    other_element: List[object] = field(
-        default_factory=list,
-        metadata={
-            "type": "Wildcard",
-            "namespace": "##other",
-            "mixed": True,
-        }
-    )
     algorithm: Optional[str] = field(
         default=None,
         metadata={
             "name": "Algorithm",
             "type": "Attribute",
             "required": True,
+        }
+    )
+    content: List[object] = field(
+        default_factory=list,
+        metadata={
+            "type": "Wildcard",
+            "namespace": "##any",
+            "mixed": True,
         }
     )
 
@@ -134,8 +134,8 @@ class KeyName:
     class Meta:
         namespace = "http://www.w3.org/2000/09/xmldsig#"
 
-    value: Optional[str] = field(
-        default=None,
+    value: str = field(
+        default="",
         metadata={
             "required": True,
         }
@@ -147,8 +147,8 @@ class MgmtData:
     class Meta:
         namespace = "http://www.w3.org/2000/09/xmldsig#"
 
-    value: Optional[str] = field(
-        default=None,
+    value: str = field(
+        default="",
         metadata={
             "required": True,
         }
@@ -157,14 +157,6 @@ class MgmtData:
 
 @dataclass
 class ObjectType:
-    any_element: List[object] = field(
-        default_factory=list,
-        metadata={
-            "type": "Wildcard",
-            "namespace": "##any",
-            "mixed": True,
-        }
-    )
     id: Optional[str] = field(
         default=None,
         metadata={
@@ -184,6 +176,14 @@ class ObjectType:
         metadata={
             "name": "Encoding",
             "type": "Attribute",
+        }
+    )
+    content: List[object] = field(
+        default_factory=list,
+        metadata={
+            "type": "Wildcard",
+            "namespace": "##any",
+            "mixed": True,
         }
     )
 
@@ -276,22 +276,6 @@ class SpkidataType:
 
 @dataclass
 class SignatureMethodType:
-    hmacoutput_length: Optional[int] = field(
-        default=None,
-        metadata={
-            "name": "HMACOutputLength",
-            "type": "Element",
-            "namespace": "http://www.w3.org/2000/09/xmldsig#",
-        }
-    )
-    other_element: List[object] = field(
-        default_factory=list,
-        metadata={
-            "type": "Wildcard",
-            "namespace": "##other",
-            "mixed": True,
-        }
-    )
     algorithm: Optional[str] = field(
         default=None,
         metadata={
@@ -300,18 +284,25 @@ class SignatureMethodType:
             "required": True,
         }
     )
+    content: List[object] = field(
+        default_factory=list,
+        metadata={
+            "type": "Wildcard",
+            "namespace": "##any",
+            "mixed": True,
+            "choices": (
+                {
+                    "name": "HMACOutputLength",
+                    "type": int,
+                    "namespace": "http://www.w3.org/2000/09/xmldsig#",
+                },
+            ),
+        }
+    )
 
 
 @dataclass
 class SignaturePropertyType:
-    other_element: List[object] = field(
-        default_factory=list,
-        metadata={
-            "type": "Wildcard",
-            "namespace": "##other",
-            "mixed": True,
-        }
-    )
     target: Optional[str] = field(
         default=None,
         metadata={
@@ -325,6 +316,14 @@ class SignaturePropertyType:
         metadata={
             "name": "Id",
             "type": "Attribute",
+        }
+    )
+    content: List[object] = field(
+        default_factory=list,
+        metadata={
+            "type": "Wildcard",
+            "namespace": "##any",
+            "mixed": True,
         }
     )
 
@@ -349,28 +348,27 @@ class SignatureValueType:
 
 @dataclass
 class TransformType:
-    other_element: List[object] = field(
-        default_factory=list,
-        metadata={
-            "type": "Wildcard",
-            "namespace": "##other",
-            "mixed": True,
-        }
-    )
-    xpath: List[str] = field(
-        default_factory=list,
-        metadata={
-            "name": "XPath",
-            "type": "Element",
-            "namespace": "http://www.w3.org/2000/09/xmldsig#",
-        }
-    )
     algorithm: Optional[str] = field(
         default=None,
         metadata={
             "name": "Algorithm",
             "type": "Attribute",
             "required": True,
+        }
+    )
+    content: List[object] = field(
+        default_factory=list,
+        metadata={
+            "type": "Wildcard",
+            "namespace": "##any",
+            "mixed": True,
+            "choices": (
+                {
+                    "name": "XPath",
+                    "type": str,
+                    "namespace": "http://www.w3.org/2000/09/xmldsig#",
+                },
+            ),
         }
     )
 
@@ -529,28 +527,24 @@ class X509DataType:
 
 @dataclass
 class KeyValueType:
-    dsakey_value: Optional[DsakeyValue] = field(
-        default=None,
-        metadata={
-            "name": "DSAKeyValue",
-            "type": "Element",
-            "namespace": "http://www.w3.org/2000/09/xmldsig#",
-        }
-    )
-    rsakey_value: Optional[RsakeyValue] = field(
-        default=None,
-        metadata={
-            "name": "RSAKeyValue",
-            "type": "Element",
-            "namespace": "http://www.w3.org/2000/09/xmldsig#",
-        }
-    )
-    other_element: List[object] = field(
+    content: List[object] = field(
         default_factory=list,
         metadata={
             "type": "Wildcard",
-            "namespace": "##other",
+            "namespace": "##any",
             "mixed": True,
+            "choices": (
+                {
+                    "name": "DSAKeyValue",
+                    "type": DsakeyValue,
+                    "namespace": "http://www.w3.org/2000/09/xmldsig#",
+                },
+                {
+                    "name": "RSAKeyValue",
+                    "type": RsakeyValue,
+                    "namespace": "http://www.w3.org/2000/09/xmldsig#",
+                },
+            ),
         }
     )
 
@@ -704,75 +698,56 @@ class RetrievalMethod(RetrievalMethodType):
 
 @dataclass
 class KeyInfoType:
-    key_name: List[str] = field(
-        default_factory=list,
-        metadata={
-            "name": "KeyName",
-            "type": "Element",
-            "namespace": "http://www.w3.org/2000/09/xmldsig#",
-        }
-    )
-    key_value: List[KeyValue] = field(
-        default_factory=list,
-        metadata={
-            "name": "KeyValue",
-            "type": "Element",
-            "namespace": "http://www.w3.org/2000/09/xmldsig#",
-        }
-    )
-    retrieval_method: List[RetrievalMethod] = field(
-        default_factory=list,
-        metadata={
-            "name": "RetrievalMethod",
-            "type": "Element",
-            "namespace": "http://www.w3.org/2000/09/xmldsig#",
-        }
-    )
-    x509_data: List[X509Data] = field(
-        default_factory=list,
-        metadata={
-            "name": "X509Data",
-            "type": "Element",
-            "namespace": "http://www.w3.org/2000/09/xmldsig#",
-        }
-    )
-    pgpdata: List[Pgpdata] = field(
-        default_factory=list,
-        metadata={
-            "name": "PGPData",
-            "type": "Element",
-            "namespace": "http://www.w3.org/2000/09/xmldsig#",
-        }
-    )
-    spkidata: List[Spkidata] = field(
-        default_factory=list,
-        metadata={
-            "name": "SPKIData",
-            "type": "Element",
-            "namespace": "http://www.w3.org/2000/09/xmldsig#",
-        }
-    )
-    mgmt_data: List[str] = field(
-        default_factory=list,
-        metadata={
-            "name": "MgmtData",
-            "type": "Element",
-            "namespace": "http://www.w3.org/2000/09/xmldsig#",
-        }
-    )
-    other_element: List[object] = field(
-        default_factory=list,
-        metadata={
-            "type": "Wildcard",
-            "namespace": "##other",
-            "mixed": True,
-        }
-    )
     id: Optional[str] = field(
         default=None,
         metadata={
             "name": "Id",
             "type": "Attribute",
+        }
+    )
+    content: List[object] = field(
+        default_factory=list,
+        metadata={
+            "type": "Wildcard",
+            "namespace": "##any",
+            "mixed": True,
+            "choices": (
+                {
+                    "name": "KeyName",
+                    "type": str,
+                    "namespace": "http://www.w3.org/2000/09/xmldsig#",
+                },
+                {
+                    "name": "KeyValue",
+                    "type": KeyValue,
+                    "namespace": "http://www.w3.org/2000/09/xmldsig#",
+                },
+                {
+                    "name": "RetrievalMethod",
+                    "type": RetrievalMethod,
+                    "namespace": "http://www.w3.org/2000/09/xmldsig#",
+                },
+                {
+                    "name": "X509Data",
+                    "type": X509Data,
+                    "namespace": "http://www.w3.org/2000/09/xmldsig#",
+                },
+                {
+                    "name": "PGPData",
+                    "type": Pgpdata,
+                    "namespace": "http://www.w3.org/2000/09/xmldsig#",
+                },
+                {
+                    "name": "SPKIData",
+                    "type": Spkidata,
+                    "namespace": "http://www.w3.org/2000/09/xmldsig#",
+                },
+                {
+                    "name": "MgmtData",
+                    "type": str,
+                    "namespace": "http://www.w3.org/2000/09/xmldsig#",
+                },
+            ),
         }
     )
 
@@ -881,7 +856,7 @@ class SignatureType:
             "namespace": "http://www.w3.org/2000/09/xmldsig#",
         }
     )
-    object: List[Object] = field(
+    object_value: List[Object] = field(
         default_factory=list,
         metadata={
             "name": "Object",
