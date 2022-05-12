@@ -13,6 +13,7 @@ dependencies:
   - libstdcxx-ng=9.3.0=hd4cf53a_17
   - ncurses=6.2=he6710b0_1
   - openssl=1.1.1k=h27cfd23_0
+  - pip=21.2.4=py38h06a4308_0
   - python=3.8.10=h12debd9_8
   - readline=8.1=h27cfd23_0
   - sqlite=3.36.0=hc218d9a_0
@@ -24,9 +25,10 @@ dependencies:
     - astroid==2.6.6
     - babel==2.9.1
     - charset-normalizer==2.0.4
-    - click
+    - click==7.1.2
     - cycler==0.10.0
     - docutils==0.17.1
+    - hexdump==3.3
     - idna==3.2
     - imagesize==1.2.0
     - isort==5.9.3
@@ -42,7 +44,6 @@ dependencies:
     - numpy==1.21.1
     - packaging==21.0
     - pillow==8.3.1
-    - pip==21.2.4
     - pygments==2.9.0
     - pyparsing==2.4.7
     - pyqt5==5.15.4
@@ -74,4 +75,4 @@ dependencies:
     - wheel==0.37.0
     - wrapt==1.12.1
     - xsdata==21.8
-prefix: /home/tonyz/miniconda3/envs/edf15118-20
+prefix: /home/oscar/miniconda3/envs/edf15118-20
