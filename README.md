@@ -7,7 +7,7 @@
 
 This project is a *Python* implementation of the communication prococol between charging station communication controllers (SECC) and electric vehicles communication controllers (EVCC) based on ISO 15118-20 FDIS version. 
 
-This implementation integrates a model of the EV charging process in order to run a charging session. Using the provided interfaces, the project provides examples of Graphical user interfaces.
+This implementation integrates a model of the EV charging process in order to run a charging session. The project is coupled to a Graphical user interface to visualize the session charging status.
 
 Supported features:
 - DC Bidirectional Power Transfer BPT with dynamic control mode.
