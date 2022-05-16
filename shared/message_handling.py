@@ -21,7 +21,8 @@ from shared.global_values import PROTOCOL_VERSION
 from shared.log import logger
 import lxml
 from shared.global_values import SDP_PAYLOAD_TYPES, MAX_PAYLOAD_LENGTH, APP_PROTOCOL_EXIG, COMMON_MESSAGES_EXIG, \
-    DC_MESSAGES_EXIG
+    DC_MESSAGES_EXIG, APP_PROTOCOL_XSD, COMMON_MESSAGES_XSD, DC_MESSAGES_XSD
+
 import jpype
 import os
 import jpype.imports
@@ -107,10 +108,9 @@ class MessageHandler(metaclass=Singleton):
     dc_grammar_cache = GrammarCache(dc_schema, options)
 
     def __init__(self):
-        pass
-        # self.supported_app_schema = self.open_exi_schema(APP_PROTOCOL_EXIG)
-        # self.common_messages_schema = self.open_exi_schema(COMMON_MESSAGES_EXIG)
-        # self.dc_messages_schema = self.open_exi_schema(DC_MESSAGES_EXIG)
+        self.xml_SAP_validator = lxml.etree.XMLSchema(file=APP_PROTOCOL_XSD)
+        self.xml_Common_validator = lxml.etree.XMLSchema(file=COMMON_MESSAGES_XSD)
+        self.xml_DC_validator = lxml.etree.XMLSchema(file=DC_MESSAGES_XSD)
 
     def is_valid(self, v2gtp_message: V2GTPMessage) -> bool:
         if self.is_version_valid(v2gtp_message) and self.is_version_valid(v2gtp_message) and \
@@ -185,8 +185,10 @@ class MessageHandler(metaclass=Singleton):
                 t.setGrammarCache(MessageHandler.ap_grammar_cache);
             elif type_msg == "Common":
                 t.setGrammarCache(MessageHandler.common_grammar_cache);
-            else:
+            elif type_msg == "DC":
                 t.setGrammarCache(MessageHandler.dc_grammar_cache);
+            else:
+                raise Exception("Unknown message type")
             t.setOutputStream(output);
             t.encode(InputSource(input));
             result = output.toByteArray()
@@ -217,8 +219,11 @@ class MessageHandler(metaclass=Singleton):
                 r.setGrammarCache(MessageHandler.ap_grammar_cache);
             elif type_msg == "Common":
                 r.setGrammarCache(MessageHandler.common_grammar_cache);
-            else:
+            elif type_msg == "DC":
                 r.setGrammarCache(MessageHandler.dc_grammar_cache);
+            else:
+                raise Exception("Unknown message type")
+
             tf_handler.setResult(StreamResult(stringWriter))
             r.parse(InputSource(input))
             result = stringWriter.getBuffer().toString()
@@ -230,27 +235,41 @@ class MessageHandler(metaclass=Singleton):
             return str(result)
 
     def supported_app_to_exi(self, xml_contents) -> bytes:
-        logger.info("Supported App Protocol message encoded")
-        return self.encode(xml_contents, "SAP")
+        logger.info("Supported App Protocol message to be encoded")
+        if self.is_xml_valid(xml_contents, 'SAP'):
+            logger.info("Message is valid against Schema XSD")
+            return self.encode(xml_contents, "SAP")
+        else:
+            raise Exception("XML is not valid against schema")
 
     def v2g_common_msg_to_exi(self, xml_contents) -> bytes:
-        logger.info("Common message encoded")
-        return self.encode(xml_contents, "Common")
+        logger.info("Common message to be encoded")
+        if self.is_xml_valid(xml_contents, 'Common'):
+            logger.info("Message is valid against Schema XSD")
+            return self.encode(xml_contents, "Common")
+        else:
+            raise Exception("XML is not valid against schema")
+
 
     def v2g_dc_msg_to_exi(self, xml_contents) -> bytes:
-        logger.info("DC message encoded")
-        return self.encode(xml_contents, "DC")
+        logger.info("DC message to be encoded")
+        if self.is_xml_valid(xml_contents, 'DC'):
+            logger.info("Message is valid against Schema XSD")
+            return self.encode(xml_contents, "DC")
+        else:
+            raise Exception("XML is not valid against schema")
+
 
     def exi_to_supported_app(self, exi_contents) -> str:
-        logger.info("Supported App Protocol message decoded")
+        logger.info("Supported App Protocol message to be decoded")
         return self.decode(exi_contents, "SAP")
 
     def exi_to_v2g_common_msg(self, exi_contents) -> str:
-        logger.info("Common message decoded")
+        logger.info("Common message to be decoded")
         return self.decode(exi_contents, "Common")
 
     def exi_to_v2g_dc_msg(self, exi_contents) -> str:
-        logger.info("DC message decoded")
+        logger.info("DC message to be decoded")
         return self.decode(exi_contents, "DC")
 
     @staticmethod
@@ -276,27 +295,23 @@ class MessageHandler(metaclass=Singleton):
         xml_string = serializer.render(message)
         return xml_string
 
-    @staticmethod
-    def is_xml_valid(xml, path_app_protocol_xsd, path_common_messages_xsd, path_dc_messages_xsd):
+    def is_xml_valid(self, xml, msg_type):
         """This method allows to check if an XML message is valid using the corresponding XSD.
 
         :param xml: Input XML file
-        :param path_app_protocol_xsd: App Protocol XSD Path
-        :param path_common_messages_xsd: Common Messages XSD Path
-        :param path_dc_messages_xsd: DC Messages XSD Path
+        :param msg_type: message type based on schema
         :return: boolean statement - true: valid, false: invalid
         """
         is_valid = False
         xml_file = lxml.etree.XML(xml.encode("ascii"))
-        if "AppProtocol" in xml:
-            filename = path_app_protocol_xsd
-        elif "DC" in xml:
-            filename = path_common_messages_xsd
-        else:
-            filename = path_dc_messages_xsd
-        xml_validator = lxml.etree.XMLSchema(file=filename)
+        if msg_type == 'SAP':
+            validator = self.xml_SAP_validator
+        elif msg_type == 'Common':
+            validator = self.xml_Common_validator
+        elif msg_type == 'DC':
+            validator = self.xml_DC_validator
         try:
-            xml_validator.assertValid(xml_file)
+            validator.assertValid(xml_file)
             is_valid = True
         except lxml.etree.DocumentInvalid as e:
             logger.warn(e)
