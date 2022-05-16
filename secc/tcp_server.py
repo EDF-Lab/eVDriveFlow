@@ -148,6 +148,7 @@ class TCPServerProtocol(asyncio.Protocol):
                 message = bytes(EXIMessage() / EXIPayload(payloadContent=exi))
             else:
                 raise Exception("Unknown message type")
+            logger.debug("Encoded EXI message: " + hexdump.dump(exi, len(exi), ' '))
             self.transport.write(message)
         self.session.save_session_data(reaction.extra_data)
 
