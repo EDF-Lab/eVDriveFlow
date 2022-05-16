@@ -27,7 +27,7 @@ class WaitForDcChargeParameterDiscoveryResponse(DcEVState):
         extra_data = {}
         request = ScheduleExchangeReq()
         request.header = MessageHeaderType(self.session_parameters.session_id, int(time.time()))
-        request.maximum_supporting_points = 2048
+        request.maximum_supporting_points = 1024
         evse_data = payload.bpt_dc_cpdres_energy_transfer_mode
         request.dynamic_sereq_control_mode = self.controller.data_model.get_dynamic_sereq_control_mode()
         self.controller.data_model.evsemaximum_charge_power = evse_data.evsemaximum_charge_power
