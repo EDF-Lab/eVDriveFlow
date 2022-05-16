@@ -26,7 +26,10 @@ dependencies:
     - babel==2.9.1
     - charset-normalizer==2.0.4
     - click==7.1.2
+    - click-default-group==1.2.2
+    - click-log==0.4.0
     - cycler==0.10.0
+    - docformatter==1.4
     - docutils==0.17.1
     - hexdump==3.3
     - idna==3.2
@@ -70,7 +73,9 @@ dependencies:
     - sphinxcontrib-serializinghtml==1.1.5
     - superqt==0.2.1
     - toml==0.10.2
+    - toposort==1.7
     - transitions==0.8.8
+    - untokenize==0.1.1
     - urllib3==1.26.6
     - wheel==0.37.0
     - wrapt==1.12.1
