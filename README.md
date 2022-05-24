@@ -1,5 +1,9 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/12/%C3%89lectricit%C3%A9_de_France_logo.svg" width="400">
-
+<p align="center">
+<img src="/doc/figures/logo.png" width="600" height="600">
+</p>	
+<p align="right">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/12/%C3%89lectricit%C3%A9_de_France_logo.svg" width="200">
+</p>	
 
 # EDF R&D implementation of ISO 15118-20 FDIS
 ============
