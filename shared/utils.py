@@ -24,17 +24,17 @@ def rational_to_float(value) -> float:
     return value.value * (10 ** value.exponent)
 
 
-def float_to_dc_rational(value: float) -> DcRationalNumberType:
+def float_to_rational(value: float):
     """Casts a float to a DcRationalNumberType.
 
     :param value: The value to cast.
     :return: DcRationalNumberType -- the cast result.
     """
     if value == 0:
-        return DcRationalNumberType(0, 0)
+        return 0, 0
     string = format(value, ".2e")
     if abs(value) < 1:
-        string = string.split("e-")
+        string = string.split("e")  # Keep the sign
     else:
         string = string.split("e+")
     try:
@@ -43,7 +43,13 @@ def float_to_dc_rational(value: float) -> DcRationalNumberType:
     except ValueError:
         value = int(string[0].replace('.', ''))
         exponent = int(string[1]) - 2
+    return value, exponent
+
+
+def float_to_dc_rational(input: float) -> DcRationalNumberType:
+    value, exponent = float_to_rational(input)
     return DcRationalNumberType(exponent, value)
+
 
 
 def greater_rational(rational_1, rational_2):

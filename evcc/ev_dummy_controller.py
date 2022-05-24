@@ -22,7 +22,7 @@ from shared.xml_classes.dc import BptDcCpdreqEnergyTransferMode, RationalNumberT
     BptDynamicDcClreqControlMode
 from shared.xml_classes.common_messages import RationalNumberType
 from dataclasses import dataclass, field
-from shared.utils import rational_to_float, float_to_dc_rational
+from shared.utils import rational_to_float, float_to_dc_rational, float_to_rational
 from shared.charge_controller_interface import ChargeControllerInterface
 from shared.physical_interface import PhysicalInterface
 
@@ -31,6 +31,7 @@ class EVDummyController(IEVController):
     """Class that implements the DcBptDynamic EV controller.
 
     """
+
     def __init__(self):
         super(EVDummyController, self).__init__(EVEmulator(battery_capacity=DcRationalNumberType(3, 67),
                                                            evmaximum_voltage=DcRationalNumberType(0, 360),
@@ -51,7 +52,7 @@ class EVDummyController(IEVController):
         else:
             self.state_machine = ChargeControllerInterface("169.254.43.30", 12500, "ev")
             transitions = [
-                #["plug", "A", "B", "is_state_a", None, None, "set_b"],
+                # ["plug", "A", "B", "is_state_a", None, None, "set_b"],
                 ["plug", "E", "B", "is_state_b", None, None, "set_b"],
                 ["unplug", "B", "A", "is_state_b"],
                 ["charge", "B", "C", "is_state_b", None, None, "set_c"],
@@ -67,11 +68,11 @@ class EVEmulator(DcEVDataModel):
     timestep: float = 0
     minimum_soc: int = 0
     maximum_soc: int = 100
-    departure_time: int = 0
+    departure_time: int = 3600 # Default value
     _departure_time: int = 0
     battery_capacity: DcRationalNumberType = None
-    target_soc: int = 0
-    _target_soc: int = 0
+    target_soc: int = 80  # Defaul Value
+    _target_soc: int = 80  # Default Value
     present_soc: int = 0
     evmaximum_voltage: DcRationalNumberType = None
     evminimum_voltage: DcRationalNumberType = None
@@ -106,7 +107,7 @@ class EVEmulator(DcEVDataModel):
         self.supported_app_protocols = [AppProtocolType(protocol_namespace=V2G_CI_MSG_DC_NAMESPACE,
                                                         version_number_major=1, version_number_minor=0,
                                                         schema_id=1, priority=1)]
-        self.evccid = "EDFVFR123456789ZZZZ8" # EDF-V-FR123456789ZZZZ-8
+        self.evccid = "EDFVFR123456789ZZZZ8"  # EDF-V-FR123456789ZZZZ-8
         self.authorization_services = [AuthorizationType.EIM]
         self.supported_service_ids = ServiceIdlistType([2, 6])
         self.present_soc = 0
@@ -178,7 +179,7 @@ class EVEmulator(DcEVDataModel):
 
         :return: float - target energy.
         """
-        return self.target_soc * rational_to_float(self.battery_capacity) - self.current_energy
+        return self.target_soc * rational_to_float(self.battery_capacity)/100 - self.current_energy
 
     def get_max_energy(self) -> float:
         """Gets max energy.
@@ -238,9 +239,12 @@ class EVEmulator(DcEVDataModel):
         request.departure_time = self.departure_time
         request.minimum_soc = self.minimum_soc
         request.target_soc = self.target_soc
-        request.evtarget_energy_request = RationalNumberType(3, 67)
-        request.evmaximum_energy_request = RationalNumberType(3, 67)
-        request.evminimum_energy_request = RationalNumberType(0, 0)
+        val, exp = float_to_rational(self.get_target_energy())
+        request.evtarget_energy_request = RationalNumberType(exp, val)
+        val, exp = float_to_rational(self.get_max_energy())
+        request.evmaximum_energy_request = RationalNumberType(exp, val)
+        val, exp = float_to_rational(self.get_min_energy())
+        request.evminimum_energy_request = RationalNumberType(exp, val)
         return request
 
     def get_bpt_dc_cpdreq_energy_transfer_mode(self) -> BptDcCpdreqEnergyTransferMode:
@@ -376,4 +380,3 @@ def battery_voltage_profile(soc) -> float:
     if 0 <= soc <= 75:
         return 50 * soc / 75 + 310
     return 360
-
