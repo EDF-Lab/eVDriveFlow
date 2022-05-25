@@ -5,11 +5,11 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/%C3%89lectricit%C3%A9_de_France_logo.svg" width="200">
 </p>	
 
-# EDF R&D implementation of ISO 15118-20 FDIS
+# EDF R&D implementation of ISO 15118-20
 ============
 
 
-This project is a *Python* implementation of the communication prococol between charging station communication controllers (SECC) and electric vehicles communication controllers (EVCC) based on ISO 15118-20 FDIS version. 
+evDriveFlow is a *Python* implementation of the communication prococol between charging station communication controllers (SECC) and electric vehicles communication controllers (EVCC) based on ISO 15118-20 version. 
 
 This implementation integrates a model of the EV charging process in order to run a charging session. The project is coupled to a Graphical user interface to visualize the session charging status.
 
