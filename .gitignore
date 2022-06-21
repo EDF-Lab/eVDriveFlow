@@ -3,3 +3,4 @@ __pycache__/
 # Runtime data
 pids
 *.pid
+*.log
