@@ -27,8 +27,6 @@ class WaitForAuthorizationSetupResponse(EVState):
     def process_payload(self, payload) -> ReactionToIncomingMessage:
         extra_data = {}
         request = AuthorizationReq()
-        logger.error(str(payload))
-        logger.error(str(self.controller.data_model.authorization_services))
         for _ in payload.authorization_services:
             if _ in self.controller.data_model.authorization_services: #TODO: remove eim_asres_authorization_mode
                 request.selected_authorization_service = AuthorizationType.EIM
