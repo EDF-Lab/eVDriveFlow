@@ -60,8 +60,13 @@ class TCPClientProtocol(asyncio.Protocol):
         self.transport = transport
         logger.info("Connection made with %s. Starting new communication session.",
                     self.transport.get_extra_info("peername"))
-        logger.info("\n\n\n TLS Session established: TLS Version: " + self.get_tls_version() + "\n Cipher suite: " +
-                    self.get_negotiated_cipher() + '\n\n\n')
+        if not self.session.controller.disable_tls:
+
+            logger.info("\n\n\n TLS Session established: TLS Version: " + self.get_tls_version() + "\n Cipher suite: " +
+                        self.get_negotiated_cipher() + '\n\n\n')
+        else:
+            logger.info("\n\n\n TLS DISABLED \n\n\n")
+
         xml_string, message, request = self.build_supported_app_protocol_message()
         self.session.message_timer.start()
         self.send(xml_string, message, request)
@@ -101,6 +106,7 @@ class TCPClientProtocol(asyncio.Protocol):
             payload = v2gtp_message.payload.getfieldval("payloadContent")
             message_type = v2gtp_message.get_payload_type()
             logger.info("Payload type: " + str(message_type))
+            logger.debug("EXI message received: " + hexdump.dump(payload, len(payload), ' '))
             if message_type == 0x8001:
                 xml = self.message_handler.exi_to_supported_app(payload)
             elif message_type == 0x8004:
@@ -109,10 +115,10 @@ class TCPClientProtocol(asyncio.Protocol):
                 xml = self.message_handler.exi_to_v2g_common_msg(payload)
             else:
                 raise Exception("Unknown payload type")
-            logger.debug("EXI message received: " + hexdump.dump(payload, len(payload), ' '))
             xml_object = self.message_handler.unmarshall(xml)
             request_type = type(xml_object).__name__
             logger.info("Received %s.", type(xml_object).__name__)
+            #logger.debug("XML message received: " + self.message_handler.marshall(xml_object))
             self.session.controller.data_model.state = request_type
             self.session.reset_message_timer()
             self.session.sequence_timer.start()
@@ -143,7 +149,7 @@ class TCPClientProtocol(asyncio.Protocol):
             else:
                 request = reaction.message
                 xml_string = self.message_handler.marshall(request)
-                logger.debug("XML to be encoded: " + xml_string)
+
                 if reaction.msg_type == "DC":
                     exi = self.message_handler.v2g_dc_msg_to_exi(xml_string)
                     message = bytes(EXIDCMessage() / EXIPayload(payloadContent=exi))
@@ -220,19 +226,22 @@ class TCPClientProtocol(asyncio.Protocol):
         logger.info("Sent %s.", type(request).__name__)
 
 
-def get_ssl_context() -> ssl.SSLContext:
+def get_ssl_context(controller) -> ssl.SSLContext:
     """Returns an SSL context suitable for 15118 communication.
 
     :return: ssl.SSLContext -- the security context.
     """
-    # OpenSSL 1.1.1 has TLS 1.3 cipher suites enabled by default. The suites cannot be disabled with set_ciphers().
-    context = ssl.create_default_context(purpose=ssl.Purpose.SERVER_AUTH, cafile=SECC_CERTIFICATE_AUTHORITY)
-    # The line below loads the certificates chain that will be sent to the peer. It will be used for the TLS handshake.
-    # Its private key is provided along with a passphrase that was used to encrypt it.
-    context.load_cert_chain(EVCC_CERTCHAIN, EVCC_KEYFILE, PASSPHRASE)
-    context.verify_mode = ssl.CERT_REQUIRED
-    context.check_hostname = False
-    return context
+    if controller.disable_tls == True:
+        return None
+    else:
+        # OpenSSL 1.1.1 has TLS 1.3 cipher suites enabled by default. The suites cannot be disabled with set_ciphers().
+        context = ssl.create_default_context(purpose=ssl.Purpose.SERVER_AUTH, cafile=SECC_CERTIFICATE_AUTHORITY)
+        # The line below loads the certificates chain that will be sent to the peer. It will be used for the TLS handshake.
+        # Its private key is provided along with a passphrase that was used to encrypt it.
+        context.load_cert_chain(EVCC_CERTCHAIN, EVCC_KEYFILE, PASSPHRASE)
+        context.verify_mode = ssl.CERT_REQUIRED
+        context.check_hostname = False
+        return context
 
 
 def get_tcp_client(tcp_server_address: str, tcp_server_port: int, session_handler: SessionHandler):
@@ -246,7 +255,7 @@ def get_tcp_client(tcp_server_address: str, tcp_server_port: int, session_handle
     loop = asyncio.get_event_loop()
     logger.info("Starting TCP client.")
     task = loop.create_connection(lambda: TCPClientProtocol(session_handler), tcp_server_address,
-                                  tcp_server_port, ssl=get_ssl_context())
+                                  tcp_server_port, ssl=get_ssl_context(session_handler.current_session.controller))
     # TODO: set tcp client port using config file
     transport, protocol = loop.run_until_complete(task)
 

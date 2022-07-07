@@ -170,18 +170,21 @@ class TCPServerProtocol(asyncio.Protocol):
             observer.update(self)
 
 
-def get_ssl_context() -> ssl.SSLContext:
+def get_ssl_context(controller) -> ssl.SSLContext:
     """Returns an SSL context based on 15118-20 recommendations.
 
     :return: ssl.SSLContext -- the SSL settings for the TLS connection.
     """
-    context = ssl.create_default_context(purpose=ssl.Purpose.CLIENT_AUTH, cafile=EVCC_CERTIFICATE_AUTHORITY)
-    # OpenSSL 1.1.1 has TLS 1.3 cipher suites enabled by default. The suites cannot be disabled with set_ciphers().
-    # The line below loads the certificates chain that will be sent to the peer. It will be used for the TLS handshake.
-    # Its private key is provided along with a passphrase that was used to encrypt it.
-    context.load_cert_chain(SECC_CERTCHAIN, SECC_KEYFILE, PASSPHRASE)
-    context.verify_mode = True
-    return context
+    if controller.disable_tls:
+        return None
+    else:
+        context = ssl.create_default_context(purpose=ssl.Purpose.CLIENT_AUTH, cafile=EVCC_CERTIFICATE_AUTHORITY)
+        # OpenSSL 1.1.1 has TLS 1.3 cipher suites enabled by default. The suites cannot be disabled with set_ciphers().
+        # The line below loads the certificates chain that will be sent to the peer. It will be used for the TLS handshake.
+        # Its private key is provided along with a passphrase that was used to encrypt it.
+        context.load_cert_chain(SECC_CERTCHAIN, SECC_KEYFILE, PASSPHRASE)
+        context.verify_mode = True
+        return context
 
 
 def get_tcp_server(controller, tcp_server_address: str, tcp_server_port: int):
@@ -192,7 +195,7 @@ def get_tcp_server(controller, tcp_server_address: str, tcp_server_port: int):
     :param tcp_server_port: The server port.
     :return: server -- the created server
     """
-    context = get_ssl_context()
+    context = get_ssl_context(controller)
     loop = asyncio.get_event_loop()
     logger.info("Starting TCP server.")
     task = loop.create_server(lambda: TCPServerProtocol(controller), tcp_server_address, tcp_server_port, ssl=context)

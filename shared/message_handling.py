@@ -107,6 +107,9 @@ class MessageHandler(metaclass=Singleton):
     dc_schema = open_exi_schema(DC_MESSAGES_EXIG)
     dc_grammar_cache = GrammarCache(dc_schema, options)
 
+
+
+
     def __init__(self):
         self.xml_SAP_validator = lxml.etree.XMLSchema(file=APP_PROTOCOL_XSD)
         self.xml_Common_validator = lxml.etree.XMLSchema(file=COMMON_MESSAGES_XSD)
@@ -281,6 +284,7 @@ class MessageHandler(metaclass=Singleton):
         """
         parser = XmlParser(context=XmlContext())
         xml_object = parser.from_string(xml)
+        logger.debug("XML message received: " + MessageHandler.marshall(xml_object))
         return xml_object
 
     @staticmethod
@@ -293,7 +297,9 @@ class MessageHandler(metaclass=Singleton):
         config = SerializerConfig(pretty_print=True)
         serializer = XmlSerializer(config=config)
         xml_string = serializer.render(message)
+        logger.debug("XML to be encoded: " + xml_string)
         return xml_string
+
 
     def is_xml_valid(self, xml, msg_type):
         """This method allows to check if an XML message is valid using the corresponding XSD.
