@@ -35,6 +35,7 @@ class TCPClientProtocol(asyncio.Protocol):
     """This is the TCP protocol used by EV client to communicate with the SECC.
 
     """
+
     def __init__(self, session_handler):
         """Basic constructor.
 
@@ -48,11 +49,19 @@ class TCPClientProtocol(asyncio.Protocol):
         self.kb_listener = KeyboardListener(self.ainput)
         super(TCPClientProtocol, self).__init__()
 
+    def get_tls_version(self):
+        return str(self.transport._ssl_protocol._extra['cipher'][1])
+
+    def get_negotiated_cipher(self):
+        return str(self.transport._ssl_protocol._extra['cipher'][0])
+
     def connection_made(self, transport: transports.BaseTransport) -> None:
         self.session.update_timers()
         self.transport = transport
         logger.info("Connection made with %s. Starting new communication session.",
                     self.transport.get_extra_info("peername"))
+        logger.info("\n\n\n TLS Session established: TLS Version: " + self.get_tls_version() + "\n Cipher suite: " +
+                    self.get_negotiated_cipher() + '\n\n\n')
         xml_string, message, request = self.build_supported_app_protocol_message()
         self.session.message_timer.start()
         self.send(xml_string, message, request)
@@ -121,7 +130,7 @@ class TCPClientProtocol(asyncio.Protocol):
         if isinstance(reaction, PauseSession):
             pass
         elif isinstance(reaction, TerminateSession):
-            #if self.transport.can_write_eof():
+            # if self.transport.can_write_eof():
             # can_write_eof doesn't work in TLS connections so we can't cut it off the by sending an EOF
             self.session.reset_sequence_timer()
             self.session.reset_message_timer()
@@ -137,10 +146,10 @@ class TCPClientProtocol(asyncio.Protocol):
                 logger.debug("XML to be encoded: " + xml_string)
                 if reaction.msg_type == "DC":
                     exi = self.message_handler.v2g_dc_msg_to_exi(xml_string)
-                    message = bytes(EXIDCMessage()/EXIPayload(payloadContent=exi))
+                    message = bytes(EXIDCMessage() / EXIPayload(payloadContent=exi))
                 elif reaction.msg_type == "Common":
                     exi = self.message_handler.v2g_common_msg_to_exi(xml_string)
-                    message = bytes(EXIMessage()/EXIPayload(payloadContent=exi))
+                    message = bytes(EXIMessage() / EXIPayload(payloadContent=exi))
                 elif reaction.msg_type == "SupportedAppProtocol":
                     exi = self.message_handler.supported_app_to_exi(xml_string)
                     message = bytes(SupportedAppMessage() / EXIPayload(payloadContent=exi))
@@ -165,7 +174,7 @@ class TCPClientProtocol(asyncio.Protocol):
         request = SupportedAppProtocolReq(protocols_list)
         xml_string = self.message_handler.marshall(request)
         exi = self.message_handler.supported_app_to_exi(xml_string)
-        message = SupportedAppMessage()/EXIPayload(payloadContent=exi)
+        message = SupportedAppMessage() / EXIPayload(payloadContent=exi)
         return xml_string, bytes(message), request
 
     def build_session_stop_message(self) -> EXIMessage:
@@ -178,7 +187,7 @@ class TCPClientProtocol(asyncio.Protocol):
         request.charging_session = ChargingSessionType.TERMINATE
         xml_string = self.message_handler.marshall(request)
         exi = self.message_handler.v2g_common_msg_to_exi(xml_string)
-        message = EXIMessage()/EXIPayload(payloadContent=exi)
+        message = EXIMessage() / EXIPayload(payloadContent=exi)
         return xml_string, bytes(message), request
 
     async def ainput(self) -> None:
@@ -211,7 +220,6 @@ class TCPClientProtocol(asyncio.Protocol):
         logger.info("Sent %s.", type(request).__name__)
 
 
-
 def get_ssl_context() -> ssl.SSLContext:
     """Returns an SSL context suitable for 15118 communication.
 
@@ -235,10 +243,14 @@ def get_tcp_client(tcp_server_address: str, tcp_server_port: int, session_handle
     :param session_handler: The session handler that manages the sessions.
     :return: transport, protocol -- the objects associated with the TCP connection.
     """
-    loop = asyncio.get_event_loop() 
+    loop = asyncio.get_event_loop()
     logger.info("Starting TCP client.")
     task = loop.create_connection(lambda: TCPClientProtocol(session_handler), tcp_server_address,
                                   tcp_server_port, ssl=get_ssl_context())
     # TODO: set tcp client port using config file
     transport, protocol = loop.run_until_complete(task)
+
     return transport, protocol
+
+
+
