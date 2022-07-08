@@ -120,7 +120,6 @@ class TCPServerProtocol(asyncio.Protocol):
         :return:
         """
         xml = self.message_handler.marshall(reaction.message)
-        logger.debug("received XML Message: %s", xml)
         if reaction.msg_type == "SupportedAppProtocol":
             exi = self.message_handler.supported_app_to_exi(xml)
         elif reaction.msg_type == "DC":
