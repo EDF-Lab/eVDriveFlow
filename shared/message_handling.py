@@ -297,7 +297,7 @@ class MessageHandler(metaclass=Singleton):
         config = SerializerConfig(pretty_print=True)
         serializer = XmlSerializer(config=config)
         xml_string = serializer.render(message)
-        logger.debug("XML to be encoded: " + xml_string)
+        logger.debug("XML message: " + xml_string)
         return xml_string
 
 

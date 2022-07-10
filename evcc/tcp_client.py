@@ -21,7 +21,7 @@ from shared.payloads import EXIPayload
 from shared.message_handling import MessageHandler
 from shared.reaction_message import PauseSession, TerminateSession, SendMessage
 from shared.xml_classes.app_protocol import SupportedAppProtocolReq
-from shared.global_values import EVCC_CERTCHAIN, EVCC_KEYFILE, PASSPHRASE, SECC_CERTIFICATE_AUTHORITY
+from shared.global_values import EVCC_CERTCHAIN, EVCC_KEYFILE, PASSPHRASE, SECC_CERTIFICATE_AUTHORITY, SECURITY_PROTOCOL
 import asyncio
 from shared.messages import EXIMessage, V2GTPMessage, SupportedAppMessage, EXIDCMessage
 from shared.log import logger
@@ -60,12 +60,12 @@ class TCPClientProtocol(asyncio.Protocol):
         self.transport = transport
         logger.info("Connection made with %s. Starting new communication session.",
                     self.transport.get_extra_info("peername"))
-        if not self.session.controller.disable_tls:
+        if SECURITY_PROTOCOL == 0x10: # Check if TLS has been disabled
 
+            logger.info("\n\n\n TLS DISABLED \n\n\n")
+        else:
             logger.info("\n\n\n TLS Session established: TLS Version: " + self.get_tls_version() + "\n Cipher suite: " +
                         self.get_negotiated_cipher() + '\n\n\n')
-        else:
-            logger.info("\n\n\n TLS DISABLED \n\n\n")
 
         xml_string, message, request = self.build_supported_app_protocol_message()
         self.session.message_timer.start()
@@ -231,7 +231,7 @@ def get_ssl_context(controller) -> ssl.SSLContext:
 
     :return: ssl.SSLContext -- the security context.
     """
-    if controller.disable_tls == True:
+    if SECURITY_PROTOCOL == 0x10:
         return None
     else:
         # OpenSSL 1.1.1 has TLS 1.3 cipher suites enabled by default. The suites cannot be disabled with set_ciphers().

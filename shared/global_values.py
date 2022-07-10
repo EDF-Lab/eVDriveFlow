@@ -29,12 +29,12 @@ APP_PROTOCOL_EXIG = "../shared/exig_files/latest_version/V2G_CI_AppProtocol.exig
 COMMON_MESSAGES_EXIG = "../shared/exig_files/latest_version/V2G_CI_CommonMessages.exig"
 DC_MESSAGES_EXIG = "../shared/exig_files/latest_version/V2G_CI_DC.exig"
 
-
 # Passphrase used to access private key. This parameter shall be stored in a secured directory.
 PASSPHRASE = "123456789abcdefgh"
 
 # Payload settings
 PROTOCOL_VERSION = 0x10
+SECURITY_PROTOCOL = 0x00  # Use 0x00 to enable TLS or 0x10 to disable TLS [Testing purposes]
 MAX_PAYLOAD_LENGTH = 4294967295
 SUPPORTED_CIPHER_SUITES_TLS_1_3 = "TLS_AES_256_GCM_SHA384:CHACHA20_POLY1305"
 SDP_PAYLOAD_TYPES = {0x8001: "SAPPayloadID", 0x8002: "Part20MainstreamPayloadID", 0x8003: "Part20ACMainstreamPayloadID",
@@ -71,4 +71,3 @@ DC_SECC_MSG_PERFORMANCE_TIME = {"DcCableCheckReq": 1.5, "DcPreChargeReq": 1.5, "
                                 "DcWeldingDetectionReq": 1.5, "DcChargeParameterDiscoveryReq": 1.5}  # same as above
 DC_EVCC_SEQUENCE_PERFORMANCE_TIME = {"DcChargeLoopReq": 0.25}
 DC_SECC_SEQUENCE_TIMEOUT = {"DcChargeLoopRes": 0.5}
-

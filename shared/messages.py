@@ -14,7 +14,7 @@
 
 from scapy.all import Packet, XByteField, bind_layers, UDP, XShortEnumField
 from shared.payloads import EXIPayload, SDPResPayload, SDPReqPayload
-from shared.global_values import SDP_PAYLOAD_TYPES, UDP_SERVER_PORT
+from shared.global_values import SDP_PAYLOAD_TYPES, UDP_SERVER_PORT, PROTOCOL_VERSION
 from abc import abstractmethod
 
 
@@ -23,8 +23,8 @@ class V2GTPMessage(Packet):
 
     """
     name = "V2GTP"
-    fields_desc = [XByteField("protocolVersion", 0x01),
-                   XByteField("inverseProtocolVersion", 0xfe),
+    fields_desc = [XByteField("protocolVersion", PROTOCOL_VERSION),
+                   XByteField("inverseProtocolVersion", PROTOCOL_VERSION ^ 0xff), # bit-wise inverse value of the protocol version
                    XShortEnumField("payloadType", 0x8001, SDP_PAYLOAD_TYPES)
                    ]
 

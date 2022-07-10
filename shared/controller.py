@@ -25,7 +25,7 @@ class ControllerInterface:
     data_model: dataclass
     state_machine: PhysicalInterface
     virtual_mode: bool = None
-    disable_tls: bool = None
+
 
     def __post_init__(self):
         self.set_settings()
@@ -38,7 +38,7 @@ class ControllerInterface:
         """
         config = self.get_config()["SETTINGS"]
         self.virtual_mode = config.getboolean("virtual_mode")
-        self.disable_tls = config.getboolean("disable_tls")
+
 
     def set_machine(self):
         """Configures the 61851 state machine.

@@ -21,7 +21,7 @@ import hexdump
 import transitions
 from secc.evse_session import EVSESession
 from shared.log import logger
-from shared.global_values import SECC_CERTCHAIN, SECC_KEYFILE, PASSPHRASE, EVCC_CERTIFICATE_AUTHORITY
+from shared.global_values import SECC_CERTCHAIN, SECC_KEYFILE, PASSPHRASE, EVCC_CERTIFICATE_AUTHORITY, SECURITY_PROTOCOL
 from shared.message_handling import MessageHandler
 from shared.messages import V2GTPMessage, EXIMessage, SupportedAppMessage, EXIDCMessage
 from shared.payloads import EXIPayload
@@ -174,7 +174,7 @@ def get_ssl_context(controller) -> ssl.SSLContext:
 
     :return: ssl.SSLContext -- the SSL settings for the TLS connection.
     """
-    if controller.disable_tls:
+    if SECURITY_PROTOCOL==0x10: # Check if TLS has been disabled for testing purposes
         return None
     else:
         context = ssl.create_default_context(purpose=ssl.Purpose.CLIENT_AUTH, cafile=EVCC_CERTIFICATE_AUTHORITY)

@@ -13,7 +13,7 @@
 """
 
 from scapy.all import Packet, XIntField, XStrLenField, IP6Field, XShortField, XByteField
-
+from shared.global_values import SECURITY_PROTOCOL
 
 class Payload(Packet):
     """This is the basic payload class for V2G messages.
@@ -58,8 +58,9 @@ class SDPResPayload(Payload):
     fields_desc = [XIntField("PayloadLength", 20),
                    IP6Field("TargetAddress", "::"),
                    XShortField("TargetPort", 0),
-                   XByteField("SecurityProtocol", 0x00),
+                   XByteField("SecurityProtocol", SECURITY_PROTOCOL),
                    XByteField("TransportProtocol", 0x00)]
+
 
 
 class SDPReqPayload(Payload):
@@ -70,5 +71,5 @@ class SDPReqPayload(Payload):
     """
     name = "SDPReq"
     fields_desc = [XIntField("PayloadLength", 2),
-                   XByteField("SecurityProtocol", 0x00),
+                   XByteField("SecurityProtocol", SECURITY_PROTOCOL),
                    XByteField("TransportProtocol", 0x00)]
