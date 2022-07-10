@@ -15,7 +15,7 @@ This implementation integrates a model of the EV charging process in order to ru
 
 Supported features:
 - DC Bidirectional Power Transfer BPT with dynamic control mode.
-- TLS 1.3 with mutual authentication.
+- TLS 1.3 with mutual authentication. [can be disabled for testing purposes by modifying SECURITY_PROTOCOL in shared/global_values.py ]
 - Set departure time from SECC side.
 
 
@@ -221,7 +221,7 @@ Then, you can run electric vehicle communication controller EVCC:
 
 ![Start Window EVCC](/doc/figures/EVCC_StartWindow.png?raw=true)
 
- - To execute without GUI, run *start_ev.py*
+ - To execute without GUI, run *start_ev.py*. To stop the session from EV side press Enter in the excution terminal.
 
 The session sequence can be seen in the terminal by the printed logs or in the GUI, in the information tab.
 
