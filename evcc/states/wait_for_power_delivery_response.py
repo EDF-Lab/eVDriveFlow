@@ -29,7 +29,7 @@ class WaitForPowerDeliveryResponse(EVState):
         extra_data = {}
         reaction = SendMessage()
         timestamp = time.time()
-        if payload.evsestatus:
+        if self.session_parameters.stop_session:
             asyncio.create_task(self.controller.state_machine.stop_charge())
             # See [V2G20-919]
             if payload.response_code == ResponseCodeType.OK:

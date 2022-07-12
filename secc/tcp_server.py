@@ -79,23 +79,24 @@ class TCPServerProtocol(asyncio.Protocol):
         """
         if self.message_handler.is_valid(v2gtp_message):
             message_type = v2gtp_message.get_payload_type()
+            payload = v2gtp_message.payload.getfieldval("payloadContent")
+
+            logger.debug("Received EXI msg to be decoded: " + hexdump.dump(payload, len(payload), ' '))
             if message_type == 0x8001:
                 logger.info("Payload type: 0x8001")
-                payload = v2gtp_message.payload.getfieldval("payloadContent")
                 xml = self.message_handler.exi_to_supported_app(payload)
             elif message_type == 0x8004:
                 logger.info("Payload type: 0x8004")
-                payload = v2gtp_message.payload.getfieldval("payloadContent")
                 xml = self.message_handler.exi_to_v2g_dc_msg(payload)
             elif message_type == 0x8002:
                 logger.info("Payload type: 0x8002")
-                payload = v2gtp_message.payload.getfieldval("payloadContent")
                 xml = self.message_handler.exi_to_v2g_common_msg(payload)
             else:
                 raise Exception("Unknown payload type")
-            logger.debug("EXI message received: " + hexdump.dump(payload, len(payload), ' '))
+            logger.debug("Message successfully decoded")
+            logger.debug("XML message received: " + xml)
             xml_object = self.message_handler.unmarshall(xml)
-            request_type = type(xml_object).__name__
+            request_type = type(xml_object).__name__ # TODO: This method takes too long
             logger.info("Received %s.", request_type)
             self.controller.data_model.state = request_type
             try:
@@ -120,6 +121,8 @@ class TCPServerProtocol(asyncio.Protocol):
         :return:
         """
         xml = self.message_handler.marshall(reaction.message)
+        logger.debug("XML message to be sent: " + xml)
+        logger.debug("Encoding process start")
         if reaction.msg_type == "SupportedAppProtocol":
             exi = self.message_handler.supported_app_to_exi(xml)
         elif reaction.msg_type == "DC":
@@ -128,6 +131,7 @@ class TCPServerProtocol(asyncio.Protocol):
             exi = self.message_handler.v2g_common_msg_to_exi(xml)
         else:
             raise Exception("Unknown message type")
+        logger.debug("Encoded EXI message: " + hexdump.dump(exi, len(exi), ' '))
         if isinstance(reaction, PauseSession):
             # TODO
             raise NotImplementedError
@@ -147,7 +151,6 @@ class TCPServerProtocol(asyncio.Protocol):
                 message = bytes(EXIMessage() / EXIPayload(payloadContent=exi))
             else:
                 raise Exception("Unknown message type")
-            logger.debug("Encoded EXI message: " + hexdump.dump(exi, len(exi), ' '))
             self.transport.write(message)
         self.session.save_session_data(reaction.extra_data)
 

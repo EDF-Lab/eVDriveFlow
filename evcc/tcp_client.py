@@ -106,7 +106,7 @@ class TCPClientProtocol(asyncio.Protocol):
             payload = v2gtp_message.payload.getfieldval("payloadContent")
             message_type = v2gtp_message.get_payload_type()
             logger.info("Payload type: " + str(message_type))
-            logger.debug("EXI message received: " + hexdump.dump(payload, len(payload), ' '))
+            logger.debug("Received EXI msg to be decoded: " + hexdump.dump(payload, len(payload), ' '))
             if message_type == 0x8001:
                 xml = self.message_handler.exi_to_supported_app(payload)
             elif message_type == 0x8004:
@@ -115,9 +115,10 @@ class TCPClientProtocol(asyncio.Protocol):
                 xml = self.message_handler.exi_to_v2g_common_msg(payload)
             else:
                 raise Exception("Unknown payload type")
+            logger.info("Message successfully decoded " + xml)
             xml_object = self.message_handler.unmarshall(xml)
             request_type = type(xml_object).__name__
-            logger.info("Received %s.", type(xml_object).__name__)
+            logger.info("Received %s.", request_type) # TODO: This method takes too long
             #logger.debug("XML message received: " + self.message_handler.marshall(xml_object))
             self.session.controller.data_model.state = request_type
             self.session.reset_message_timer()
@@ -146,10 +147,11 @@ class TCPClientProtocol(asyncio.Protocol):
             if self.session.session_parameters.stop_session and \
                     self.session.is_state_exitable(self.get_current_state()):
                 xml_string, message, request = self.build_session_stop_message()
+                logger.debug("XML message to be sent: " + xml_string)
             else:
                 request = reaction.message
                 xml_string = self.message_handler.marshall(request)
-
+                logger.debug("XML message to be sent: " + xml_string)
                 if reaction.msg_type == "DC":
                     exi = self.message_handler.v2g_dc_msg_to_exi(xml_string)
                     message = bytes(EXIDCMessage() / EXIPayload(payloadContent=exi))
