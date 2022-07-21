@@ -103,7 +103,7 @@ class EVSEEmulator(DcEVSEDataModel):
                                                         version_number_major=1, version_number_minor=0, priority=1)]
         self.authorization_services = [AuthorizationType.EIM]
         self.certificate_installation_service = False
-        self.energy_transfer_service_list = ServiceListType([ServiceType(2, False), ServiceType(6, False)])
+        self.energy_transfer_service_list = ServiceListType([ServiceType(6, False)])
         self.service_renegotiation_supported = False
         self.services = {"6": ServiceParameterListType([ParameterSetType(1, [ParameterType(
             name="Connector", int_value=2), ParameterType(name="ControlMode", int_value=2), ParameterType(
