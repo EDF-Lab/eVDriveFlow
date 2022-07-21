@@ -15,7 +15,7 @@ This implementation integrates a model of the EV charging process in order to ru
 
 Supported features:
 - DC Bidirectional Power Transfer BPT with dynamic control mode.
-- TLS 1.3 with mutual authentication. [can be disabled for testing purposes by modifying SECURITY_PROTOCOL in shared/global_values.py ]
+- TLS 1.3 with mutual authentication. [NOT RECOMMENDED : can be disabled for testing purposes by modifying SECURITY_PROTOCOL in shared/global_values.py ]
 - Set departure time from SECC side.
 
 
