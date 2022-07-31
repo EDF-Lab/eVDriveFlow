@@ -111,6 +111,9 @@ class MessageHandler(metaclass=Singleton):
         self.xml_SAP_validator = lxml.etree.XMLSchema(file=APP_PROTOCOL_XSD)
         self.xml_Common_validator = lxml.etree.XMLSchema(file=COMMON_MESSAGES_XSD)
         self.xml_DC_validator = lxml.etree.XMLSchema(file=DC_MESSAGES_XSD)
+        self.parser = XmlParser(context=XmlContext())
+        self.config = SerializerConfig(pretty_print=True)
+        self.serializer = XmlSerializer(config=self.config)
 
     def is_valid(self, v2gtp_message: V2GTPMessage) -> bool:
         if self.is_version_valid(v2gtp_message) and self.is_version_valid(v2gtp_message) and \
@@ -270,28 +273,25 @@ class MessageHandler(metaclass=Singleton):
         logger.info("DC message to be decoded")
         return self.decode(exi_contents, "DC")
 
-    @staticmethod
-    def unmarshall(xml):
+
+    def unmarshall(self, xml):
         """Extracts data from XML string and turns it to an object understood by the machine.
 
         :param xml: The XLM string to extract data from.
         :return: object -- the resulting XML object.
         """
-        parser = XmlParser(context=XmlContext())
-        xml_object = parser.from_string(xml)
+        xml_object = self.parser.from_string(xml)
         return xml_object
 
-    @staticmethod
-    def marshall(message) -> str:
+
+    def marshall(self, message) -> str:
         """Turns an XML object to a string.
 
         :param message: The XML object to be processed.
         :print_xml: Boolean to request printing, default True
         :return: str -- the resulting XML string.
         """
-        config = SerializerConfig(pretty_print=True)
-        serializer = XmlSerializer(config=config)
-        xml_string = serializer.render(message)
+        xml_string = self.serializer.render(message)
         return xml_string
 
     def is_xml_valid(self, xml, msg_type):
