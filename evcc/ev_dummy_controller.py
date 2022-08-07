@@ -221,7 +221,7 @@ class EVEmulator(DcEVDataModel):
             evse_max_power = rational_to_float(self.evsemaximum_charge_power)
             ev_max_power = rational_to_float(self.evmaximum_charge_power)
             present_power = min(evse_max_power, ev_max_power, present_power)
-        self.current_energy = int(self.current_energy + present_power * time_step / 3600 * 100)
+        self.current_energy = int(self.current_energy + present_power * time_step / 3600 * 1000)
         # TODO: time mutiplied by 1000 (testing purposes)
         self.present_soc = int(self.current_energy * 100 / rational_to_float(self.battery_capacity))
         self.power_evolution.append(present_power)

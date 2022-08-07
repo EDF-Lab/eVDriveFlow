@@ -113,6 +113,7 @@ class EVSession(CommunicationSession):
         self.session_parameters.stop_session = True
         self.session_parameters.charging = False
         logger.warning("Session stop has been requested.")
+        return
 
 
 
