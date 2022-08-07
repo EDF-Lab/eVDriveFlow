@@ -116,7 +116,8 @@ class EVEmulator(DcEVDataModel):
         self.soc = np.linspace(0, 100, 21)
         self.max_charge_power = 1000 * np.array([49, 49, 49, 49, 49, 49, 49, 49, 48, 46, 44, 42, 40, 37, 34, 31, 27, 23,
                                                  19, 14, 0])
-        self.max_discharge_power = - np.flip(self.max_charge_power)
+        self.max_discharge_power = np.flip(self.max_charge_power)
+        self.min_discharge_power = 500
 
     def get_max_charge_parameters(self) -> (DcRationalNumberType, DcRationalNumberType):
         """Gets max charge power and max current from a vehicle's charging data.
@@ -156,7 +157,11 @@ class EVEmulator(DcEVDataModel):
 
         :return: (DcRationalNumberType, DcRationalNumberType) -- min discharge power and min discharge current.
         """
-        min_discharge_pow = np.interp(self.present_soc, self.soc, self.max_discharge_power)
+        if self.present_soc <= 1:
+            min_discharge_pow = 0
+        else:
+            min_discharge_pow = self.min_discharge_power
+
         min_discharge_current = min_discharge_pow / rational_to_float(self.evmaximum_voltage)
         return float_to_dc_rational(min_discharge_pow), float_to_dc_rational(min_discharge_current)
 
@@ -209,15 +214,15 @@ class EVEmulator(DcEVDataModel):
         present_power = rational_to_float(present_current) * rational_to_float(present_voltage)
         # TODO: the power test limit should be located in states process_payload
         if present_power < 0:
-            evse_max_power = rational_to_float(self.evsemaximum_discharge_power)
-            ev_max_power = rational_to_float(self.evmaximum_discharge_power)
+            evse_max_power = - rational_to_float(self.evsemaximum_discharge_power)
+            ev_max_power = - rational_to_float(self.evmaximum_discharge_power)
             present_power = max(evse_max_power, ev_max_power, present_power)
         else:
             evse_max_power = rational_to_float(self.evsemaximum_charge_power)
             ev_max_power = rational_to_float(self.evmaximum_charge_power)
             present_power = min(evse_max_power, ev_max_power, present_power)
         self.current_energy = int(self.current_energy + present_power * time_step / 3600 * 100)
-        # TODO: time mutiplied by 100 (to be removed)
+        # TODO: time mutiplied by 1000 (testing purposes)
         self.present_soc = int(self.current_energy * 100 / rational_to_float(self.battery_capacity))
         self.power_evolution.append(present_power)
         self.elapsed_time += time_step

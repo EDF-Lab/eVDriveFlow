@@ -11,6 +11,7 @@
 
 
 """
+
 from evcc.states.wait_for_dc_cable_check_response import WaitForDcCableCheckResponse
 from evcc.states.wait_for_dc_charge_parameter_discovery_response import WaitForDcChargeParameterDiscoveryResponse
 from evcc.states.wait_for_dc_charge_loop_response import WaitForDcChargeLoopResponse
@@ -112,6 +113,7 @@ class EVSession(CommunicationSession):
         self.session_parameters.stop_session = True
         self.session_parameters.charging = False
         logger.warning("Session stop has been requested.")
+
 
 
 @dataclass

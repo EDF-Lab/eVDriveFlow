@@ -29,23 +29,35 @@ class ProcessDcChargeLoopRequest(DcEVSEState):
         response = DcChargeLoopRes()
         response.header = MessageHeaderType(self.session_parameters.session_id, int(time.time()))
         response.response_code = ResponseCodeType.OK
-        present_current = self.controller.data_model.evsepresent_current
+        present_current = self.controller.data_model.evsepresent_current  # This value is set by verticalSlider GUI
         # In theory, if the EVSE has symmetrical parameters for charge/discharge, half of the operations here are not
         # needed. For more thoroughness, I decided to write all cases.
-        if rational_to_float(present_current) < 0:
-            evse_max_discharge_current = self.controller.data_model.evsemaximum_discharge_current
-            ev_max_discharge_current = payload.bpt_dynamic_dc_clreq_control_mode.evmaximum_discharge_current
-            current_limit = lower_rational(evse_max_discharge_current, ev_max_discharge_current)
-        else:
+
+        if rational_to_float(present_current) < 0:  # Discharging
+            power_direction = -1
+            evse_max_discharge_current = self.controller.data_model.evsemaximum_discharge_current  # Positive
+            ev_max_discharge_current = payload.bpt_dynamic_dc_clreq_control_mode.evmaximum_discharge_current  # Positive
+            if ev_max_discharge_current.value <0:
+                raise ValueError('ev_max_discharge_current'+ 'has a negative value')
+            current_limit =lower_rational(evse_max_discharge_current, ev_max_discharge_current) # Positive, This value is linked to evsemaximum_charge_current and evsemaximum_discharge_current
+
+        else:  # Charging
+            power_direction = 1
             evse_max_charge_current = self.controller.data_model.evsemaximum_charge_current
             ev_max_charge_current = payload.bpt_dynamic_dc_clreq_control_mode.evmaximum_charge_current
+            if ev_max_charge_current.value <0:
+                raise ValueError('ev_max_charge_current'+ 'has a negative value')
             current_limit = lower_rational(evse_max_charge_current, ev_max_charge_current)
+
         if self.is_limit_achieved(current_limit, present_current):
             logger.warning("Current limit achieved!")
             response.evsecurrent_limit_achieved = True
-            present_current = current_limit
+            present_current.value = abs(current_limit.value) * power_direction
+            present_current.exponent = current_limit.exponent
+
         else:
             response.evsecurrent_limit_achieved = False
+
         response.evsepresent_current = present_current
         # Computing present_voltage: U_evse = R*I + U_ev
         present_voltage = rational_to_float(present_current) * self.controller.data_model.internal_resistance
@@ -63,21 +75,26 @@ class ProcessDcChargeLoopRequest(DcEVSEState):
         response.evsepresent_voltage = present_voltage
 
         power = rational_to_float(present_current) * rational_to_float(present_voltage)
-        ev_max_discharge_power = payload.bpt_dynamic_dc_clreq_control_mode.evmaximum_discharge_power
-        ev_max_charge_power = payload.bpt_dynamic_dc_clreq_control_mode.evmaximum_charge_power
-        self.controller.data_model.evmaximum_discharge_power = ev_max_discharge_power
-        self.controller.data_model.evmaximum_charge_power = ev_max_charge_power
-        if power < 0:
-            evse_max_discharge_power = self.controller.data_model.evsemaximum_discharge_power
-            power_limit = lower_rational(evse_max_discharge_power, ev_max_discharge_power)
-        else:
+        ev_max_discharge_power = payload.bpt_dynamic_dc_clreq_control_mode.evmaximum_discharge_power  # Positive
+
+        self.controller.data_model.evmaximum_discharge_power = ev_max_discharge_power  # Positive
+        ev_max_charge_power = payload.bpt_dynamic_dc_clreq_control_mode.evmaximum_charge_power  # Positive
+        self.controller.data_model.evmaximum_charge_power = ev_max_charge_power  # Positive
+
+        if power < 0:  # Discharge
+            evse_max_discharge_power = self.controller.data_model.evsemaximum_discharge_power  # Positive
+            power_limit = lower_rational(evse_max_discharge_power, ev_max_discharge_power)  # Positive, this value is linked to evsemaximum_charge_power and evsemaximum_discharge_power
+
+        else:  # Charging
             evse_max_charge_power = self.controller.data_model.evsemaximum_charge_power
             power_limit = lower_rational(evse_max_charge_power, ev_max_charge_power)
-        power = float_to_dc_rational(power)
+
+        power = float_to_dc_rational(power) # Keeps the sign
         if self.is_limit_achieved(power_limit, power):
             logger.warning("Power limit achieved!")
             response.evsepower_limit_achieved = True
-            power = power_limit
+            power.value = abs(power_limit.value) * power_direction
+            power.exponent = power_limit.exponent
         else:
             response.evsepower_limit_achieved = False
         self.controller.data_model.evsepresent_power = power

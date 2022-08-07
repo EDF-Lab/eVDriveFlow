@@ -116,10 +116,9 @@ class EVSEEmulator(DcEVSEDataModel):
         self.evseminimum_charge_current = self.evseminimum_discharge_current = float_to_dc_rational(min_current)
         self.evsepresent_voltage = self.evseminimum_voltage
         # self.evsepresent_current = DcRationalNumberType(0, 0) not useful when using ui
-        self.evsemaximum_discharge_power = negative_dc_rational(self.evsemaximum_charge_power)
-        self.evseminimum_discharge_power = negative_dc_rational(self.evseminimum_charge_power)
-        self.evsemaximum_discharge_current = negative_dc_rational(self.evsemaximum_discharge_current)
-        self.evseminimum_discharge_current = negative_dc_rational(self.evseminimum_discharge_current)
+        self.evsemaximum_discharge_power = self.evsemaximum_charge_power
+        self.evseminimum_discharge_power = self.evseminimum_charge_power
+
 
     def get_dynamic_seres_control_mode(self):
         """Builds message containing DynamicSeresControlModeType.

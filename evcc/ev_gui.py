@@ -636,11 +636,11 @@ class EVMainWindow(GUI):
         elif subject.notification_type == "ev_settings":
             self.graphics.evsemaximum_charge_power[-1] = rational_to_float(
                 self.controller.data_model.evsemaximum_charge_power)
-            self.graphics.evsemaximum_discharge_power[-1] = rational_to_float(
+            self.graphics.evsemaximum_discharge_power[-1] = - rational_to_float(
                 self.controller.data_model.evsemaximum_discharge_power)
             self.graphics.evmaximum_charge_power[-1] = rational_to_float(
                 self.controller.data_model.evmaximum_charge_power)
-            self.graphics.evmaximum_discharge_power[-1] = rational_to_float(
+            self.graphics.evmaximum_discharge_power[-1] = - rational_to_float(
                 self.controller.data_model.evmaximum_discharge_power)
             self.graphics.maximum_battery_capacity[-1] = rational_to_float(
                 self.controller.data_model.battery_capacity)
@@ -737,7 +737,7 @@ class EVMainWindow(GUI):
             lambda: self.stop_button.setEnabled(True)
         )
         self.thread.finished.connect(
-            lambda: print("Hello i'm finished")
+            lambda: print("Hello I'm finished")
         )
 
 

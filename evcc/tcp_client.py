@@ -118,8 +118,7 @@ class TCPClientProtocol(asyncio.Protocol):
             logger.info("Message successfully decoded " + xml)
             xml_object = self.message_handler.unmarshall(xml)
             request_type = type(xml_object).__name__
-            logger.info("Received %s.", request_type) # TODO: This method takes too long
-            #logger.debug("XML message received: " + self.message_handler.marshall(xml_object))
+            logger.info("Received %s.", request_type)
             self.session.controller.data_model.state = request_type
             self.session.reset_message_timer()
             self.session.sequence_timer.start()
@@ -205,6 +204,15 @@ class TCPClientProtocol(asyncio.Protocol):
         """
         # await asyncio.get_event_loop().run_in_executor(None, lambda s=string: sys.stdout.write(s + ' '))
         await asyncio.get_event_loop().run_in_executor(None, sys.stdin.readline)
+        await self.set_stop()
+
+
+    async def set_stop(self) -> None:
+        """Awaits the 'return' key press to stop a session.
+
+        :return:
+        """
+        await asyncio.sleep(0.05)
         self.session.session_parameters.stop_session = True
         self.session.session_parameters.charging = False
         logger.warning("Session stop has been requested.")

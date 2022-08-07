@@ -527,7 +527,7 @@ class EVSEMainWindow(GUI):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.verticalSlider.sizePolicy().hasHeightForWidth())
         self.verticalSlider.setSizePolicy(sizePolicy)
-        self.verticalSlider.setMinimum(rational_to_float(self.controller.data_model.evsemaximum_discharge_current))
+        self.verticalSlider.setMinimum(- rational_to_float(self.controller.data_model.evsemaximum_discharge_current))
         self.verticalSlider.setMaximum(rational_to_float(self.controller.data_model.evsemaximum_charge_current))
         self.verticalSlider.setOrientation(QtCore.Qt.Vertical)
         self.verticalSlider.setTickPosition(QtWidgets.QSlider.TicksBothSides)
@@ -546,7 +546,7 @@ class EVSEMainWindow(GUI):
         self.verticalLayout_8 = QtWidgets.QVBoxLayout()
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         limits = rational_to_float(
-            self.controller.data_model.evsemaximum_charge_power), rational_to_float(
+            self.controller.data_model.evsemaximum_charge_power), - rational_to_float(
             self.controller.data_model.evsemaximum_discharge_power)
         self.graphics = CustomCanvas(
             self.controller.data_model.power_evolution, self.controller.data_model.energy_evolution, limits)
@@ -661,11 +661,11 @@ class EVSEMainWindow(GUI):
         elif subject.notification_type == "ev_settings":
             self.graphics.evsemaximum_charge_power[-1] = rational_to_float(
                 self.controller.data_model.evsemaximum_charge_power)
-            self.graphics.evsemaximum_discharge_power[-1] = rational_to_float(
+            self.graphics.evsemaximum_discharge_power[-1] = - rational_to_float(
                 self.controller.data_model.evsemaximum_discharge_power)
             self.graphics.evmaximum_charge_power[-1] = rational_to_float(
                 self.controller.data_model.evmaximum_charge_power)
-            self.graphics.evmaximum_discharge_power[-1] = rational_to_float(
+            self.graphics.evmaximum_discharge_power[-1] = -rational_to_float(
                 self.controller.data_model.evmaximum_discharge_power)
             self.graphics.maximum_battery_capacity[-1] = rational_to_float(
                 self.controller.data_model.battery_capacity)
