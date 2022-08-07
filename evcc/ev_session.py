@@ -95,7 +95,7 @@ class EVSession(CommunicationSession):
             if state != initial_state:
                 state.session_parameters = self.session_parameters
                 state.controller = self.controller
-        self.controller.stop = self.stop_loop
+        self.controller.stop = self.stop_loop # This line links controller.stop() method to self.stop_loop() method
 
     def processing(self):
         return self.session_parameters.processing

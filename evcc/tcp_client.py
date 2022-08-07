@@ -207,12 +207,11 @@ class TCPClientProtocol(asyncio.Protocol):
         await self.set_stop()
 
 
-    async def set_stop(self) -> None:
+    def set_stop(self) -> None:
         """Awaits the 'return' key press to stop a session.
 
         :return:
         """
-        await asyncio.sleep(0.05)
         self.session.session_parameters.stop_session = True
         self.session.session_parameters.charging = False
         logger.warning("Session stop has been requested.")
