@@ -25,6 +25,8 @@ class ControllerInterface:
     data_model: dataclass
     state_machine: PhysicalInterface
     virtual_mode: bool = None
+    charge_controller_ip: str = ''
+
 
 
     def __post_init__(self):
@@ -36,8 +38,9 @@ class ControllerInterface:
 
         :return:
         """
-        config = self.get_config()["SETTINGS"]
-        self.virtual_mode = config.getboolean("virtual_mode")
+        config = self.get_config()
+        self.virtual_mode = config["SETTINGS"].getboolean("virtual_mode")
+        self.charge_controller_ip = config["NETWORK"].get("charge_controller_ip")
 
 
     def set_machine(self):

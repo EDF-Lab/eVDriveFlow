@@ -50,7 +50,7 @@ class EVDummyController(IEVController):
                 ["stop_charge", "C", "B", None, None, None, "set_b"]
             ]
         else:
-            self.state_machine = ChargeControllerInterface("169.254.43.30", 12500, "ev")
+            self.state_machine = ChargeControllerInterface(self.charge_controller_ip, 12500, "ev")
             transitions = [
                 # ["plug", "A", "B", "is_state_a", None, None, "set_b"],
                 ["plug", "E", "B", "is_state_b", None, None, "set_b"],

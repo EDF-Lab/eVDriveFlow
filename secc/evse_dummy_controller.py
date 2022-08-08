@@ -47,7 +47,7 @@ class EVSEDummyController(IEVSEController):
                 ["stop_charge", "C", "B", None, None, None, "set_b"]
             ]
         else:
-            self.state_machine = ChargeControllerInterface("169.254.43.20", 12500, "evse")
+            self.state_machine = ChargeControllerInterface(self.charge_controller_ip, 12500, "evse")
             transitions = [
                 ["plug", "A", "B", "is_state_b", None, None, 'set_pwm'],
                 ["unplug", "B", "A", "is_state_a"],
