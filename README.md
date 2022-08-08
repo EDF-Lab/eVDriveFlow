@@ -9,9 +9,9 @@
 ============
 
 
-evDriveFlow is a *Python* implementation of the communication prococol between charging station communication controllers (SECC) and electric vehicles communication controllers (EVCC) based on ISO 15118-20 version. 
+evDriveFlow is a *Python* implementation of the communication prococol between charging station communication controllers (SECC) and electric vehicles communication controllers (EVCC) based on ISO 15118-20 Ed. 1. 
 
-This implementation integrates a model of the EV charging process in order to run a charging session. The project is coupled to a Graphical user interface to visualize the session charging status.
+This implementation integrates a model of the EV charging process in order to run a charging session. The project is coupled to a Graphical user interface to visualize the session information and control the charging status.
 
 Supported features:
 - DC Bidirectional Power Transfer BPT with dynamic control mode.
@@ -234,7 +234,14 @@ The session sequence can be seen in the terminal by the printed logs or in the G
  
   To stop the charging session, click on stop button of the EVCC start window.
 
+## Generate documentation
+------------------------
+In order to generate the documentation, one has to use the **sphinx** module from the *docs* directory:
 
+```bash
+    make html
+```
+## Troubleshoot
 
  *Note:* If you have the error message below when runing the project: 
 ```
@@ -248,13 +255,4 @@ Aborted (core dumped)
 This error comes from the library *libxcb* which is used in package *Qt* for GUI. To fix it, you need to re-install this library with the command below:
 ```bash
 sudo apt-get install libxcb-randr0-dev libxcb-xtest0-dev libxcb-xinerama0-dev libxcb-shape0-dev libxcb-xkb-dev
-```
-
-
-## Generate documentation
-------------------------
-In order to generate the documentation, one has to use the **sphinx** module from the *docs* directory:
-
-```bash
-    make html
 ```
