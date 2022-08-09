@@ -699,8 +699,9 @@ class EVMainWindow(GUI):
         self.stop_button.setEnabled(False)
         self.start_button.setEnabled(True)
         self.controller.stop()
-        self.start_button.clicked.connect(self.reset_check_boxes)
         time.sleep(2) # time to finish the sequence before stopping the GUI
+        self.start_button.clicked.connect(self.reset_check_boxes)
+
 
     def reset_check_boxes(self) -> None:
         """Resets state checkboxes.
