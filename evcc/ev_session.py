@@ -128,3 +128,4 @@ class EVSessionParameters(SessionParameters):
     charging: bool = False
     stop_session: bool = False
     processing: bool = False
+    request_type: str = 'SAP'

@@ -74,13 +74,15 @@ class TCPClientProtocol(asyncio.Protocol):
     def data_received(self, data: bytes) -> None:
         addr = self.transport.get_extra_info('peername')
         logger.info("Received response from %s.", addr)
-        if self.session.state == "WaitForSupportedAppProtocolRes":
+        if self.session.session_parameters.request_type.lower() == "sap":
             packet = SupportedAppMessage(data)
-        elif "Dc" in self.session.state:
+        elif "dc" in self.session.session_parameters.request_type.lower():
             packet = EXIDCMessage(data)
         else:
             packet = EXIMessage(data)
         self.process_incoming_message(packet)
+
+
 
     def eof_received(self) -> Optional[bool]:
         logger.info('Received EOF.')
@@ -103,7 +105,14 @@ class TCPClientProtocol(asyncio.Protocol):
         :return:
         """
         if self.message_handler.is_valid(v2gtp_message):
-            payload = v2gtp_message.payload.getfieldval("payloadContent")
+            try:
+                payload = v2gtp_message.payload.getfieldval("payloadContent")
+            except AttributeError as ex:
+                template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+                message = template.format(type(ex).__name__, ex.args)
+                logger.error(message + '\n v2gtp_message has no field payloadContent, incorrect payload')
+                raise
+
             message_type = v2gtp_message.get_payload_type()
             logger.info("Payload type: " + str(message_type))
             logger.debug("Received EXI msg to be decoded: " + hexdump.dump(payload, len(payload), ' '))
@@ -167,6 +176,7 @@ class TCPClientProtocol(asyncio.Protocol):
             self.session.reset_sequence_timer()
             self.session.message_timer.start()
             self.send(xml_string, message, request)
+            self.session.session_parameters.request_type = reaction.msg_type
             self.session.save_session_data(reaction.extra_data)
             self.session.next_state()
 
