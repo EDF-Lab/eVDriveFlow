@@ -25,31 +25,40 @@ def rational_to_float(value) -> float:
 
 
 def float_to_rational(value: float):
-    """Casts a float to a DcRationalNumberType.
+    """Casts a float to a RationalNumberType.
 
     :param value: The value to cast.
-    :return: DcRationalNumberType -- the cast result.
+    :return: tuple  with value and exponent-- the cast result.
     """
-    if value == 0:
-        return 0, 0
-    string = format(value, ".2e")
-    if abs(value) < 1:
-        string = string.split("e")  # Keep the sign
+    sign = ""
+    if value < 0:
+        sign = "-"
+    exp = 0
+    string = format(value, ".3f")  # Keep three decimal places
+    elements = string.split(".")
+    val = elements[0]
+    decimal = elements[1]
+
+    if abs(value) < 1:  # decimal number
+        val = sign + decimal
+        exp = -3
     else:
-        string = string.split("e+")
-    try:
-        value = int(string[0])
-        exponent = int(string[1])
-    except ValueError:
-        value = int(string[0].replace('.', ''))
-        exponent = int(string[1]) - 2
-    return value, exponent
+        while abs(int(val)) > 32767:
+            val = str(round(int(val) / 10))
+            exp += 1
+        if int(decimal) != 0:
+            while abs(int(val)) <= 3000:
+                val = val + decimal[0]
+                decimal = decimal[1:]
+                exp -= 1
+                if decimal == '':
+                    break
+    return int(val), int(exp)
 
 
 def float_to_dc_rational(input: float) -> DcRationalNumberType:
     value, exponent = float_to_rational(input)
     return DcRationalNumberType(exponent, value)
-
 
 
 def greater_rational(rational_1, rational_2):
