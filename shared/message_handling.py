@@ -21,7 +21,7 @@ from shared.global_values import PROTOCOL_VERSION
 from shared.log import logger
 import lxml
 from shared.global_values import SDP_PAYLOAD_TYPES, MAX_PAYLOAD_LENGTH, APP_PROTOCOL_EXIG, COMMON_MESSAGES_EXIG, \
-    DC_MESSAGES_EXIG, APP_PROTOCOL_XSD, COMMON_MESSAGES_XSD, DC_MESSAGES_XSD
+    DC_MESSAGES_EXIG, APP_PROTOCOL_XSD, COMMON_MESSAGES_XSD, DC_MESSAGES_XSD, XMLDSIG_XSD, XMLDSIG_EXIG
 
 import jpype
 import os
@@ -107,10 +107,14 @@ class MessageHandler(metaclass=Singleton):
     dc_schema = open_exi_schema(DC_MESSAGES_EXIG)
     dc_grammar_cache = GrammarCache(dc_schema, options)
 
+    xmldsig_schema = open_exi_schema(XMLDSIG_EXIG)
+    xmldsig_grammar_cache = GrammarCache(xmldsig_schema, options)
+
     def __init__(self):
         self.xml_SAP_validator = lxml.etree.XMLSchema(file=APP_PROTOCOL_XSD)
         self.xml_Common_validator = lxml.etree.XMLSchema(file=COMMON_MESSAGES_XSD)
         self.xml_DC_validator = lxml.etree.XMLSchema(file=DC_MESSAGES_XSD)
+        self.xml_xmldsig_validator = lxml.etree.XMLSchema(file=XMLDSIG_XSD)
         self.parser = XmlParser(context=XmlContext())
         self.config = SerializerConfig(pretty_print=True)
         self.serializer = XmlSerializer(config=self.config)
@@ -170,7 +174,7 @@ class MessageHandler(metaclass=Singleton):
     #         return schema
 
     @staticmethod
-    def encode(xml_contents: str, type_msg: str) -> str:
+    def encode(xml_contents: str, type_msg: str, fragment: bool = False) -> str:
         """Turns a human-readable string to an EXI-encoded string. Relies on Java classes.
 
         :param xml_contents: The XML string to be encoded.
@@ -182,18 +186,21 @@ class MessageHandler(metaclass=Singleton):
         output = None
         try:
             t = MessageHandler.transmogrifier
-            input = ByteArrayInputStream(contents.getBytes(Charset.forName("ASCII")));
-            output = ByteArrayOutputStream();
+            t.setFragment(fragment)
+            input = ByteArrayInputStream(contents.getBytes(Charset.forName("ASCII")))
+            output = ByteArrayOutputStream()
             if type_msg == "SAP":
-                t.setGrammarCache(MessageHandler.ap_grammar_cache);
+                t.setGrammarCache(MessageHandler.ap_grammar_cache)
             elif type_msg == "Common":
-                t.setGrammarCache(MessageHandler.common_grammar_cache);
+                t.setGrammarCache(MessageHandler.common_grammar_cache)
             elif type_msg == "DC":
-                t.setGrammarCache(MessageHandler.dc_grammar_cache);
+                t.setGrammarCache(MessageHandler.dc_grammar_cache)
+            elif type_msg == "xmldsig":
+                t.setGrammarCache(MessageHandler.xmldsig_grammar_cache)
             else:
                 raise Exception("Unknown message type")
-            t.setOutputStream(output);
-            t.encode(InputSource(input));
+            t.setOutputStream(output)
+            t.encode(InputSource(input))
             result = output.toByteArray()
         finally:
             if input:
@@ -203,7 +210,7 @@ class MessageHandler(metaclass=Singleton):
             return result
 
     @staticmethod
-    def decode(exi_contents: bytes, type_msg: str) -> str:
+    def decode(exi_contents: bytes, type_msg: str, fragment: bool = False) -> str:
         """Turns encoded EXI bytes to human-readable string. Relies on Java classes.
 
         :param exi_contents: The EXI encoded contents.
@@ -217,13 +224,16 @@ class MessageHandler(metaclass=Singleton):
         try:
             input = ByteArrayInputStream(exi_contents)
             r = MessageHandler.reader
+            r.setFragment(fragment)
             tf_handler = MessageHandler.transformer_handler
             if type_msg == "SAP":
-                r.setGrammarCache(MessageHandler.ap_grammar_cache);
+                r.setGrammarCache(MessageHandler.ap_grammar_cache)
             elif type_msg == "Common":
-                r.setGrammarCache(MessageHandler.common_grammar_cache);
+                r.setGrammarCache(MessageHandler.common_grammar_cache)
             elif type_msg == "DC":
-                r.setGrammarCache(MessageHandler.dc_grammar_cache);
+                r.setGrammarCache(MessageHandler.dc_grammar_cache)
+            elif type_msg == "xmldsig":
+                r.setGrammarCache(MessageHandler.xmldsig_grammar_cache)
             else:
                 raise Exception("Unknown message type")
 
@@ -309,6 +319,8 @@ class MessageHandler(metaclass=Singleton):
             validator = self.xml_Common_validator
         elif msg_type == 'DC':
             validator = self.xml_DC_validator
+        elif msg_type == 'xmldsig':
+            validator = self.xml_xmldsig_validator
         try:
             validator.assertValid(xml_file)
             is_valid = True
