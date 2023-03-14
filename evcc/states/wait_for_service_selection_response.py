@@ -27,8 +27,11 @@ class WaitForServiceSelectionResponse(EVState):
         extra_data = {}
         request = DcChargeParameterDiscoveryReq()
         request.header = MessageHeaderType(self.session_parameters.session_id, int(time.time()))
-        # TODO: test based on service selected
-        request.bpt_dc_cpdreq_energy_transfer_mode = self.controller.data_model.get_bpt_dc_cpdreq_energy_transfer_mode()
+        if self.session_parameters.dc_bpt_selected == True:
+            request.bpt_dc_cpdreq_energy_transfer_mode = self.controller.data_model.get_bpt_dc_cpdreq_energy_transfer_mode()
+        else :
+            request.dc_cpdreq_energy_transfer_mode = self.controller.data_model.get_dc_cpdreq_energy_transfer_mode()
+        
         reaction = SendMessage()
         reaction.extra_data = extra_data
         reaction.message = request

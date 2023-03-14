@@ -129,3 +129,4 @@ class EVSessionParameters(SessionParameters):
     stop_session: bool = False
     processing: bool = False
     request_type: str = 'SAP'
+    dc_bpt_selected:bool = True

@@ -26,7 +26,14 @@ class ProcessServiceSelectionRequest(EVSEState):
         extra_data = {}
         response = ServiceSelectionRes()
         response.header = MessageHeaderType(self.session_parameters.session_id, int(time.time()))
-        response.response_code = ResponseCodeType.OK  # TODO if service is accepted
+        if payload.selected_energy_transfer_service.service_id == 6:
+            response.response_code = ResponseCodeType.OK
+            self.session_parameters.dc_bpt_selected = True
+        elif payload.selected_energy_transfer_service.service_id == 2:
+            response.response_code = ResponseCodeType.OK
+            self.session_parameters.dc_bpt_selected = False
+        else :
+            response.response_code = ResponseCodeType.FAILED
         reaction = SendMessage()
         reaction.extra_data = extra_data
         reaction.message = response
