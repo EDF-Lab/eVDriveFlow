@@ -26,7 +26,11 @@ class WaitForServiceDetailResponse(EVState):
         extra_data = {}
         request = ServiceSelectionReq()
         request.header = MessageHeaderType(self.session_parameters.session_id, int(time.time()))
-        # TODO: from the options in response, select one that is available
+        if payload.service_id == 6:
+            self.session_parameters.dc_bpt_selected = True
+        elif payload.service_id == 2:
+            self.session_parameters.dc_bpt_selected = False
+        
         request.selected_energy_transfer_service = SelectedServiceType(payload.service_id, 1)
         reaction = SendMessage()
         reaction.extra_data = extra_data

@@ -15,11 +15,11 @@
 from typing import Optional
 from evcc.ev_controller import IEVController, DcEVDataModel
 import numpy as np
-from shared.global_values import V2G_CI_MSG_DC_NAMESPACE
+from shared.global_values import V2G_CI_MSG_DC_NAMESPACE, SUPPORTED_SERVICE_IDS
 from shared.xml_classes.app_protocol import AppProtocolType
 from shared.xml_classes.common_messages import ServiceIdlistType, AuthorizationType, DynamicSereqControlModeType
 from shared.xml_classes.dc import BptDcCpdreqEnergyTransferMode, RationalNumberType as DcRationalNumberType, \
-    BptDynamicDcClreqControlMode
+    BptDynamicDcClreqControlMode, DcCpdreqEnergyTransferMode, DynamicDcClreqControlMode
 from shared.xml_classes.common_messages import RationalNumberType
 from dataclasses import dataclass, field
 from shared.utils import rational_to_float, float_to_dc_rational, float_to_rational
@@ -109,7 +109,7 @@ class EVEmulator(DcEVDataModel):
                                                         schema_id=1, priority=1)]
         self.evccid = "EDFVFR123456789ZZZZ8"  # EDF-V-FR123456789ZZZZ-8
         self.authorization_services = [AuthorizationType.EIM]
-        self.supported_service_ids = ServiceIdlistType([2, 6])
+        self.supported_service_ids = ServiceIdlistType(SUPPORTED_SERVICE_IDS)
         self.present_soc = 0
         self.current_energy = 0
         self.evpresent_voltage = DcRationalNumberType(0, 0)
@@ -285,6 +285,35 @@ class EVEmulator(DcEVDataModel):
         request.evminimum_discharge_power, request.evminimum_discharge_current = self.get_min_discharge_parameters()
         return request
 
+    def get_dc_cpdreq_energy_transfer_mode(self) -> DcCpdreqEnergyTransferMode:
+        """Returns DcCpdreqEnergyTransferMode request.
+
+        :return: DcCpdreqEnergyTransferMode -- the request.
+        """
+        request = DcCpdreqEnergyTransferMode()
+        request.evmaximum_charge_power, request.evmaximum_charge_current = self.get_max_charge_parameters()
+        request.evminimum_charge_power, request.evminimum_charge_current = self.get_min_charge_parameters()
+        request.evmaximum_voltage = self.evmaximum_voltage
+        request.evminimum_voltage = self.evminimum_voltage
+        request.target_soc = self.target_soc
+        return request
+
+    def get_dynamic_dc_clreq_control_mode(self) -> DynamicDcClreqControlMode:
+        """Returns DynamicDcClreqControlMode request.
+
+        :return: DynamicDcClreqControlMode -- the request
+        """
+        request = DynamicDcClreqControlMode()
+        request.departure_time = self.departure_time
+        request.evtarget_energy_request = float_to_dc_rational(self.get_target_energy())
+        request.evmaximum_energy_request = float_to_dc_rational(self.get_max_energy())
+        request.evminimum_energy_request = float_to_dc_rational(self.get_min_energy())
+        request.evmaximum_charge_power, request.evmaximum_charge_current = self.get_max_charge_parameters()
+        request.evminimum_charge_power, request.evminimum_charge_current = self.get_min_charge_parameters()
+        request.evmaximum_voltage = self.evmaximum_voltage
+        request.evminimum_voltage = self.evminimum_voltage
+        return request
+    
     @property
     def present_soc(self):
         return self._present_soc

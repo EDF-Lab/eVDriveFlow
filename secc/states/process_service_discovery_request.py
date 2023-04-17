@@ -28,7 +28,12 @@ class ProcessServiceDiscoveryRequest(EVSEState):
         response.header = MessageHeaderType(self.session_parameters.session_id, int(time.time()))
         response.response_code = ResponseCodeType.OK
         response.service_renegotiation_supported = self.controller.data_model.service_renegotiation_supported
-        response.energy_transfer_service_list = self.controller.data_model.energy_transfer_service_list
+        if 6 in payload.supported_service_ids.service_id:
+            response.energy_transfer_service_list = self.controller.data_model.energy_transfer_service_list["6"]
+        elif 2 in payload.supported_service_ids.service_id:
+            response.energy_transfer_service_list = self.controller.data_model.energy_transfer_service_list["2"]
+            self.session_parameters.dc_bpt_selected = False
+
         reaction = SendMessage()
         reaction.extra_data = extra_data
         reaction.message = response

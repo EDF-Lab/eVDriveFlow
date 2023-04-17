@@ -148,3 +148,4 @@ class EVSESessionParameters(SessionParameters):
     bpt_scheduled_dc_clres_control_mode: Optional[BptScheduledDcClresControlMode] = None
     scheduled_dc_clres_control_mode: Optional[ScheduledDcClresControlMode] = None
     clres_control_mode: Optional[DcClresControlMode] = None
+    dc_bpt_selected:bool = True

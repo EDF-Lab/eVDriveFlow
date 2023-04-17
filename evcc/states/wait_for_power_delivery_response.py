@@ -42,9 +42,10 @@ class WaitForPowerDeliveryResponse(EVState):
             self.session_parameters.charging = True
             request = DcChargeLoopReq()
             request.header = MessageHeaderType(self.session_parameters.session_id, int(timestamp))
-            request.bpt_dynamic_dc_clreq_control_mode = \
+            if self.session_parameters.dc_bpt_selected == True:
+                request.bpt_dynamic_dc_clreq_control_mode = \
                 self.controller.data_model.get_bpt_dynamic_dc_clreq_control_mode()
-            request.display_parameters = DisplayParametersType(present_soc=self.controller.data_model.present_soc,
+                request.display_parameters = DisplayParametersType(present_soc=self.controller.data_model.present_soc,
                                                                minimum_soc=self.controller.data_model.minimum_soc,
                                                                target_soc=self.controller.data_model.target_soc,
                                                                maximum_soc=self.controller.data_model.maximum_soc,
@@ -53,6 +54,16 @@ class WaitForPowerDeliveryResponse(EVState):
                                                                        self.controller.data_model.target_soc),
                                                                battery_energy_capacity=
                                                                self.controller.data_model.battery_capacity)
+            else :
+                request.dynamic_dc_clreq_control_mode = \
+                self.controller.data_model.get_dynamic_dc_clreq_control_mode()
+                request.display_parameters = DisplayParametersType(present_soc=self.controller.data_model.present_soc,
+                                                               minimum_soc=self.controller.data_model.minimum_soc,
+                                                               target_soc=self.controller.data_model.target_soc,
+                                                               maximum_soc=self.controller.data_model.maximum_soc,
+                                                               charging_complete=(
+                                                                       self.controller.data_model.present_soc ==
+                                                                       self.controller.data_model.target_soc))
             request.evpresent_voltage = self.controller.data_model.evpresent_voltage
             request.meter_info_requested = False
         reaction.message = request

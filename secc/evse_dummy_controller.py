@@ -20,7 +20,7 @@ from shared.xml_classes.app_protocol import AppProtocolType
 from shared.xml_classes.common_messages import ServiceListType, ServiceType, AuthorizationType, \
     ServiceParameterListType, ParameterSetType, ParameterType, DynamicSeresControlModeType
 from shared.xml_classes.dc import BptDcCpdresEnergyTransferMode, RationalNumberType as DcRationalNumberType, \
-    BptDynamicDcClresControlMode
+    BptDynamicDcClresControlMode, DcCpdresEnergyTransferMode, DynamicDcClresControlMode
 from dataclasses import dataclass, field
 from shared.charge_controller_interface import ChargeControllerInterface
 from shared.physical_interface import PhysicalInterface
@@ -103,12 +103,16 @@ class EVSEEmulator(DcEVSEDataModel):
                                                         version_number_major=1, version_number_minor=0, priority=1)]
         self.authorization_services = [AuthorizationType.EIM]
         self.certificate_installation_service = False
-        self.energy_transfer_service_list = ServiceListType([ServiceType(6, False)])
+        self.energy_transfer_service_list = {"2": ServiceListType([ServiceType(2, False)]), 
+                                             "6": ServiceListType([ServiceType(6, False)])}
         self.service_renegotiation_supported = False
-        self.services = {"6": ServiceParameterListType([ParameterSetType(1, [ParameterType(
-            name="Connector", int_value=2), ParameterType(name="ControlMode", int_value=2), ParameterType(
-            name="MobilityNeedsMode", int_value=2), ParameterType(name="Pricing", int_value=0), ParameterType(
-            name="BPTChannel", int_value=1), ParameterType(name="GeneratorMode", int_value=1)])])}
+        self.services = {"2": ServiceParameterListType([ParameterSetType(1, [ParameterType(
+                            name="Connector", int_value=2), ParameterType(name="ControlMode", int_value=2), ParameterType(
+                            name="MobilityNeedsMode", int_value=2), ParameterType(name="Pricing", int_value=0)])]),
+                         "6": ServiceParameterListType([ParameterSetType(1, [ParameterType(
+                            name="Connector", int_value=2), ParameterType(name="ControlMode", int_value=2), ParameterType(
+                            name="MobilityNeedsMode", int_value=2), ParameterType(name="Pricing", int_value=0), ParameterType(
+                            name="BPTChannel", int_value=1), ParameterType(name="GeneratorMode", int_value=1)])])}
         max_current = rational_to_float(self.evsemaximum_charge_power)
         max_current /= rational_to_float(self.evseminimum_voltage)
         self.evsemaximum_charge_current = self.evsemaximum_discharge_current = float_to_dc_rational(max_current)
@@ -129,6 +133,36 @@ class EVSEEmulator(DcEVSEDataModel):
         response.departure_time = self.departure_time
         return response
 
+    def get_dc_cpdres_energy_transfer_mode(self):
+        """Builds message containing DcCpdresEnergyTransferMode.
+
+        :return: XML object.
+        """
+        response = DcCpdresEnergyTransferMode()
+        response.evsemaximum_charge_current = self.evsemaximum_charge_current
+        response.evseminimum_charge_current = self.evseminimum_charge_current
+        response.evsemaximum_voltage = self.evsemaximum_voltage
+        response.evseminimum_voltage = self.evseminimum_voltage
+        response.evsemaximum_charge_power = self.evsemaximum_charge_power
+        response.evseminimum_charge_power = self.evseminimum_charge_power
+        return response
+
+    def get_dynamic_dc_clres_control_mode(self):
+        """Builds message containing DynamicDcClresControlMode.
+
+        :return: XML object.
+        """
+        response = DynamicDcClresControlMode()
+        response.departure_time = self.departure_time
+        response.minimum_soc = self.minimum_soc
+        response.target_soc = self.target_soc
+        response.evsemaximum_charge_power = self.evsemaximum_charge_power
+        response.evseminimum_charge_power = self.evseminimum_charge_power
+        response.evsemaximum_charge_current = self.evsemaximum_charge_current
+        response.evsemaximum_voltage = self.evsemaximum_voltage
+        response.evseminimum_voltage = self.evseminimum_voltage
+        return response
+    
     def get_bpt_dc_cpdres_energy_transfer_mode(self):
         """Builds message containing BptDcCpdresEnergyTransferMode.
 

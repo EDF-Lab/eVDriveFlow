@@ -44,6 +44,7 @@ SDP_PAYLOAD_TYPES = {0x8001: "SAPPayloadID", 0x8002: "Part20MainstreamPayloadID"
                      0x8104: "ParkingStatusPayloadID", 0x9000: "SDPRequestPayloadID", 0x9001: "SDPResponsePayloadID",
                      0x9002: "SDPRequestWithPPDPayloadID", 0x9003: "SDPResponseWithPPDPayloadID"}  # [7.8.3-3152]
 V2G_CI_MSG_DC_NAMESPACE = "urn:iso:std:iso:15118:-20:DC"
+SUPPORTED_SERVICE_IDS = [2,6] # DC charging without BPT can be enabled by selecting only DC [2]
 
 # See table 214
 EVCC_MSG_TIMEOUT = {"SupportedAppProtocolReq": 2, "SessionSetupReq": 2, "VehicleCheckInReq": 2, "VehicleCheckOut": 2,

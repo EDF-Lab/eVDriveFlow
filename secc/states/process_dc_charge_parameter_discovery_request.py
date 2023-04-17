@@ -27,15 +27,21 @@ class ProcessDcChargeParameterDiscoveryRequest(DcEVSEState):
         controller = self.controller
         response = DcChargeParameterDiscoveryRes()
         response.header = MessageHeaderType(self.session_parameters.session_id, int(time.time()))
-        ev_data = payload.bpt_dc_cpdreq_energy_transfer_mode
+
+        if self.session_parameters.dc_bpt_selected == True:
+            ev_data = payload.bpt_dc_cpdreq_energy_transfer_mode
+            controller.data_model.evmaximum_discharge_power = ev_data.evmaximum_discharge_power
+            response.bpt_dc_cpdres_energy_transfer_mode = controller.data_model.get_bpt_dc_cpdres_energy_transfer_mode()
+        else :
+            ev_data = payload.dc_cpdreq_energy_transfer_mode
+            controller.data_model.evmaximum_charge_power = ev_data.evmaximum_charge_power
+            response.dc_cpdres_energy_transfer_mode = controller.data_model.get_dc_cpdres_energy_transfer_mode()
+
         if hasattr(ev_data, "departure_time"):
             controller.data_model.departure_time = ev_data.departure_time
         if hasattr(ev_data, "target_soc"):
             controller.data_model.target_soc = ev_data.target_soc
-        controller.data_model.evmaximum_charge_power = ev_data.evmaximum_charge_power
-        controller.data_model.evmaximum_discharge_power = ev_data.evmaximum_discharge_power
         # TODO: handle ev data, only max power is handled now for the hmi
-        response.bpt_dc_cpdres_energy_transfer_mode = controller.data_model.get_bpt_dc_cpdres_energy_transfer_mode()
         response.response_code = ResponseCodeType.OK
         reaction = SendMessage()
         reaction.extra_data = extra_data

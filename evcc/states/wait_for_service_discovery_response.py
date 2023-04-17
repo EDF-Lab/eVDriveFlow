@@ -27,9 +27,12 @@ class WaitForServiceDiscoveryResponse(EVState):
         request = ServiceDetailReq()
         request.header = MessageHeaderType(self.session_parameters.session_id, int(time.time()))
         for service in payload.energy_transfer_service_list.service:
-            if service.service_id in self.controller.data_model.supported_service_ids.service_id:
-                # TODO input from HMI
+            if service.service_id == 6  and service.service_id in self.controller.data_model.supported_service_ids.service_id:
                 request.service_id = 6
+                break
+            if service.service_id == 2 and service.service_id in self.controller.data_model.supported_service_ids.service_id:
+                request.service_id = 2
+        
         reaction = SendMessage()
         reaction.extra_data = extra_data
         reaction.message = request
