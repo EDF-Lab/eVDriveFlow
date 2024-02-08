@@ -948,6 +948,11 @@ class SignedCertificateChainType:
         }
     )
 
+@dataclass
+class OEMProvisioningCertificateChain(SignedCertificateChainType):
+    class Meta:
+        name = "OEMProvisioningCertificateChain"
+        namespace = "urn:iso:std:iso:15118:-20:CommonMessages"
 
 @dataclass
 class SignedMeteringDataType:
@@ -1463,6 +1468,11 @@ class PnCAreqAuthorizationModeType:
         }
     )
 
+@dataclass
+class PnCAreqAuthorizationMode(PnCAreqAuthorizationModeType):
+    class Meta:
+        name = "PnC_AReqAuthorizationMode"
+        namespace = "urn:iso:std:iso:15118:-20:CommonMessages"
 
 @dataclass
 class PowerDeliveryRes(PowerDeliveryResType):
